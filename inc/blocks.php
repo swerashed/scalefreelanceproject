@@ -298,6 +298,35 @@ function hungry_register_scaletopia_component()
             setData($fields);
             get_template_part('components/faq-inner');
         });
+
+    Block::make('Why Choose Us Comparison')
+        ->add_fields(array(
+            Field::make('html', 'crb_information_text')
+                ->set_html('<h2>Comparison</h2>'),
+            Field::make('text', 'title', 'Title'),
+            Field::make('rich_text', 'description', 'Description'),
+            Field::make('image', 'scaletopia_logo', 'Scaletopia Logo'),
+            Field::make('text', 'others_label', 'Others Label'),
+            Field::make('complex', 'comparison_rows', 'Comparison Rows')
+                ->set_layout('tabbed-vertical')
+                ->add_fields(array(
+                    Field::make('text', 'row_label', 'Row Label'),
+                    Field::make('text', 'scaletopia_title', 'Scaletopia Title'),
+                    Field::make('textarea', 'scaletopia_desc', 'Scaletopia Description'),
+                    Field::make('text', 'others_title', 'Others Title'),
+                    Field::make('textarea', 'others_desc', 'Others Description'),
+                )),
+            Field::make('text', 'btn_title', 'Button Title'),
+            Field::make('text', 'btn_link', 'Button Link'),
+            Field::make('text', 'footer_text', 'Footer Text'),
+        ))
+        ->set_icon('star-filled')
+        ->set_keywords([__('Comparison')])
+        ->set_description(__('Custom Comparison Block'))
+        ->set_render_callback(function ($fields, $attributes, $inner_blocks) {
+            setData($fields);
+            get_template_part('components/comparison');
+        });
 }
 
 

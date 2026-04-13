@@ -1,0 +1,242 @@
+#comparison {
+  padding: $sectionPaddingMobile 0;
+  background: transparent;
+  position: relative;
+  font-family: $secondaryFontFamily !important;
+
+  p,
+  strong,
+  div,
+  span {
+    font-family: $secondaryFontFamily !important;
+  }
+
+  @include respond-to("xl") {
+    padding: $sectionPaddingDesktop 0;
+  }
+
+  max-width: 1080px;
+  margin-inline: auto;
+
+  // Header Title & Desc
+  .section-header {
+    text-align: center;
+    margin-bottom: 30px;
+
+    @include respond-to("xl") {
+      margin-bottom: 60px;
+    }
+
+  }
+
+  // Scroll Area
+  .comparison-scroll-wrapper {
+    overflow-x: auto;
+    padding-bottom: 20px;
+    margin-bottom: 40px;
+
+    @include respond-to("xl") {
+      overflow-x: visible;
+    }
+
+    &::-webkit-scrollbar {
+      height: 4px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: $primaryColor;
+      border-radius: 10px;
+    }
+  }
+
+  .comparison-table {
+    min-width: 900px;
+
+    @include respond-to("xl") {
+      min-width: 100%;
+    }
+  }
+
+  // Table Structure - Clean Grid
+  .comparison-header-row,
+  .comparison-row {
+    display: grid;
+    grid-template-columns: 200px 1fr 1fr;
+    gap: 12px;
+    align-items: start;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+
+    @include respond-to("xl") {
+      grid-template-columns: 280px 1fr 1fr;
+    }
+  }
+
+  .comparison-header-row,
+  .comparison-row {
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+
+    @include respond-to("xl") {
+      padding-bottom: 20px;
+      margin-bottom: 20px;
+    }
+  }
+
+  .comparison-row:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+
+  .category-col {
+    .category-name {
+      font-family: $serifFontFamily !important;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 22.95px;
+      color: #E8E6F0;
+      margin-top: 10px;
+    }
+  }
+
+  // Independent Header Boxes
+  .header-box {
+    padding: 14px 20px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #111120;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+
+
+
+    &--scaletopia {
+      background: #8B00FF0F;
+      border: 1px solid #8B00FF4D;
+
+      img {
+        max-height: 28px;
+        width: auto;
+      }
+    }
+
+    &--others {
+      .other-label {
+        font-family: $secondaryFontFamily !important;
+        font-weight: 500;
+        font-size: 15px;
+        color: #6b6980;
+        margin: 0;
+        text-align: center;
+      }
+    }
+  }
+
+  // Modular Cards as individual blocks
+  .comparison-card {
+    border-radius: 12px;
+    background: #111120;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: all 0.3s ease;
+    padding: 13px 17px;
+    gap: 5px;
+
+    strong {
+      display: block;
+      font-family: $secondaryFontFamily !important;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 19.6px;
+      letter-spacing: 0px;
+      color: #9896A8;
+      margin: 0;
+    }
+
+    p {
+      font-family: $secondaryFontFamily !important;
+      font-weight: 400;
+      font-size: 12.5px;
+      line-height: 18.75px;
+      letter-spacing: 0px;
+      color: #6B6980;
+      margin: 0;
+    }
+
+    &.scaletopia-card {
+      background: #8B00FF0F;
+      border: 1px solid #8B00FF4D;
+      position: relative;
+      overflow: hidden;
+
+      strong {
+        color: #E8E6F0;
+      }
+
+      p {
+        color: #9896A8;
+      }
+
+      // Stylized vertical accent
+      &:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 2px;
+        height: 60.09000015258789px;
+        opacity: 0.5;
+        border-radius: 2px;
+        background-color: #8B00FF;
+      }
+    }
+  }
+
+  // CTA Section
+  .comparison-cta {
+    margin-top: 60px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    //on mobile gap will be 30
+    .group-cta {
+      margin-bottom: 24px;
+    }
+
+    .cta-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+
+      .button-description {
+        font-family: $secondaryFontFamily;
+        font-weight: 500;
+        font-size: 15px;
+        color: white;
+        margin: 0;
+      }
+    }
+
+    .footer-subtext {
+      font-family: $secondaryFontFamily;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 150%;
+      letter-spacing: 0%;
+      text-align: center;
+      color: #FFFFFF;
+      margin: 0;
+    }
+  }
+}
