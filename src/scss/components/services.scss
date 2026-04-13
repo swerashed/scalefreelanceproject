@@ -1,6 +1,7 @@
 #services {
   position: relative;
-  padding: $sectionPaddingMobile 20px;
+  padding: $sectionPaddingMobile 15px;
+  overflow-x: clip;
 
   // Top Left Gradient
   &::before {
