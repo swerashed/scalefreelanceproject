@@ -5,6 +5,7 @@
   @include respond-to("xl") {
     padding: $sectionPaddingDesktop 0;
   }
+
   overflow: hidden; // Contain the visible swiper overflow
 
   .title {
@@ -26,6 +27,7 @@
       padding: 30px;
       border-radius: 24px;
       width: 85%; // Increased gap on both sides
+      height: auto;
 
       @include respond-to("sm") {
         padding: 48px;

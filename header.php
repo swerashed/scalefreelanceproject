@@ -66,7 +66,8 @@
 			?>
 		</nav>
 		<div class="mobile-menu-cta">
-			<a href="<?php echo carbon_get_theme_option('scaletopia_footer') ?>" class="btn" target="__blank">Schedule a
+			<a href="<?php echo carbon_get_theme_option('scaletopia_footer') ?>" class="animated-button"
+				target="__blank">Schedule a
 				call</a>
 		</div>
 	</div>

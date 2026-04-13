@@ -1,5 +1,5 @@
 #hero-section {
-  padding: $sectionPaddingMobile 0;
+  padding: $sectionPaddingMobile 0px;
   padding-top: ($sectionPaddingMobile * 2);
 
   @include respond-to("lg") {

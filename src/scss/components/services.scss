@@ -33,14 +33,7 @@
       gap: 100px;
     }
 
-    h2 {
-      font-family: $serifFontFamily;
-      font-weight: 400;
-      font-size: 56px;
-      line-height: 110.00000000000001%;
-      letter-spacing: -1.2px;
-      text-align: left;
-    }
+
 
     .left-part {
       width: 100%;
@@ -54,6 +47,10 @@
         text-align: left;
       }
 
+      .section-header {
+        margin-bottom: 0;
+      }
+
       h2 {
         font-family: $serifFontFamily;
         font-weight: 400;
@@ -63,7 +60,6 @@
         text-align: center;
 
         @include respond-to("xl") {
-          font-size: 56px;
           line-height: 110%;
           text-align: left;
         }

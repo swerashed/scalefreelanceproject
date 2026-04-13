@@ -1,5 +1,5 @@
 #services-card {
-  padding: $sectionPaddingMobile 0;
+  padding: $sectionPaddingMobile 15px;
   position: relative;
   overflow: hidden;
 
@@ -22,7 +22,6 @@
     position: relative;
     z-index: 1;
     gap: 16px;
-    padding: 15px;
 
     @include respond-to("lg") {
       grid-template-columns: repeat(2, 1fr);
