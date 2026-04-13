@@ -280,7 +280,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const lastItem = serviceItems[serviceItems.length - 1];
 
     // Simplify tracking to cover full wrapper height
-    const dotOffset = window.innerWidth >= 1200 ? 72 : 54;
+    const dotOffset = 0;
 
     // 1. Progress Line & Dot Sync (Single Source of Truth)
     const updateActiveState = (index) => {

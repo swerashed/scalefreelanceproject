@@ -14,7 +14,7 @@ $items = isset($data['items']) ? $data['items'] : [];
 
                     <div class="cta">
                         <a target="__blank" href="<?php echo carbon_get_theme_option('scaletopia_book_now_link') ?>"
-                            class="btn">Book a Free Call</a>
+                            class="btn animated-button">Book a Free Call</a>
                     </div>
                 </div>
             </div>
@@ -29,9 +29,9 @@ $items = isset($data['items']) ? $data['items'] : [];
                                 <h3>
                                     <?php echo $service['title']; ?>
                                 </h3>
-                                <p>
+                                <div>
                                     <?php echo $service['description']; ?>
-                                </p>
+                                </div>
                             </div>
                         </div>
                     <?php endforeach; ?>
