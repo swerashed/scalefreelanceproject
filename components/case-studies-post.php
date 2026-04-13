@@ -1,0 +1,101 @@
+<section class="case-studies">
+    <div class="container">
+        <div class="filter-wrapper text-center">
+            <div class="filter">
+                <button class="active" data-filter="*">All</button>
+                <?php
+                // Fetch all terms of the 'case_study_category' taxonomy
+                $terms = get_terms(array(
+                    'taxonomy' => 'case_study_category',
+                    'hide_empty' => false, // Set to true to exclude empty categories
+                ));
+
+                // Check if terms are available
+                if (!empty($terms) && !is_wp_error($terms)) {
+                    foreach ($terms as $term) {
+                        // Generate a button for each term
+                        echo '<button data-filter=".' . esc_attr($term->slug) . '">' . esc_html($term->name) . '</button>';
+                    }
+                }
+                ?>
+            </div>
+        </div>
+
+
+        <div class="case-studies-wrapper">
+            <?php
+            // Query all 'case_study' posts
+            $args = array(
+                'post_type' => 'case_study', // Custom post type slug
+                'posts_per_page' => -1, // Retrieve all posts
+                'post_status' => 'publish', // Only published posts
+            );
+
+            $query = new WP_Query($args);
+
+            // Loop through the posts
+            if ($query->have_posts()) :
+                while ($query->have_posts()) : $query->the_post();
+                    // Get the post thumbnail URL
+                    $thumbnail_url = get_the_post_thumbnail_url(get_the_ID(), 'full');
+                    $logoID = carbon_get_post_meta(get_the_ID(), 'logo');
+                    $logo = wp_get_attachment_image($logoID, 'full');
+                    $video = carbon_get_post_meta(get_the_ID(), 'video');
+
+            ?>
+                    <div class="case-studies-item">
+                        <div class="case-studies-item-img">
+                            <a href="<?php the_permalink(); ?>" <?php echo $video ? 'class="video-thumb"' : '' ?>>
+                                <img src="<?php echo esc_url($thumbnail_url); ?>" alt="<?php the_title(); ?>" />
+                                <?php if ($video) : ?>
+                                    <svg
+                                        class="play-icon"
+                                        width="96"
+                                        height="96"
+                                        viewBox="0 0 96 96"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <rect
+                                            width="96"
+                                            height="96"
+                                            rx="48"
+                                            fill="#1C1D20"
+                                            fill-opacity="0.2" />
+                                        <rect
+                                            x="0.5"
+                                            y="0.5"
+                                            width="95"
+                                            height="95"
+                                            rx="47.5"
+                                            stroke="white"
+                                            stroke-opacity="0.6" />
+                                        <path
+                                            d="M49.6172 43.2809C50.978 44.054 52.0473 44.6615 52.8092 45.218C53.5762 45.7783 54.1435 46.3639 54.3467 47.1361C54.4957 47.7022 54.4957 48.2979 54.3467 48.8641C54.1435 49.6362 53.5762 50.2218 52.8092 50.7821C52.0473 51.3386 50.978 51.9461 49.6172 52.7192C48.3027 53.466 47.1942 54.0957 46.3527 54.4537C45.5045 54.8145 44.7312 54.9974 43.9795 54.7844C43.4272 54.6278 42.9246 54.3307 42.5197 53.9222C41.9702 53.3679 41.7497 52.6016 41.6453 51.6796C41.5417 50.7641 41.5417 49.5659 41.5417 48.0418V47.9583C41.5417 46.4342 41.5417 45.236 41.6453 44.3206C41.7497 43.3985 41.9702 42.6322 42.5197 42.0778C42.9246 41.6694 43.4272 41.3723 43.9795 41.2157C44.7312 41.0028 45.5045 41.1856 46.3527 41.5464C47.1942 41.9044 48.3027 42.5341 49.6172 43.2809Z"
+                                            fill="white" />
+                                    </svg>
+                                <?php endif; ?>
+                            </a>
+                        </div>
+                        <div class="case-studies-item-content">
+                            <?php echo $logo;  ?>
+
+                            <h3>
+                                <?php the_title(); ?>
+                            </h3>
+
+                            <a href="<?php the_permalink(); ?>" class="btn">
+                                Read the story
+                            </a>
+                        </div>
+                    </div>
+                <?php
+                endwhile;
+                wp_reset_postdata();
+            else :
+                ?>
+                <p>No case studies found.</p>
+            <?php endif; ?>
+        </div>
+
+    </div>
+</section>

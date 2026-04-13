@@ -1,0 +1,262 @@
+#header-section {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  background: rgba(19,
+      22,
+      29,
+      0.2);
+  /* Using your base color with transparency */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  padding: 20px 0;
+
+  @include respond-to("xl") {
+    padding: 20px 0;
+  }
+
+  .header-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* Center all child elements horizontally */
+    align-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
+
+    .logo {
+      margin-right: auto;
+
+      @media (max-width: 1199px) {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .mobile-toogle {
+        .burger-menu {
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          width: 40px;
+          height: 40px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 50%;
+          cursor: pointer;
+          transition: all 0.3s ease;
+
+          &:hover {
+            border-color: $primaryColor;
+            background: $primaryColor;
+          }
+        }
+
+        @include respond-to("xl") {
+          display: none;
+        }
+      }
+
+      img {
+        max-width: 200px;
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    .primary-menu {
+      display: none;
+
+      @include respond-to("xl") {
+        display: block;
+      }
+
+      ul {
+        display: flex;
+        align-items: center;
+        margin: 0 auto;
+        /* Center the menu horizontally */
+        padding: 0;
+
+        li {
+          margin-right: 32px;
+          list-style: none;
+
+          &:last-child {
+            margin-right: 0;
+            /* Remove margin for the last item */
+          }
+
+          a {
+            position: relative;
+            /* Required for the pseudo-element */
+            color: $whiteColor;
+            text-decoration: none;
+            font-size: 18px;
+            line-height: 26px;
+            font-weight: 600;
+            font-family: $secondaryFontFamily;
+            transition: color 0.3s ease;
+
+            &:hover {
+              color: $secondaryColor;
+            }
+          }
+        }
+      }
+    }
+
+    .cta {
+      display: none;
+
+      @include respond-to("xl") {
+        display: block;
+      }
+
+      margin-left: auto;
+      /* Push the CTA button to the right */
+      // a {
+      //   background: $buttonGradientColor;
+      //   color: $whiteColor;
+      //   font-family: $secondaryFontFamily;
+      //   font-size: 16px;
+      //   line-height: 22px;
+      //   font-weight: 600;
+      //   text-decoration: none;
+      //   padding: 9px 24px; /* Padding defines size */
+      //   border-radius: 40px;
+      //   text-align: center;
+      //   display: flex;
+      //   justify-content: center;
+      //   align-items: center;
+      //   transition: all 0.3s ease;
+      //   border: none;
+
+      //   &:hover {
+      //     background: $primaryColor;
+      //     color: $whiteColor;
+      //   }
+      // }
+    }
+  }
+}
+
+#mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: $darkColor;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+
+  &.open {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+    visibility: visible;
+  }
+
+  .mobile-menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 20px;
+    background: $darkColor;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+    .logo {
+      position: relative;
+      top: 5px;
+
+      img {
+        max-width: 200px;
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    .close-menu {
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &:hover {
+        border-color: $primaryColor;
+        background: $primaryColor;
+      }
+    }
+  }
+
+  .mobile-menu-nav {
+    ul {
+      padding: 0 20px;
+      margin: 40px 0;
+
+      li {
+        list-style: none;
+        margin-bottom: 20px;
+
+        a {
+          color: $whiteColor;
+          font-family: $secondaryFontFamily;
+          font-size: 18px;
+          line-height: 26px;
+          font-weight: 600;
+          text-decoration: none;
+          transition: color 0.3s ease;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+          display: block;
+          padding-bottom: 10px;
+
+          &:hover,
+          &.active &:focus {
+            outline: none;
+            color: $primaryColor;
+          }
+        }
+      }
+    }
+  }
+
+  .mobile-menu-cta {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+
+    a {
+      background: linear-gradient(90deg, #8563ff 17.91%, #9c2cd0 73.73%);
+      color: $whiteColor;
+      font-family: $secondaryFontFamily;
+      font-size: 16px;
+      line-height: 22px;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 9px 24px;
+      /* Padding defines size */
+      border-radius: 40px;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: all 0.3s ease;
+      border: none;
+
+      &:hover {
+        background: $secondaryColor;
+        color: $darkColor;
+      }
+    }
+  }
+}

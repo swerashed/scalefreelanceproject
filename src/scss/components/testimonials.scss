@@ -1,0 +1,223 @@
+#testimonials {
+  position: relative;
+  padding: 0 15px 60px;
+  overflow: hidden; // Contain the visible swiper overflow
+
+  .title {
+    margin-top: 0;
+  }
+
+  .swiper {
+    overflow: visible; // Prevent clipping of card edges/shadows
+
+    .swiper-wrapper {
+      @include respond-to("xl") {
+        padding-left: 105px;
+      }
+    }
+
+    .swiper-slide {
+      background: radial-gradient(153.38% 1055.88% at 17.55% 50%, rgba(85, 43, 237, 0.2) 0%, rgba(189, 171, 255, 0.4) 100%);
+      backdrop-filter: blur(24px);
+      padding: 30px;
+      border-radius: 24px;
+      width: 85%; // Increased gap on both sides
+
+      @include respond-to("sm") {
+        padding: 48px;
+        width: 75%;
+      }
+
+      .testimonial-item {
+        display: flex;
+        gap: 24px;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+        @include respond-to("lg") {
+          gap: 40px;
+          align-items: center;
+          flex-direction: row;
+          text-align: left;
+        }
+
+        .testimonial-author {
+          max-width: 250px;
+          width: 100%;
+          margin: 0 auto;
+
+          @include respond-to("lg") {
+            max-width: 308px;
+            margin: 0;
+          }
+        }
+
+        .author-image {
+          position: relative;
+          max-width: 250px;
+          margin: 0 auto;
+
+          @include respond-to("lg") {
+            max-width: 308px;
+          }
+
+          &::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 70px;
+            /* Size of the pulse */
+            height: 70px;
+            background: $buttonGradientColor;
+            /* Light purple */
+            border-radius: 50%;
+            z-index: 0;
+            /* Behind the play icon */
+            animation: pulse 1.5s infinite linear;
+            /* Pulse animation */
+          }
+
+          .play-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+            /* Ensures the SVG appears above the pulse effect */
+            transition: all 0.3s ease;
+          }
+
+          &:hover .play-icon rect {
+            fill: #ffffff32;
+            stroke: $buttonGradientColor;
+          }
+
+          &:hover .play-icon path {
+            fill: $darkColor;
+            stroke: $darkColor;
+          }
+        }
+
+        .testimonial-content {
+          p {
+            font-family: $secondaryFontFamily;
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 28px;
+            letter-spacing: 0%;
+            margin-bottom: 30px;
+            color: rgba(255, 255, 255, 1);
+            max-width: 100%;
+
+            @include respond-to("lg") {
+              font-size: 28px;
+              line-height: 38px;
+              margin-bottom: 40px;
+              max-width: 90%;
+            }
+          }
+
+          .btn {
+            padding: 11px 33px;
+          }
+
+          .author-info {
+            margin-bottom: 40px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 8px;
+
+            @include respond-to("lg") {
+              margin-bottom: 40px;
+            }
+
+            h4 {
+              font-family: $secondaryFontFamily;
+              font-weight: 600;
+              font-size: 20px;
+              line-height: 30px;
+              letter-spacing: 0%;
+              margin: 0;
+            }
+
+            span {
+              font-family: $secondaryFontFamily;
+              font-weight: 400;
+              font-size: 14px;
+              line-height: 22px;
+              letter-spacing: 0%;
+            }
+          }
+        }
+      }
+    }
+
+    .pagination {
+      display: none;
+
+      @include respond-to("xl") {
+        display: flex;
+      }
+
+      gap: 10px;
+      justify-content: space-between;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 100%;
+      z-index: 10;
+
+      .navigation {
+        background-color: rgba(30, 36, 52, 1);
+        width: 56px;
+        height: 56px;
+        border-radius: 100%;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &:hover {
+          svg {
+            path {
+              stroke: $secondaryColor;
+              stroke-opacity: 1;
+            }
+          }
+        }
+
+        &.prev {
+          left: 15px;
+          position: relative;
+
+          svg {
+            transform: rotate(180deg);
+          }
+        }
+
+        &.next {
+          right: 15px;
+          position: relative;
+        }
+      }
+    }
+  }
+
+  .swiper-pagination-bullet {
+    width: 26px;
+    height: 3px;
+    background-color: rgba(189, 171, 255, 0.3);
+    border-radius: 30px;
+    transition: all 0.3s ease;
+
+    &.swiper-pagination-bullet-active {
+      background: linear-gradient(90deg, #8563ff 17.91%, #9c2cd0 73.73%);
+      width: 55px;
+    }
+  }
+}

@@ -1,0 +1,52 @@
+// Define Bootstrap-compatible breakpoints
+$breakpoints: (
+  "xs": 0,
+  // Extra small (default)
+  "sm": 576px,
+  // Small
+  "md": 768px,
+  // Medium
+  "lg": 992px,
+  // Large
+  "xl": 1200px,
+  // Extra large
+  "xxl": 1400px, // Extra extra large
+);
+
+// Mixin for breakpoints
+@mixin respond-to($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    $min-width: map-get($breakpoints, $breakpoint);
+    @media (min-width: $min-width) {
+      @content;
+    }
+  } @else {
+    @error "Breakpoint #{$breakpoint} not found in \$breakpoints map.";
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto 0;
+
+  @include respond-to("sm") {
+    max-width: 540px;
+  }
+
+  @include respond-to("md") {
+    max-width: 720px;
+  }
+
+  @include respond-to("lg") {
+    max-width: 960px;
+  }
+
+  @include respond-to("xl") {
+    max-width: 1140px;
+  }
+
+  @include respond-to("xxl") {
+    max-width: 1320px;
+  }
+}

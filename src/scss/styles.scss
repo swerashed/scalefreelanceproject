@@ -1,0 +1,36 @@
+@import "utils/fonts";
+@import "utils/variables";
+@import "utils/responsive";
+@import "utils/button";
+
+// Global styles
+@import "layouts/header";
+@import "layouts/footer";
+
+// Components
+@import "components/hero";
+@import "components/services-card";
+@import "components/global";
+@import "components/testimonials";
+@import "components/partners";
+@import "components/services";
+@import "components/faq";
+@import "components/contact-us";
+@import "components/case-studies";
+@import "components/mission-vision";
+@import "components/lead-cards";
+@import "components/pricing";
+
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background-color: $darkColor;
+  font-family: $primaryFontFamily;
+  color: $whiteColor;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 18px;
+  line-height: 28px;
+}

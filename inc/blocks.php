@@ -1,0 +1,304 @@
+<?php
+
+use Carbon_Fields\Field;
+use Carbon_Fields\Block;
+
+add_action('carbon_fields_register_fields', 'hungry_register_scaletopia_component');
+
+function hungry_register_scaletopia_component()
+{
+    // Hero Banner (Home)
+    Block::make('Hero Banner (Home)')
+        ->add_fields(array(
+            Field::make('html', 'crb_information_text')
+                ->set_html('<h2>Hero Banner</h2>'),
+            Field::make('text', 'title', 'Title'),
+            Field::make('rich_text', 'description', 'Description'),
+            Field::make('text', 'btn_title', 'Button Title'),
+            Field::make('text', 'btn_link', 'Button Link'),
+            Field::make('text', 'button_description', 'Button Description'),
+            Field::make('image', 'img', 'Image'),
+            Field::make('text', 'video', 'Video'),
+        ))
+        ->set_icon('star-filled')
+        ->set_keywords([__('Hero Banner')])
+        ->set_description(__('Custom Block'))
+        ->set_render_callback(function ($fields, $attributes, $inner_blocks) {
+            setData($fields);
+            get_template_part('components/hero-banner');
+        });
+
+    Block::make('Partners (Home)')
+        ->add_fields(array(
+            Field::make('html', 'crb_information_text')
+                ->set_html('<h2>Partners (Home)</h2>'),
+            Field::make('text', 'title', 'Title'),
+            Field::make('complex', 'items', 'Items Top')
+                ->set_layout('tabbed-vertical')
+                ->add_fields(array(
+                    Field::make('image', 'img', 'Image'),
+                )),
+            Field::make('complex', 'items_bottom', 'Items Bottom')
+                ->set_layout('tabbed-vertical')
+                ->add_fields(array(
+                    Field::make('image', 'img', 'Image'),
+                ))
+        ))
+        ->set_icon('star-filled')
+        ->set_keywords([__('Home CTA')])
+        ->set_description(__('Custom Block'))
+        ->set_render_callback(function ($fields, $attributes, $inner_blocks) {
+            setData($fields);
+            get_template_part('components/partners');
+        });
+
+    Block::make('Services Cards (Home)')
+        ->add_fields(array(
+            Field::make('html', 'crb_information_text')
+                ->set_html('<h2>Services Cards (Home)</h2>'),
+            Field::make('text', 'title', 'Section Title'),
+            Field::make('rich_text', 'description', 'Section Description'),
+            Field::make('complex', 'items', 'Items')
+                ->set_layout('tabbed-vertical')
+                ->add_fields(array(
+                    Field::make('text', 'title', 'Title'),
+                    Field::make('textarea', 'description', 'Description'),
+                ))
+        ))
+        ->set_icon('star-filled')
+        ->set_keywords([__('Services Cards (Home)')])
+        ->set_description(__('Custom Block'))
+        ->set_render_callback(function ($fields, $attributes, $inner_blocks) {
+            setData($fields);
+            get_template_part('components/services-card');
+        });
+
+    Block::make('Case Studies Slider (Home)')
+        ->add_fields(array(
+            Field::make('html', 'crb_information_text')
+                ->set_html('<h2>Case Studies Slider (Home)</h2>'),
+            Field::make('text', 'title', 'Title'),
+            Field::make('rich_text', 'description', 'Description'),
+            Field::make('complex', 'items', 'Items')
+                ->set_layout('tabbed-vertical')
+                ->add_fields(array(
+                    Field::make('text', 'title', 'Title'),
+                    Field::make('text', 'sub_title', 'Sub Title'),
+                    Field::make('image', 'img', 'Image'),
+                    Field::make('rich_text', 'description', 'Description'),
+                    Field::make('text', 'btn_title', 'Button Title'),
+                    Field::make('text', 'btn_link', 'Button Link'),
+
+                ))
+        ))
+        ->set_icon('star-filled')
+        ->set_keywords([__('Case Studies Slider (Home)')])
+        ->set_description(__('Custom Block'))
+        ->set_render_callback(function ($fields, $attributes, $inner_blocks) {
+            setData($fields);
+            get_template_part('components/case-studies-slider');
+        });
+
+
+    Block::make('Services (Home)')
+        ->add_fields(array(
+            Field::make('html', 'crb_information_text')
+                ->set_html('<h2>Services (Home)</h2>'),
+            Field::make('text', 'title', 'Title'),
+            Field::make('rich_text', 'description', 'Description'),
+            Field::make('complex', 'items', 'Items')
+                ->set_layout('tabbed-vertical')
+                ->add_fields(array(
+                    Field::make('image', 'icon', 'Icon'),
+                    Field::make('text', 'title', 'Title'),
+                    Field::make('rich_text', 'description', 'Description'),
+                ))
+        ))
+        ->set_icon('star-filled')
+        ->set_keywords([__('Services (Home)')])
+        ->set_description(__('Custom Block'))
+        ->set_render_callback(function ($fields, $attributes, $inner_blocks) {
+            setData($fields);
+            get_template_part('components/services');
+        });
+
+
+    Block::make('FAQ (Home)')
+        ->add_fields(array(
+            Field::make('html', 'crb_information_text')
+                ->set_html('<h2>FAQ (Home)</h2>'),
+            Field::make('text', 'title', 'Title'),
+            Field::make('image', 'img', 'Image'),
+            Field::make('complex', 'items', 'Items')
+                ->set_layout('tabbed-vertical')
+                ->add_fields(array(
+                    Field::make('text', 'title', 'Title'),
+                    Field::make('rich_text', 'description', 'Description'),
+                ))
+
+        ))
+        ->set_icon('star-filled')
+        ->set_keywords([__('FAQ (Home)')])
+        ->set_description(__('Custom Block'))
+        ->set_render_callback(function ($fields, $attributes, $inner_blocks) {
+            setData($fields);
+            get_template_part('components/faq-home');
+        });
+
+    Block::make('Contact')
+        ->add_fields(array(
+            Field::make('html', 'crb_information_text')
+                ->set_html('<h2>Contact</h2>'),
+            Field::make('text', 'title', 'Title'),
+
+        ))
+        ->set_icon('star-filled')
+        ->set_keywords([__('Contact (Home)')])
+        ->set_description(__('Custom Block'))
+        ->set_render_callback(function ($fields, $attributes, $inner_blocks) {
+            setData($fields);
+            get_template_part('components/contact');
+        });
+
+    Block::make('Generic Banner (Inner)')
+        ->add_fields(array(
+            Field::make('html', 'crb_information_text')
+                ->set_html('<h2>Generic Banner (Inner)</h2>'),
+            Field::make('text', 'title', 'Title'),
+            Field::make('rich_text', 'description', 'Description'),
+            Field::make('image', 'img', 'Image'),
+        ))
+        ->set_icon('star-filled')
+        ->set_keywords([__('Generic Banner (Inner)')])
+        ->set_description(__('Custom Block'))
+        ->set_render_callback(function ($fields, $attributes, $inner_blocks) {
+            setData($fields);
+            get_template_part('components/generic-banner-inner');
+        });
+
+    Block::make('Mission and Vision (Inner)')
+        ->add_fields(array(
+            Field::make('html', 'crb_information_text')
+                ->set_html('<h2>Mission and Vision (Inner)</h2>'),
+            Field::make('rich_text', 'description', 'Description'),
+        ))
+        ->set_icon('star-filled')
+        ->set_keywords([__('Mission and Vision (Inner)')])
+        ->set_description(__('Custom Block'))
+        ->set_render_callback(function ($fields, $attributes, $inner_blocks) {
+            setData($fields);
+            get_template_part('components/mission-and-vision');
+        });
+
+    Block::make('Statistics (Inner)')
+        ->add_fields(array(
+            Field::make('html', 'crb_information_text')
+                ->set_html('<h2>Statistics (Inner)</h2>'),
+            Field::make('complex', 'stats', 'Stats')
+                ->set_layout('tabbed-vertical')
+                ->add_fields(array(
+                    Field::make('text', 'number', 'Number'),
+                    Field::make('rich_text', 'description', 'Description'),
+                ))
+        ))
+        ->set_icon('star-filled')
+        ->set_keywords([__('Statistics (Inner)')])
+        ->set_description(__('Custom Block'))
+        ->set_render_callback(function ($fields, $attributes, $inner_blocks) {
+            setData($fields);
+            get_template_part('components/statistics-inner');
+        });
+
+    Block::make('Case Studies Banner (Inner)')
+        ->add_fields(array(
+            Field::make('html', 'crb_information_text')
+                ->set_html('<h2>Case Studies Banner (Inner)</h2>'),
+            Field::make('text', 'title', 'Title'),
+            Field::make('rich_text', 'description', 'Description'),
+        ))
+        ->set_icon('star-filled')
+        ->set_keywords([__('Inner Banner')])
+        ->set_description(__('Custom Block'))
+        ->set_render_callback(function ($fields, $attributes, $inner_blocks) {
+            setData($fields);
+            get_template_part('components/case-studies-banner-inner');
+        });
+
+    // Statistics (Inner)
+    Block::make('Case Studies (Post)')
+        ->add_fields(array(
+            Field::make('html', 'crb_information_text')
+                ->set_html('<h2>Case Studies (Post)</h2>'),
+        ))
+        ->set_icon('star-filled')
+        ->set_keywords([__('Statistics')])
+        ->set_description(__('Custom Block'))
+        ->set_render_callback(function ($fields, $attributes, $inner_blocks) {
+            setData($fields);
+            get_template_part('components/case-studies-post');
+        });
+
+
+    Block::make('Pricing Banner (Inner)')
+        ->add_fields(array(
+            Field::make('html', 'crb_information_text')
+                ->set_html('<h2>Pricing Banner (Inner)</h2>'),
+            Field::make('text', 'title', 'Title'),
+            Field::make('rich_text', 'description', 'Description'),
+        ))
+        ->set_icon('star-filled')
+        ->set_keywords([__('Pricing Banner (Inner)')])
+        ->set_description(__('Custom Block'))
+        ->set_render_callback(function ($fields, $attributes, $inner_blocks) {
+            setData($fields);
+            get_template_part('components/pricing-banner-inner');
+        });
+
+    Block::make('Our Pricing')
+        ->add_fields(array(
+            Field::make('html', 'crb_information_text')
+                ->set_html('<h2>Our Pricing</h2>'),
+            Field::make('text', 'title', 'Title'),
+            Field::make('rich_text', 'details', 'Details'),
+
+            // card title
+            Field::make('text', 'card_title', 'Card Title'),
+            Field::make('complex', 'items', 'Items')
+                ->set_layout('tabbed-vertical')
+                ->add_fields(array(
+                    Field::make('text', 'title', 'Title'),
+                )),
+            Field::make('textarea', 'bottom_description', 'Bottom Description'),
+        ))
+        ->set_icon('star-filled')
+        ->set_keywords([__('Our Pricing')])
+        ->set_description(__('Custom Block'))
+        ->set_render_callback(function ($fields, $attributes, $inner_blocks) {
+            setData($fields);
+            get_template_part('components/our-pricing');
+        });
+
+    Block::make('FAQ (Inner)')
+        ->add_fields(array(
+            Field::make('html', 'crb_information_text')
+                ->set_html('<h2>FAQ (Inner)</h2>'),
+            Field::make('text', 'title', 'Title'),
+            Field::make('rich_text', 'description', 'Description'),
+            Field::make('complex', 'items', 'Items')
+                ->set_layout('tabbed-vertical')
+                ->add_fields(array(
+                    Field::make('text', 'title', 'Title'),
+                    Field::make('rich_text', 'description', 'Description'),
+                ))
+        ))
+        ->set_icon('star-filled')
+        ->set_keywords([__('FAQ (Inner)')])
+        ->set_description(__('Custom Block'))
+        ->set_render_callback(function ($fields, $attributes, $inner_blocks) {
+            setData($fields);
+            get_template_part('components/faq-inner');
+        });
+}
+
+
+
