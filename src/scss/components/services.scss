@@ -65,6 +65,7 @@
         @include respond-to("xl") {
           font-size: 56px;
           line-height: 110%;
+          text-align: left;
         }
       }
 
@@ -98,7 +99,7 @@
       .service-item-wrapper {
         display: flex;
         flex-direction: column;
-        gap: 30px;
+        gap: 20px;
         position: relative;
         padding-left: 40px;
 
@@ -137,10 +138,11 @@
           box-sizing: border-box;
           padding: 24px;
           border-radius: 24px;
-          border-width: 1px;
+          border: 1px solid rgba(255, 255, 255, 0.03); // Base border for transition
           background: linear-gradient(0deg, rgba(24, 28, 37, 0.6), rgba(24, 28, 37, 0.6)),
             radial-gradient(81.81% 95.07% at 18.19% 20.41%, rgba(85, 43, 237, 0.07) 0%, rgba(24, 28, 37, 0) 100%);
           backdrop-filter: blur(24px);
+          transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); // Smooth transition
 
           @include respond-to("xl") {
             padding: 40px;
