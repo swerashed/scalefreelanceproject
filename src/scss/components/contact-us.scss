@@ -1,8 +1,11 @@
 #contact-us {
   position: relative;
   z-index: 1;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding: $sectionPaddingMobile 15px;
+
+  @include respond-to("xl") {
+    padding: $sectionPaddingDesktop 0;
+  }
 
   .section-header {
     margin-bottom: 0;

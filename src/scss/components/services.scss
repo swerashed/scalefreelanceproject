@@ -1,9 +1,9 @@
 #services {
   position: relative;
-  padding: 60px 20px;
+  padding: $sectionPaddingMobile 20px;
 
   @include respond-to("xl") {
-    padding: 120px 0;
+    padding: $sectionPaddingDesktop 0;
   }
 
   &::after {

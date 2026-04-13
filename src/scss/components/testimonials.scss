@@ -1,6 +1,10 @@
 #testimonials {
   position: relative;
-  padding: 0 15px 60px;
+  padding: $sectionPaddingMobile 15px;
+
+  @include respond-to("xl") {
+    padding: $sectionPaddingDesktop 0;
+  }
   overflow: hidden; // Contain the visible swiper overflow
 
   .title {

@@ -1,5 +1,5 @@
 .case-studies {
-  padding-bottom: 60px;
+  padding-bottom: $sectionPaddingMobile;
   position: relative;
 
   &::after {
@@ -18,7 +18,7 @@
   }
 
   @include respond-to("lg") {
-    padding-bottom: 120px;
+    padding-bottom: $sectionPaddingDesktop;
   }
 
   padding-left: 15px;
@@ -199,12 +199,12 @@
   .case-studies-generic-wrapper {
     max-width: 1110px;
     margin: 0 auto;
-    padding-top: 40px;
-    padding-bottom: 40px;
+    padding-top: ($sectionPaddingMobile * 1.33);
+    padding-bottom: ($sectionPaddingMobile * 1.33);
 
     @include respond-to("lg") {
-      padding-top: 80px;
-      padding-bottom: 80px;
+      padding-top: ($sectionPaddingDesktop * 1.33);
+      padding-bottom: ($sectionPaddingDesktop * 1.33);
     }
   }
 
@@ -586,10 +586,10 @@
 .more-case-studies {
   padding-left: 15px;
   padding-right: 15px;
-  padding-bottom: 60px;
+  padding-bottom: $sectionPaddingMobile;
 
   @include respond-to("lg") {
-    padding-bottom: 120px;
+    padding-bottom: $sectionPaddingDesktop;
   }
 
   .swiper {

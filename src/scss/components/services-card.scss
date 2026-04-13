@@ -1,10 +1,10 @@
 #services-card {
-  padding: 60px 0 60px;
+  padding: $sectionPaddingMobile 0;
   position: relative;
   overflow: hidden;
 
   @include respond-to("xl") {
-    padding: 120px 0 120px;
+    padding: $sectionPaddingDesktop 0;
   }
 
   .section-header {

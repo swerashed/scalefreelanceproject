@@ -1,10 +1,10 @@
 #hero-section {
-  padding: 30px 0;
-  padding-top: 60px;
+  padding: $sectionPaddingMobile 0;
+  padding-top: ($sectionPaddingMobile * 2);
 
   @include respond-to("lg") {
-    padding: 60px 0;
-    padding-top: 120px;
+    padding: $sectionPaddingDesktop 0;
+    padding-top: ($sectionPaddingDesktop * 2);
   }
 
   position: relative;

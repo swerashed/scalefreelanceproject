@@ -1,8 +1,8 @@
 #partners {
-  padding: 0 0 60px;
+  padding: $sectionPaddingMobile 0;
 
   @include respond-to("xl") {
-    padding: 0 0 120px;
+    padding: $sectionPaddingDesktop 0;
   }
 
   .partners-title {

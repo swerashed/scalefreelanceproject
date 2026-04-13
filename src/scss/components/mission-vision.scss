@@ -1,11 +1,10 @@
 .mission-vision {
   max-width: 940px;
   margin: 0 auto;
-  padding-bottom: 50px;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding: $sectionPaddingMobile 15px;
+
   @include respond-to(lg) {
-    padding-bottom: 100px;
+    padding: $sectionPaddingDesktop 15px;
   }
   span {
     font-family: "Urbanist", sans-serif;
