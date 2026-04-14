@@ -116,29 +116,30 @@
         flex-direction: column;
         gap: 20px;
         position: relative;
-        padding-left: 40px;
+        padding-left: 28px;
 
-        @include respond-to("xl") {
-          padding-left: 60px;
-        }
 
         // Timeline Line (Background)
         &::before {
           content: "";
           position: absolute;
-          left: 0;
+          left: -12px;
           top: 0;
           height: 100%;
           width: 2px;
           background: rgba(237, 237, 237, 0.1);
           border-radius: 2px;
+
+          @include respond-to("xl") {
+            left: -32px;
+          }
         }
 
         // Timeline Progress Line (Animated via JS)
         &::after {
           content: "";
           position: absolute;
-          left: 0;
+          left: -12px;
           top: 0;
           width: 2px;
           height: calc(100% * (var(--progress, 0) / 100));
@@ -146,6 +147,10 @@
           box-shadow: 0 0 15px #8D00FF;
           z-index: 1;
           border-radius: 2px;
+
+          @include respond-to("xl") {
+            left: -32px;
+          }
         }
 
         .service-item {

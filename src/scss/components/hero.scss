@@ -96,14 +96,7 @@
             gap: 10px;
           }
 
-          .animated-button {
-            padding: 12px 30px;
-            /* Increased padding for mobile */
 
-            @include respond-to("xl") {
-              padding: 7px 20px;
-            }
-          }
 
           .button-description {
             font-family: $secondaryFontFamily;

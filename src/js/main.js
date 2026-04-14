@@ -18,12 +18,10 @@ const testiSwiper = new Swiper("#testimonials .swiper", {
     640: {
       centeredSlides: false,
       slidesPerView: "auto",
-      spaceBetween: 30,
     },
     1024: {
       centeredSlides: false,
       slidesPerView: "auto",
-      spaceBetween: 40,
     },
   },
 

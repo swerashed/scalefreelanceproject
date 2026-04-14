@@ -348,9 +348,11 @@ img {
     align-items: center;
     justify-content: space-between;
     flex-direction: column;
+    gap: 20px;
 
     @include respond-to("lg") {
       flex-direction: row;
+      gap: 60px;
     }
 
     .left-content {
