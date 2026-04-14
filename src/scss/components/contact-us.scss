@@ -10,4 +10,12 @@
   .section-header {
     margin-bottom: 0;
   }
+
+  .calendly-iframe {
+    height: 1100px;
+
+    @include respond-to("xl") {
+      height: 700px;
+    }
+  }
 }

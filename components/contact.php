@@ -10,7 +10,7 @@ $data = getData();
             </h2>
         </div>
         <div class="calendy text-center">
-            <iframe width="100%" height="700" frameborder="0" scrolling="no"
+            <iframe class="calendly-iframe" width="100%" frameborder="0" scrolling="no"
                 src="<?php echo carbon_get_theme_option('scaletopia_book_now_link') ?>"
                 allow="camera; microphone; clipboard-write">
             </iframe>
