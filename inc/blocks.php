@@ -327,6 +327,19 @@ function hungry_register_scaletopia_component()
             setData($fields);
             get_template_part('components/comparison');
         });
+
+    Block::make('Phases (Home)')
+        ->add_fields(array(
+            Field::make('html', 'crb_information_text')
+                ->set_html('<h2>Phases (Home)</h2>'),
+        ))
+        ->set_icon('star-filled')
+        ->set_keywords([__('Phases')])
+        ->set_description(__('Custom Phases Block'))
+        ->set_render_callback(function ($fields, $attributes, $inner_blocks) {
+            setData($fields);
+            get_template_part('components/phases');
+        });
 }
 
 
