@@ -627,3 +627,32 @@ img {
     }
   }
 }
+
+.agency-badge {
+  display: inline-block;
+  background: #12112B;
+  border: 1px solid #241150;
+  font-family: $secondaryFontFamily;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 150%;
+  letter-spacing: 0%;
+  color: white;
+  margin-top: 32px;
+  border-radius: 50px;
+  position: relative;
+  padding: 6px 12px;
+  padding-left: 28px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    width: 8px;
+    height: 8px;
+    background: #552AED;
+    transform: translateY(-50%);
+    border-radius: 50%;
+  }
+}

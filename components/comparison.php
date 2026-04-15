@@ -65,6 +65,7 @@ $rows = isset($data['comparison_rows']) ? $data['comparison_rows'] : [];
             <?php if (!empty($data['footer_text'])): ?>
                 <p class="footer-subtext"><?php echo $data['footer_text']; ?></p>
             <?php endif; ?>
+            <div class="agency-badge">For qualified agencies only</div>
         </div>
     </div>
 </section>
