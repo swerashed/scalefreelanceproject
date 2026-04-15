@@ -332,6 +332,16 @@ function hungry_register_scaletopia_component()
         ->add_fields(array(
             Field::make('html', 'crb_information_text')
                 ->set_html('<h2>Phases (Home)</h2>'),
+            Field::make('text', 'title', 'Title'),
+            Field::make('rich_text', 'description', 'Description'),
+            Field::make('complex', 'items', 'Phases')
+                ->set_layout('tabbed-vertical')
+                ->add_fields(array(
+                    Field::make('text', 'badge', 'Badge (e.g., Phase 01)'),
+                    Field::make('text', 'title', 'Title'),
+                    Field::make('textarea', 'description', 'Description'),
+                    Field::make('image', 'img', 'Image'),
+                ))
         ))
         ->set_icon('star-filled')
         ->set_keywords([__('Phases')])
