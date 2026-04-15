@@ -18,7 +18,7 @@ $title = isset($data['title']) ? $data['title'] : '';
                     // Repeat 3 times for extra safety on large screens
                     for ($x = 0; $x < 3; $x++) :
                         foreach ($items_top as $partner): ?>
-                            <div class="partner-item">
+                            <div class="partner-item <?php echo ($x > 0) ? 'marquee-extra' : ''; ?>">
                                 <img src="<?php echo wp_get_attachment_image_url($partner['img'], 'full'); ?>" alt="Partner" />
                             </div>
                         <?php endforeach; 
@@ -33,7 +33,7 @@ $title = isset($data['title']) ? $data['title'] : '';
                     <?php 
                     for ($x = 0; $x < 3; $x++) :
                         foreach ($items_bottom as $partner): ?>
-                            <div class="partner-item">
+                            <div class="partner-item <?php echo ($x > 0) ? 'marquee-extra' : ''; ?>">
                                 <img src="<?php echo wp_get_attachment_image_url($partner['img'], 'full'); ?>" alt="Partner" />
                             </div>
                         <?php endforeach; 

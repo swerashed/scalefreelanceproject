@@ -20,11 +20,14 @@
   .marquee-container {
     overflow: hidden;
     width: 100%;
-    mask-image: linear-gradient(to right,
-        transparent,
-        black 10%,
-        black 90%,
-        transparent);
+
+    @include respond-to("xl") {
+      mask-image: linear-gradient(to right,
+          transparent,
+          black 10%,
+          black 90%,
+          transparent);
+    }
   }
 
   .partners-row {
@@ -42,31 +45,48 @@
 
   .marquee-track {
     display: flex;
-    width: max-content;
-    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    gap: 0px;
     /* Reduced mobile gap */
     align-items: center;
 
     @include respond-to("xl") {
+      width: max-content;
+      flex-wrap: nowrap;
       gap: 32px;
-    }
 
-    // Use a long duration for smooth movement
-    animation-duration: 40s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
+      // Use a long duration for smooth movement
+      animation-duration: 40s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+    }
   }
 
   .top .marquee-track {
-    animation-name: scroll-right;
+    @include respond-to("xl") {
+      animation-name: scroll-right;
+    }
   }
 
   .bottom .marquee-track {
-    animation-name: scroll-left;
+    @include respond-to("xl") {
+      animation-name: scroll-left;
+    }
   }
 
   .partner-item {
     flex-shrink: 0;
+
+    &.marquee-extra {
+      display: none;
+
+      @include respond-to("xl") {
+        display: flex;
+      }
+    }
+
     width: fit-content;
     /* More compact mobile width */
     display: flex;
