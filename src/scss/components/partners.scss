@@ -48,15 +48,12 @@
     flex-wrap: wrap;
     justify-content: center;
     width: 100%;
-    gap: 0px;
     /* Reduced mobile gap */
     align-items: center;
 
     @include respond-to("xl") {
       width: max-content;
       flex-wrap: nowrap;
-      gap: 32px;
-
       // Use a long duration for smooth movement
       animation-duration: 40s;
       animation-timing-function: linear;
@@ -93,24 +90,14 @@
     align-items: center;
     justify-content: center;
 
-    @include respond-to("xl") {
-      width: 220px;
-    }
-
     img {
       display: block;
-      max-width: 160px;
+      max-width: 130px;
       height: auto;
       object-fit: contain;
-      opacity: 0.8;
-      transition: opacity 0.3s ease;
 
       @include respond-to("xl") {
-        max-width: 200px;
-      }
-
-      &:hover {
-        opacity: 1;
+        max-width: fit-content;
       }
     }
   }

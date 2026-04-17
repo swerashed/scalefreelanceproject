@@ -15,12 +15,14 @@ $title = isset($data['title']) ? $data['title'] : '';
             <div class="marquee-container">
                 <div class="marquee-track">
                     <?php 
-                    // Repeat 3 times for extra safety on large screens
                     for ($x = 0; $x < 3; $x++) :
-                        foreach ($items_top as $partner): ?>
-                            <div class="partner-item <?php echo ($x > 0) ? 'marquee-extra' : ''; ?>">
-                                <img src="<?php echo wp_get_attachment_image_url($partner['img'], 'full'); ?>" alt="Partner" />
-                            </div>
+                        foreach ($items_top as $partner): 
+                            $img_url = wp_get_attachment_image_url($partner['img'], 'full');
+                            if ($img_url) : ?>
+                                <div class="partner-item <?php echo ($x > 0) ? 'marquee-extra' : ''; ?>">
+                                    <img src="<?php echo esc_url($img_url); ?>" alt="Partner" />
+                                </div>
+                            <?php endif; ?>
                         <?php endforeach; 
                     endfor; ?>
                 </div>
@@ -32,10 +34,13 @@ $title = isset($data['title']) ? $data['title'] : '';
                 <div class="marquee-track">
                     <?php 
                     for ($x = 0; $x < 3; $x++) :
-                        foreach ($items_bottom as $partner): ?>
-                            <div class="partner-item <?php echo ($x > 0) ? 'marquee-extra' : ''; ?>">
-                                <img src="<?php echo wp_get_attachment_image_url($partner['img'], 'full'); ?>" alt="Partner" />
-                            </div>
+                        foreach ($items_bottom as $partner): 
+                            $img_url = wp_get_attachment_image_url($partner['img'], 'full');
+                            if ($img_url) : ?>
+                                <div class="partner-item <?php echo ($x > 0) ? 'marquee-extra' : ''; ?>">
+                                    <img src="<?php echo esc_url($img_url); ?>" alt="Partner" />
+                                </div>
+                            <?php endif; ?>
                         <?php endforeach; 
                     endfor; ?>
                 </div>
