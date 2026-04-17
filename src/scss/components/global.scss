@@ -15,9 +15,7 @@
     margin-top: 0px !important;
 
     span {
-      background: $gradientColor;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      color: $primaryColor;
     }
 
     @include respond-to("lg") {
@@ -651,7 +649,7 @@ img {
     left: 12px;
     width: 8px;
     height: 8px;
-    background: #552AED;
+    background: $primaryColor;
     transform: translateY(-50%);
     border-radius: 50%;
   }

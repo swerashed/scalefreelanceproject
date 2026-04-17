@@ -139,8 +139,8 @@
           top: 0;
           width: 2px;
           height: calc(100% * (var(--progress, 0) / 100));
-          background: #8D00FF;
-          box-shadow: 0 0 15px #8D00FF;
+          background: $primaryColor;
+          box-shadow: 0 0 15px $primaryColor;
           z-index: 1;
           border-radius: 2px;
         }
@@ -152,7 +152,9 @@
           border-radius: 24px;
           border: 1px solid rgba(255, 255, 255, 0.03); // Base border for transition
           background: linear-gradient(0deg, rgba(24, 28, 37, 0.6), rgba(24, 28, 37, 0.6)),
-            radial-gradient(81.81% 95.07% at 18.19% 20.41%, rgba(85, 43, 237, 0.07) 0%, rgba(24, 28, 37, 0) 100%);
+            radial-gradient(81.81% 95.07% at 18.19% 20.41%, rgba(85, 43, 237, 0.07) 0%, rgba(24, 28, 37, 0) 100%)
+            /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
+          ;
           backdrop-filter: blur(24px);
           transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); // Smooth transition
 
@@ -173,7 +175,7 @@
             transform-origin: center;
             margin-left: 1px;
             background: #0B0E13; // Dark background to look hollow
-            border: 2px solid #8D00FF;
+            border: 2px solid $primaryColor;
             border-radius: 50%;
             z-index: 2;
             transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease;
@@ -187,9 +189,9 @@
           &.active,
           &.completed {
             &::before {
-              background: #8D00FF; // Fill slightly or keep consistent
-              border-color: #9718FD;
-              box-shadow: 0 0 15px rgba(141, 0, 255, 0.6);
+              background: $primaryColor; // Fill slightly or keep consistent
+              border-color: $primaryColor;
+              box-shadow: 0 0 15px $primaryColor;
               transform: translate(-50%, 0) scale(1.1);
               transition: none;
             }
@@ -200,8 +202,9 @@
               radial-gradient(81.81% 95.07% at 18.19% 20.41%, rgba(85, 43, 237, 0.07) 0%, rgba(24, 28, 37, 0) 100%)
               /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
               ,
-              linear-gradient(0deg, rgba(141, 0, 255, 0.2), rgba(141, 0, 255, 0.2));
-            border: 1px solid #8D00FF;
+              linear-gradient(0deg, rgba(85, 42, 237, 0.2), rgba(85, 42, 237, 0.2));
+
+            border: 1px solid $primaryColor;
             backdrop-filter: blur(24px)
           }
 
