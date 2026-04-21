@@ -17,11 +17,37 @@
     margin-top: 0px;
   }
 
+  .partners-desktop {
+    display: none;
+
+    @include respond-to("xl") {
+      display: block;
+    }
+  }
+
+  .partners-mobile {
+    display: block;
+
+    @include respond-to("xl") {
+      display: none;
+    }
+
+    .partners-mobile-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0px;
+      width: 100%;
+    }
+  }
+
   .marquee-container {
     overflow: hidden;
     width: 100%;
+    display: none; // Default hide
 
     @include respond-to("xl") {
+      display: block;
       mask-image: linear-gradient(to right,
           transparent,
           black 10%,
@@ -31,12 +57,7 @@
   }
 
   .partners-row {
-    margin-bottom: 16px;
-    /* Reduced mobile gap */
-
-    @include respond-to("xl") {
-      margin-bottom: 32px;
-    }
+    margin-bottom: 32px;
 
     &:last-child {
       margin-bottom: 0;
@@ -45,10 +66,6 @@
 
   .marquee-track {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 100%;
-    /* Reduced mobile gap */
     align-items: center;
 
     @include respond-to("xl") {
@@ -75,6 +92,10 @@
 
   .partner-item {
     flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
 
     &.marquee-extra {
       display: none;
@@ -84,15 +105,9 @@
       }
     }
 
-    width: fit-content;
-    /* More compact mobile width */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
     img {
       display: block;
-      max-width: 130px;
+      max-width: 150px;
       height: auto;
       object-fit: contain;
 
