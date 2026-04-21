@@ -60,8 +60,10 @@ function scaletopia_setup()
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(
-			'primary' => esc_html__('Primary', 'scaletopia'),
-			'footer' => esc_html__('Footer', 'scaletopia'),
+			'primary'               => esc_html__('Primary', 'scaletopia'),
+			'footer-company'        => esc_html__('Footer: Company', 'scaletopia'),
+			'footer-case-studies'   => esc_html__('Footer: Case Studies', 'scaletopia'),
+			'footer-case-studies-2' => esc_html__('Footer: Case Studies (overflow)', 'scaletopia'),
 		)
 	);
 

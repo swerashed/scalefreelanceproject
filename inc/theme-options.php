@@ -34,8 +34,12 @@ function scaletopia_option_register()
     Container::make('theme_options', "Footer")
         ->set_page_parent($basic_options_container) // reference to a top level container
         ->add_fields(array(
-            Field::make('rich_text', 'scaletopia_footer_description', "Footer Description"),
-            Field::make('text', 'scaletopia_footer', "Footer"),
-
+            Field::make('text', 'scaletopia_footer', "Copyright Text"),
+            Field::make('text', 'scaletopia_linkedin', "LinkedIn URL"),
+            Field::make('text', 'scaletopia_youtube', "YouTube URL"),
+            Field::make('textarea', 'scaletopia_address_usa', "USA Address"),
+            Field::make('textarea', 'scaletopia_address_dubai', "Dubai Address"),
+            Field::make('text', 'scaletopia_privacy_policy', "Privacy Policy URL"),
+            Field::make('text', 'scaletopia_terms_of_service', "Terms of Service URL"),
         ));
 }

@@ -1,169 +1,253 @@
 footer {
   position: relative;
-  margin-top: -200px;
-  @include respond-to("lg") {
-    margin-top: -340px;
-  }
-  &::before {
-    content: "";
-    position: absolute;
-    top: -300px;
-    left: 0;
-    background-image: url("../img/footer-vector.png");
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-  }
+  background-color: #090712;
+
   .footer-wrapper {
-    background-color: rgba(24, 28, 37, 1);
-    border-radius: 24px 24px 0 0;
-    padding: 240px 30px 0px;
-
-    @include respond-to("lg") {
-      padding: 340px 100px 0px;
-    }
-    @include respond-to("xl") {
-      padding: 340px 220px 0px;
-    }
-    .top-wrapper {
-      padding-top: 40px;
+    .footer-top {
       display: flex;
-      justify-content: space-between;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      padding-bottom: 40px;
       flex-direction: column;
+      gap: 40px;
+      padding-bottom: 60px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
       @include respond-to("lg") {
         flex-direction: row;
-      }
-      .left-part {
-        margin-bottom: 30px;
-        img {
-          width: 100%;
-          max-width: 160px;
-        }
-      }
-      .right-part {
-        .footer-menu ul {
-          display: flex;
-          gap: 30px;
-          flex-direction: column;
-          margin: 0;
-          padding: 0;
-          @include respond-to("lg") {
-            flex-direction: row;
-          }
-          li {
-            list-style: none;
-          }
-          a {
-            font-family: $secondaryFontFamily;
-            font-size: 18px;
-            line-height: 26px;
-            font-weight: 600;
-            color: rgba(255, 255, 255, 0.7);
-            text-decoration: none;
-            transition: color 0.3s ease;
-            position: relative;
-            /* Border transition */
-            &::after {
-              content: "";
-              position: absolute;
-              bottom: -5px; /* Adjust to position the border */
-              left: 0;
-              width: 0;
-              height: 2px; /* Border thickness */
-              background: $primaryColor; /* Border color */
-              transition: width 0.3s ease; /* Smooth transition */
-            }
-
-            &:hover {
-              color: $secondaryColor;
-            }
-          }
-        }
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 80px;
       }
     }
-    .bottom-wrapper {
+
+    .footer-top-left {
       display: flex;
-      justify-content: space-between;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 24px;
+      flex-shrink: 0;
       width: 100%;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      padding-top: 40px;
-      padding-bottom: 40px;
-      flex-direction: column;
       @include respond-to("lg") {
-        align-items: center;
-        flex-direction: row;
+        max-width: 605px;
+      }
+    }
+
+    .footer-logo {
+      display: inline-block;
+      line-height: 0;
+
+      img {
+        width: auto;
+        height: 28px;
+        max-width: 160px;
+      }
+    }
+
+    .footer-top-title {
+      font-family: $primaryFontFamily;
+      font-size: 32px;
+      font-weight: 600;
+      line-height: 1.15;
+      letter-spacing: -0.5px;
+      color: $whiteColor;
+      margin: 0;
+
+      @include respond-to("lg") {
+        font-size: 40px;
       }
 
-      .left-part {
-        max-width: 100%;
-        margin-bottom: 30px;
-        @include respond-to("lg") {
-          max-width: 365px;
-        }
-        p {
-          font-family: $secondaryFontFamily;
-          font-size: 16px;
-          line-height: 26px;
-          color: rgba(255, 255, 255, 0.8);
-          margin: 0;
-        }
+      span {
+        color: rgba(255, 255, 255, 0.55);
       }
-      .right-part {
-        max-width: 100%;
-        @include respond-to("lg") {
-          max-width: 320px;
-        }
-        h4 {
-          font-family: $secondaryFontFamily;
-          font-size: 18px;
-          line-height: 34px;
-          font-weight: 600;
-          color: rgba(255, 255, 255, 1);
-          margin-bottom: 20px;
-          margin: 0 0 20px;
-        }
-        ul {
-          padding: 0;
-          margin: 0;
-          li {
-            font-family: $secondaryFontFamily;
-            font-size: 16px;
-            color: rgba(255, 255, 255, 0.8);
-            list-style: none;
-            margin-bottom: 10px;
-            display: flex;
-            gap: 10px;
-            align-items: center;
-            a {
-              color: rgba(255, 255, 255, 0.8);
-              text-decoration: none;
-              transition: color 0.3s ease-in-out;
-              &:hover {
-                color: $primaryColor;
-              }
-            }
-          }
+    }
+
+    .footer-top-right {
+      @include respond-to("lg") {
+        max-width: 560px;
+        padding-top: 8px;
+      }
+
+      p {
+        font-family: $secondaryFontFamily;
+        font-size: 15px;
+        line-height: 1.7;
+        color: rgba(255, 255, 255, 0.6);
+        margin: 0;
+      }
+    }
+
+    // ── Columns grid ────────────────────────────────────────────────────────
+    .footer-columns {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+      padding-top: 48px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+      @include respond-to("md") {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @include respond-to("lg") {
+        grid-template-columns: repeat(5, 1fr);
+        gap: 24px;
+      }
+    }
+
+    // ── Column heading ───────────────────────────────────────────────────────
+    .footer-col-heading {
+      font-family: $secondaryFontFamily;
+      font-size: 13px;
+      font-weight: 600;
+      line-height: 1.4;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.45);
+      margin: 0 0 18px;
+    }
+
+    // ── No-heading column: push items down to align with other cols ──────────
+    .footer-col--no-heading {
+      @include respond-to("lg") {
+        // 13px × 1.4lh = 18.2px + 18px margin-bottom ≈ 36px
+        padding-top: 36px;
+      }
+    }
+
+    // ── Nav link lists ───────────────────────────────────────────────────────
+    .footer-nav {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      padding-left: 0;
+      margin-left: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+
+      li {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      a {
+        font-family: $secondaryFontFamily;
+        font-size: 15px;
+        line-height: 1.5;
+        font-weight: 400;
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        transition: color 0.25s ease;
+
+        &:hover {
+          color: $secondaryColor;
         }
       }
     }
-    .copyright {
-      padding: 25px 0 25px;
-      p {
-        margin: 0;
-        font-family: $secondaryFontFamily;
-        font-size: 16px;
-        line-height: 26px;
-        color: rgba(255, 255, 255, 0.6);
 
-        span {
-          font-family: $secondaryFontFamily;
-          font-size: 16px;
-          line-height: 26px;
-          color: rgba(189, 171, 255, 1);
+    // ── Social links (icon + label) ──────────────────────────────────────────
+    .footer-socials {
+      li a {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+
+        svg {
+          flex-shrink: 0;
+          border-radius: 4px;
+          display: block;
+        }
+      }
+    }
+
+    // ── Contact block ────────────────────────────────────────────────────────
+    .footer-contact {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .footer-email {
+      font-family: $secondaryFontFamily;
+      font-size: 14px;
+      line-height: 1.5;
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none;
+      word-break: break-all;
+      transition: color 0.25s ease;
+
+      &:hover {
+        color: $secondaryColor;
+      }
+    }
+
+    .footer-address {
+      strong {
+        display: block;
+        font-family: $secondaryFontFamily;
+        font-size: 14px;
+        font-weight: 600;
+        color: rgba(255, 255, 255, 1);
+        margin-bottom: 4px;
+      }
+
+      p {
+        font-family: $secondaryFontFamily;
+        font-size: 14px;
+        line-height: 1.65;
+        color: rgba(255, 255, 255, 0.6);
+        margin: 0;
+      }
+    }
+
+    // ── Bottom bar ───────────────────────────────────────────────────────────
+    .footer-bottom {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      padding: 24px 0;
+
+      @include respond-to("md") {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0;
+      }
+    }
+
+    .footer-copyright {
+      font-family: $secondaryFontFamily;
+      font-size: 14px;
+      line-height: 1.5;
+      color: rgba(255, 255, 255, 0.5);
+      margin: 0;
+    }
+
+    .footer-legal {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      padding-left: 0;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+
+      li {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      a {
+        font-family: $secondaryFontFamily;
+        font-size: 14px;
+        line-height: 1.5;
+        color: rgba(255, 255, 255, 0.5);
+        text-decoration: none;
+        transition: color 0.25s ease;
+
+        &:hover {
+          color: $secondaryColor;
         }
       }
     }
