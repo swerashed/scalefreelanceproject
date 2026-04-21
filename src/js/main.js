@@ -51,6 +51,7 @@ const moreCaseStudiesSwiper = new Swiper(".more-case-studies .swiper", {
     prevEl: ".more-case-studies .prev",
   },
 });
+
 document.addEventListener("DOMContentLoaded", () => {
   const accordionItems = document.querySelectorAll(".accordion-item");
 

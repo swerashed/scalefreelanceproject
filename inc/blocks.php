@@ -350,6 +350,28 @@ function hungry_register_scaletopia_component()
             setData($fields);
             get_template_part('components/phases');
         });
+
+    Block::make('Social proof')
+        ->add_fields(array(
+            Field::make('html', 'crb_information_text')
+                ->set_html('<h2>Social proof</h2>'),
+            Field::make('text', 'title', 'Title'),
+            Field::make('rich_text', 'description', 'Description'),
+            Field::make('complex', 'cards', 'Cards')
+                ->set_layout('tabbed-vertical')
+                ->add_fields(array(
+                    Field::make('image', 'image', 'Image'),
+                    Field::make('text', 'footer_title', 'Footer Title'),
+                    Field::make('text', 'footer_subtitle', 'Footer Subtitle'),
+                )),
+        ))
+        ->set_icon('star-filled')
+        ->set_keywords([__('Social proof')])
+        ->set_description(__('Custom Social Proof Block'))
+        ->set_render_callback(function ($fields, $attributes, $inner_blocks) {
+            setData($fields);
+            get_template_part('components/social-proof');
+        });
 }
 
 

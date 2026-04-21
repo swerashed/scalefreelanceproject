@@ -1,0 +1,101 @@
+.social-proof {
+  padding: $sectionPaddingMobile 15px;
+
+  @include respond-to("xl") {
+    padding: $sectionPaddingDesktop 0;
+  }
+
+  .section-header {
+    margin-bottom: 32px;
+
+    @include respond-to("lg") {
+      margin-bottom: 60px;
+    }
+  }
+}
+
+.social-proof-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+
+  @include respond-to("lg") {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+}
+
+.social-proof-card {
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(15, 12, 29, 1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+
+  // Card 1 & 2 → left column (stacked)
+  // Card 3 → right column, spans both rows
+  @include respond-to("lg") {
+    &:nth-child(1) {
+      grid-column: 1;
+      grid-row: 1;
+    }
+
+    &:nth-child(2) {
+      grid-column: 1;
+      grid-row: 2;
+    }
+
+    &:nth-child(3) {
+      grid-column: 2;
+      grid-row: 1 / span 2;
+    }
+  }
+
+  &:hover {
+    border-color: rgba(133, 99, 255, 0.25);
+    transform: translateY(-2px);
+  }
+
+  &__media {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.02);
+  }
+
+  &__img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  &__footer {
+    padding: 16px 16px 18px;
+    background: rgba(19, 22, 29, 0.6);
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    flex-shrink: 0;
+
+    @include respond-to("lg") {
+      padding: 18px 20px 20px;
+    }
+  }
+
+  &__footer-title {
+    font-family: $secondaryFontFamily;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 6px;
+  }
+
+  &__footer-subtitle {
+    font-family: $secondaryFontFamily;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
+    color: rgba(255, 255, 255, 0.9);
+  }
+}
