@@ -396,6 +396,29 @@ function hungry_register_scaletopia_component()
             setData($fields);
             get_template_part('components/success-stories');
         });
+
+    Block::make('Focus Section')
+        ->add_fields(array(
+            Field::make('html', 'crb_information_text')
+                ->set_html('<h2>Focus Section</h2>'),
+            Field::make('text', 'label', 'Label (e.g. WHY US?)'),
+            Field::make('text', 'title', 'Title (Use <span> for purple text)'),
+            Field::make('text', 'sub_title', 'Sub Title'),
+            Field::make('rich_text', 'description', 'Description'),
+            Field::make('complex', 'stats', 'Stats Grid')
+                ->set_layout('tabbed-vertical')
+                ->add_fields(array(
+                    Field::make('text', 'number', 'Stat Number (e.g. 85+)'),
+                    Field::make('textarea', 'label', 'Stat Label'),
+                ))
+        ))
+        ->set_icon('star-filled')
+        ->set_keywords([__('Focus'), __('Why Us')])
+        ->set_description(__('Custom section for agency focus and statistics'))
+        ->set_render_callback(function ($fields, $attributes, $inner_blocks) {
+            setData($fields);
+            get_template_part('components/why-us');
+        });
 }
 
 

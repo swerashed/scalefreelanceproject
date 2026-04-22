@@ -1,0 +1,153 @@
+.why-us-section {
+    padding: $sectionPaddingMobile 0;
+    background-color: $darkColor;
+    overflow: hidden;
+
+    @include respond-to("lg") {
+        padding: $sectionPaddingDesktop 0;
+    }
+
+    .why-us-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 48px;
+
+        @include respond-to("lg") {
+            gap: 64px;
+        }
+    }
+
+    .why-us-content {
+        .section-header {
+            max-width: 800px;
+            margin: 0;
+            text-align: left;
+
+            .section-label {
+                display: block;
+                font-family: $secondaryFontFamily;
+                font-weight: 700;
+                font-size: 14px;
+                line-height: 1.2;
+                letter-spacing: 0.05em;
+                color: $primaryColor;
+                text-transform: uppercase;
+                margin-bottom: 24px;
+            }
+
+            h2 {
+                text-align: left;
+                margin-bottom: 20px !important;
+                
+                @include respond-to("lg") {
+                    font-size: 64px;
+                    line-height: 1.1;
+                }
+            }
+
+            .sub-title {
+                font-family: $secondaryFontFamily;
+                font-weight: 500;
+                font-size: 20px;
+                line-height: 1.4;
+                color: $whiteColor;
+                margin-bottom: 32px;
+
+                @include respond-to("lg") {
+                    font-size: 24px;
+                }
+            }
+
+            .description {
+                p {
+                    font-size: 16px;
+                    line-height: 1.6;
+                    color: rgba(255, 255, 255, 0.7);
+                    max-width: 650px;
+                    margin-bottom: 0;
+
+                    @include respond-to("lg") {
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+    }
+
+    .why-us-stats {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 20px;
+
+        @include respond-to("md") {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include respond-to("lg") {
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        .stat-card {
+            position: relative;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 40px 30px;
+            transition: all 0.3s ease;
+            height: 100%;
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 20px;
+                right: 20px;
+                height: 1px;
+                background: linear-gradient(90deg, transparent, $primaryColor, transparent);
+                opacity: 0.5;
+            }
+
+            &:hover {
+                background: rgba(255, 255, 255, 0.04);
+                border-color: rgba(85, 42, 237, 0.3);
+                transform: translateY(-5px);
+
+                &::before {
+                    opacity: 1;
+                    box-shadow: 0 0 15px $primaryColor;
+                }
+            }
+
+            .stat-inner {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 16px;
+            }
+
+            .stat-number {
+                font-family: $serifFontFamily;
+                font-size: 48px;
+                line-height: 1;
+                color: $primaryColor;
+
+                @include respond-to("lg") {
+                    font-size: 64px;
+                }
+            }
+
+            .stat-label {
+                font-family: $secondaryFontFamily;
+                font-size: 14px;
+                line-height: 1.5;
+                color: rgba(255, 255, 255, 0.6);
+                margin: 0;
+
+                @include respond-to("lg") {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}
