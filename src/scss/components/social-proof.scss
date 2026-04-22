@@ -6,10 +6,11 @@
   }
 
   .section-header {
-    margin-bottom: 32px;
+    margin-bottom: 20px;
+    max-width: 964px;
 
     @include respond-to("lg") {
-      margin-bottom: 60px;
+      margin-bottom: 40px;
     }
   }
 }
@@ -18,24 +19,25 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 16px;
+  border-radius: 16px;
+  padding: 0;
 
   @include respond-to("lg") {
     grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
+    padding: 40px;
+    background: linear-gradient(135deg, #0F0C1D 0%, rgba(23, 20, 41, 0.3) 50%, #0F0C1D 100%);
   }
 }
 
 .social-proof-card {
-  border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  background: rgba(15, 12, 29, 1);
+  border-radius: 8px;
+  border: 1px solid #552AED80;
+  background-color: #0F0C1D99;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  transition: border-color 0.3s ease, transform 0.3s ease;
+  transition: all 0.3s ease;
 
-  // Card 1 & 2 → left column (stacked)
-  // Card 3 → right column, spans both rows
   @include respond-to("lg") {
     &:nth-child(1) {
       grid-column: 1;
@@ -61,41 +63,41 @@
   &-media {
     width: 100%;
     background: rgba(255, 255, 255, 0.02);
+    height: 100%;
   }
 
   &-img {
     width: 100%;
-    height: auto;
+    height: 100%;
     display: block;
   }
 
   &-footer {
-    padding: 16px 16px 18px;
-    background: rgba(19, 22, 29, 0.6);
-    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 12px 16px;
     flex-shrink: 0;
-
-    @include respond-to("lg") {
-      padding: 18px 20px 20px;
-    }
+    max-height: 62px;
   }
 
   &-footer-title {
     font-family: $secondaryFontFamily;
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 16px;
-    letter-spacing: 0.08em;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16.5px;
+    letter-spacing: 0px;
+    vertical-align: middle;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.7);
-    margin-bottom: 6px;
+    margin-bottom: 0px;
+    color: #562CEDB2;
   }
 
   &-footer-subtitle {
     font-family: $secondaryFontFamily;
-    font-weight: 600;
+    font-weight: 400;
     font-size: 14px;
-    line-height: 18px;
-    color: rgba(255, 255, 255, 0.9);
+    line-height: 17.88px;
+    letter-spacing: 0px;
+    color: #989FB3;
+    margin: 0;
+
   }
 }

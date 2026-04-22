@@ -23,8 +23,7 @@ $cards = isset($data['cards']) ? $data['cards'] : [];
                     <div class="social-proof-card">
                         <?php if ($image_url): ?>
                             <div class="social-proof-card-media">
-                                <img src="<?php echo esc_url($image_url); ?>" alt=""
-                                    class="social-proof-card-img">
+                                <img src="<?php echo esc_url($image_url); ?>" alt="" class="social-proof-card-img">
                             </div>
                         <?php endif; ?>
 
