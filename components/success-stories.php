@@ -18,20 +18,17 @@ $items = isset($data['items']) ? $data['items'] : [];
             <div class="success-stories-glow"></div>
             <div class="swiper">
                 <div class="swiper-wrapper">
-                    <?php 
-                    foreach ($items as $item_data): 
-                        $post_id = $item_data['id'];
-                        $post_title = get_the_title($post_id);
-                        $post_link = get_permalink($post_id);
-                        $logo = carbon_get_post_meta($post_id, 'logo');
-                        $stats = carbon_get_post_meta($post_id, 'top_cards_items');
-                        
-                        // Fallbacks for stats if not set
-                        $stat_1_val = isset($stats[0]['title']) ? $stats[0]['title'] : '';
-                        $stat_1_lab = isset($stats[0]['description']) ? $stats[0]['description'] : '';
-                        $stat_2_val = isset($stats[1]['title']) ? $stats[1]['title'] : '';
-                        $stat_2_lab = isset($stats[1]['description']) ? $stats[1]['description'] : '';
-                    ?>
+                    <?php
+                    foreach ($items as $item_data):
+                        $post_title = isset($item_data['headline']) ? $item_data['headline'] : '';
+                        $post_link = isset($item_data['link']) ? $item_data['link'] : '';
+                        $logo = isset($item_data['logo']) ? $item_data['logo'] : '';
+
+                        $stat_1_val = isset($item_data['stat_1_val']) ? $item_data['stat_1_val'] : '';
+                        $stat_1_lab = isset($item_data['stat_1_label']) ? $item_data['stat_1_label'] : '';
+                        $stat_2_val = isset($item_data['stat_2_val']) ? $item_data['stat_2_val'] : '';
+                        $stat_2_lab = isset($item_data['stat_2_label']) ? $item_data['stat_2_label'] : '';
+                        ?>
                         <div class="swiper-slide">
                             <div class="success-card">
                                 <div class="card-header">
@@ -55,10 +52,12 @@ $items = isset($data['items']) ? $data['items'] : [];
                                     </div>
                                 </div>
                                 <div class="card-footer">
-                                    <a href="<?php echo $post_link; ?>" class="read-more">
-                                        Read the case study 
-                                        <svg width="14" height="12" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M1 6H13M13 6L8.5 1.5M13 6L8.5 10.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <a href="<?php echo $post_link; ?>" class="animated-button">
+                                        <span>Read the case study</span>
+                                        <svg width="14" height="12" viewBox="0 0 14 12" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1 6H13M13 6L8.5 1.5M13 6L8.5 10.5" stroke="white"
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                         </svg>
                                     </a>
                                 </div>
@@ -66,19 +65,21 @@ $items = isset($data['items']) ? $data['items'] : [];
                         </div>
                     <?php endforeach; ?>
                 </div>
+            </div>
 
-                <div class="slider-controls">
-                    <div class="nav-arrow prev">
-                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M15.8334 10H4.16675M4.16675 10L9.16675 15M4.16675 10L9.16675 5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </div>
-                    <div class="swiper-pagination"></div>
-                    <div class="nav-arrow next">
-                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M4.16663 10H15.8333M15.8333 10L10.8333 5M15.8333 10L10.8333 15" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </div>
+            <div class="slider-controls">
+                <div class="nav-arrow prev">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15.8334 10H4.16675M4.16675 10L9.16675 15M4.16675 10L9.16675 5" stroke="white"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="nav-arrow next">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4.16663 10H15.8333M15.8333 10L10.8333 5M15.8333 10L10.8333 15" stroke="white"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
                 </div>
             </div>
         </div>

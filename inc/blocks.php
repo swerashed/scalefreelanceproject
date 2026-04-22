@@ -371,23 +371,27 @@ function hungry_register_scaletopia_component()
             get_template_part('components/launch-cta');
         });
 
-    Block::make('Success Stories')
+    Block::make('Agency Success Stories')
         ->add_fields(array(
             Field::make('html', 'crb_information_text')
-                ->set_html('<h2>Success Stories</h2>'),
-            Field::make('text', 'title', 'Title'),
-            Field::make('rich_text', 'description', 'Description'),
-            Field::make('association', 'items', 'Case Studies')
-                ->set_types(array(
-                    array(
-                        'type'      => 'post',
-                        'post_type' => 'case_study',
-                    )
+                ->set_html('<h2>Agency Success Stories</h2>'),
+            Field::make('text', 'title', 'Section Title'),
+            Field::make('rich_text', 'description', 'Section Description'),
+            Field::make('complex', 'items', 'Case Study Cards')
+                ->set_layout('tabbed-vertical')
+                ->add_fields(array(
+                    Field::make('image', 'logo', 'Company Logo'),
+                    Field::make('text', 'headline', 'Headline'),
+                    Field::make('text', 'link', 'Case Study Link'),
+                    Field::make('text', 'stat_1_val', 'Stat 1 Value'),
+                    Field::make('text', 'stat_1_label', 'Stat 1 Label'),
+                    Field::make('text', 'stat_2_val', 'Stat 2 Value'),
+                    Field::make('text', 'stat_2_label', 'Stat 2 Label'),
                 ))
         ))
         ->set_icon('star-filled')
-        ->set_keywords([__('Success Stories'), __('Case Studies')])
-        ->set_description(__('Custom Block for Agency Success Stories Slider'))
+        ->set_keywords([__('Success Stories'), __('Agency')])
+        ->set_description(__('Clean re-creation of Success Stories Slider'))
         ->set_render_callback(function ($fields, $attributes, $inner_blocks) {
             setData($fields);
             get_template_part('components/success-stories');

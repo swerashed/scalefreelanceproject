@@ -56,7 +56,7 @@ const moreCaseStudiesSwiper = new Swiper(".more-case-studies .swiper", {
 const successStoriesSwiper = new Swiper("#success-stories .swiper", {
   modules: [Navigation, Pagination, Autoplay],
   centeredSlides: true,
-  slidesPerView: "auto",
+  slidesPerView: 1,
   spaceBetween: 16,
   loop: true,
   autoplay: {
@@ -65,6 +65,11 @@ const successStoriesSwiper = new Swiper("#success-stories .swiper", {
   },
   breakpoints: {
     768: {
+      slidesPerView: 2,
+      spaceBetween: 20,
+    },
+    1024: {
+      slidesPerView: 3,
       spaceBetween: 24,
     },
   },
