@@ -6,103 +6,85 @@
   }
 
   .section-header {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
 
     @include respond-to(lg) {
-      margin-bottom: 60px;
+      margin-bottom: 40px;
     }
 
-    h2 {
-      font-size: 40px;
-      line-height: 1.1;
-      margin-bottom: 20px;
-      font-weight: 400;
-
-      @include respond-to(lg) {
-        font-size: 80px;
-      }
-    }
-
-    .subtitle {
-      font-size: 18px;
-      line-height: 1.5;
-      color: rgba(255, 255, 255, 0.7);
-      margin: 0 auto;
-
-      @include respond-to(lg) {
-        font-size: 20px;
-      }
+    p {
+      margin-bottom: 0;
     }
   }
 
   .features-box {
-    background: linear-gradient(135deg, rgba(85, 42, 237, 0.05) 0%, rgba(0, 0, 0, 0) 40%), #0d0b17;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 32px;
-    padding: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
-
-    @include respond-to(lg) {
-      padding: 60px 80px;
-    }
+    background: #171429;
+    border-radius: 24px;
+    border-width: 1px;
+    border: 1px solid #562CED33;
+    overflow: hidden;
+    max-width: 1288px;
+    margin-inline: auto;
 
     &-header {
+      background-color: #0F0C1D;
+      padding: 30px 20px;
+      border-bottom: 1px solid #2C293D;
       display: flex;
       flex-direction: column;
-      gap: 20px;
-      margin-bottom: 40px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      padding-bottom: 40px;
+      align-items: center;
+      text-align: center;
+      gap: 24px;
 
       @include respond-to(lg) {
+        padding: 30px 40px;
         flex-direction: row;
-        align-items: flex-end;
         justify-content: space-between;
-        margin-bottom: 60px;
-        padding-bottom: 60px;
+        align-items: center;
+        text-align: left;
       }
     }
 
     &-branding {
       .brand {
-        font-size: 32px;
-        font-weight: 600;
-        margin-bottom: 10px;
-        display: flex;
-        align-items: center;
-        gap: 10px;
+        font-family: $serifFontFamily;
+        font-weight: 400;
+        font-size: 28px;
+        line-height: 1.2;
+        letter-spacing: 0%;
+        color: #F8FAFC;
+        margin: 0;
+        margin-bottom: 7px;
 
         @include respond-to(lg) {
-          font-size: 42px;
+          font-size: 32px;
+          line-height: 39px;
         }
 
-        .serif-italic {
-          font-family: $serifFontFamily;
+        span {
+          color: #562CED;
           font-style: italic;
-          color: $primaryColor;
-          font-weight: 400;
         }
       }
 
       .box-subtitle {
-        font-size: 16px;
-        color: rgba(255, 255, 255, 0.5);
-
-        @include respond-to(lg) {
-          font-size: 18px;
-        }
+        font-family: $secondaryFontFamily;
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 19.5px;
+        letter-spacing: 0%;
+        vertical-align: middle;
+        color: #989FB3;
+        margin: 0;
       }
     }
 
     &-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 40px;
-      margin-bottom: 40px;
 
       @include respond-to(md) {
         grid-template-columns: repeat(2, 1fr);
@@ -110,37 +92,50 @@
 
       @include respond-to(lg) {
         grid-template-columns: repeat(3, 1fr);
-        gap: 0; // Use 0 gap when using borders and internal padding
-        margin-bottom: 60px;
+        gap: 0;
       }
     }
 
     &-col {
-      @include respond-to(lg) {
-        padding: 0 40px;
-        border-right: 1px solid rgba(255, 255, 255, 0.1);
+      border-bottom: 1px solid #2C293D;
+      padding: 28px 32px;
 
-        &:first-child {
-          padding-left: 0;
-        }
+      @include respond-to(md) {
+        border-right: 1px solid #2C293D;
 
-        &:last-child {
-          padding-right: 0;
+        &:nth-child(2n) {
           border-right: none;
         }
       }
 
-      .col-title {
-        font-size: 14px;
-        font-weight: 600;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        color: $primaryColor;
-        margin-bottom: 25px;
+      @include respond-to(lg) {
+        border-bottom: none;
 
-        @include respond-to(lg) {
-          margin-bottom: 45px;
+        &:nth-child(2n) {
+          border-right: 1px solid #2C293D;
         }
+
+        &:nth-child(3n) {
+          border-right: none;
+        }
+      }
+
+      &:last-child {
+        border-bottom: none;
+        border-right: none;
+      }
+
+
+      .col-title {
+        font-family: $secondaryFontFamily;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 16.5px;
+        letter-spacing: 1.98px;
+        vertical-align: middle;
+        text-transform: uppercase;
+        margin: 0;
+        color: #562CED;
       }
     }
 
@@ -148,19 +143,22 @@
       list-style: none;
       padding: 0;
       margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 20px;
 
       &-item {
+        font-family: $secondaryFontFamily;
         display: flex;
-        gap: 12px;
-        margin-bottom: 20px;
-        font-size: 16px;
-        line-height: 1.4;
-        color: rgba(255, 255, 255, 0.8);
-
-        @include respond-to(lg) {
-          font-size: 18px;
-          margin-bottom: 25px;
-        }
+        gap: 10px;
+        font-weight: 400;
+        font-size: 13.5px;
+        line-height: 20.25px;
+        letter-spacing: 0%;
+        vertical-align: middle;
+        color: #989FB3;
+        margin: 0;
 
         .features-list-icon {
           flex-shrink: 0;
@@ -177,37 +175,31 @@
     }
 
     &-footer {
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      padding-top: 30px;
-      text-align: center;
-
-      @include respond-to(lg) {
-        padding-top: 40px;
-      }
+      border-top: 1px solid #2C293D;
+      padding: 20px;
 
       p {
-        font-size: 14px;
-        color: rgba(255, 255, 255, 0.4);
+        font-family: $secondaryFontFamily;
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 19.5px;
+        letter-spacing: 0%;
+        text-align: center;
+        vertical-align: middle;
+        color: #989FB399;
+        margin: 0;
 
-        @include respond-to(lg) {
-          font-size: 16px;
-        }
-
-        a {
-          color: $primaryColor;
-          text-decoration: none;
-          font-weight: 600;
-          margin-left: 5px;
-
-          &:hover {
-            text-decoration: underline;
-          }
+        .link {
+          font-family: $secondaryFontFamily;
+          font-weight: 500;
+          font-size: 13px;
+          line-height: 19.5px;
+          letter-spacing: 0%;
+          text-align: center;
+          text-decoration: underline;
+          color: #562CED;
         }
       }
     }
-  }
-
-  .serif {
-    font-family: $serifFontFamily;
   }
 }

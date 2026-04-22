@@ -9,11 +9,13 @@ $box_subtitle = isset($data['box_subtitle']) ? $data['box_subtitle'] : '';
 <section class="included-features">
     <div class="containerWide">
         <div class="section-header text-center">
-            <?php if (!empty($data['title'])) : ?>
+            <?php if (!empty($data['title'])): ?>
                 <h2 class="serif"><?php echo $data['title']; ?></h2>
             <?php endif; ?>
-            <?php if (!empty($data['subtitle'])) : ?>
-                <p class="subtitle"><?php echo $data['subtitle']; ?></p>
+            <?php if (!empty($data['subtitle'])): ?>
+                <div>
+                    <p><?php echo $data['subtitle']; ?></p>
+                </div>
             <?php endif; ?>
         </div>
 
@@ -29,25 +31,28 @@ $box_subtitle = isset($data['box_subtitle']) ? $data['box_subtitle'] : '';
                     <a href="<?php echo isset($data['btn_link']) ? $data['btn_link'] : '#'; ?>" class="animated-button">
                         <span><?php echo isset($data['btn_text']) ? $data['btn_text'] : ''; ?></span>
                         <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M1 7H13M13 7L7 1M13 7L7 13" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M1 7H13M13 7L7 1M13 7L7 13" stroke="white" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
                         </svg>
                     </a>
                 </div>
             </div>
 
             <div class="features-box-grid">
-                <?php foreach ($columns as $column) : ?>
+                <?php foreach ($columns as $column): ?>
                     <div class="features-box-col">
                         <h4 class="col-title"><?php echo $column['col_title']; ?></h4>
                         <ul class="features-list">
-                            <?php 
+                            <?php
                             $features = isset($column['features']) ? $column['features'] : [];
-                            foreach ($features as $feature) : 
-                            ?>
+                            foreach ($features as $feature):
+                                ?>
                                 <li class="features-list-item">
                                     <span class="features-list-icon">
-                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M16.6666 5L7.49992 14.1667L3.33325 10" stroke="#552AED" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <svg width="13" height="13" viewBox="0 0 13 13" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M2 6.5L5.5 10L11 3" stroke="#562CED" stroke-width="1.5"
+                                                stroke-linecap="round" stroke-linejoin="round" />
                                         </svg>
                                     </span>
                                     <span class="features-list-text"><?php echo $feature['feature_text']; ?></span>
@@ -61,7 +66,8 @@ $box_subtitle = isset($data['box_subtitle']) ? $data['box_subtitle'] : '';
             <div class="features-box-footer">
                 <p>
                     <?php echo isset($data['footer_text']) ? $data['footer_text'] : ''; ?>
-                    <a href="<?php echo isset($data['footer_link_url']) ? $data['footer_link_url'] : '#'; ?>"><?php echo isset($data['footer_link_text']) ? $data['footer_link_text'] : ''; ?></a>
+                    <a class="link"
+                        href="<?php echo isset($data['footer_link_url']) ? $data['footer_link_url'] : '#'; ?>"><?php echo isset($data['footer_link_text']) ? $data['footer_link_text'] : ''; ?></a>
                 </p>
             </div>
         </div>
