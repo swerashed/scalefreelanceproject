@@ -352,6 +352,24 @@ function hungry_register_scaletopia_component()
             setData($fields);
             get_template_part('components/social-proof');
         });
+
+    Block::make('Launch CTA')
+        ->add_fields(array(
+            Field::make('html', 'crb_information_text')
+                ->set_html('<h2>Launch CTA</h2>'),
+            Field::make('text', 'title', 'Title'),
+            Field::make('rich_text', 'description', 'Description'),
+            Field::make('text', 'btn_title', 'Button Title'),
+            Field::make('text', 'btn_link', 'Button Link'),
+            Field::make('text', 'footer_text', 'Footer Text'),
+        ))
+        ->set_icon('star-filled')
+        ->set_keywords([__('Launch CTA')])
+        ->set_description(__('Custom Launch CTA Block'))
+        ->set_render_callback(function ($fields, $attributes, $inner_blocks) {
+            setData($fields);
+            get_template_part('components/launch-cta');
+        });
 }
 
 
