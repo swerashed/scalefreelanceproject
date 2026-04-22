@@ -68,13 +68,13 @@ const successStoriesSwiper = new Swiper("#success-stories .swiper", {
   },
   breakpoints: {
     320: {
-      spaceBetween: -36, // Optimized for scale(0.65) on 300px slides
+      spaceBetween: 16, // Normal gap for full-width mobile slides
     },
     768: {
-      spaceBetween: -40,
+      spaceBetween: 20, // Normal gap for tablets
     },
     1024: {
-      spaceBetween: -90, // Optimized for scale(0.65) on 652px slides
+      spaceBetween: -90, // Maintain negative space for centered desktop slides
     },
   },
   navigation: {

@@ -75,16 +75,17 @@
     }
 
     .swiper-slide {
-      width: 300px; // Fixed stable width for centering
+      width: 100%; // Full width on mobile/tablet
       opacity: 0.35;
       transition: opacity 0.6s ease;
       display: flex;
       justify-content: center;
       align-items: center;
-      pointer-events: none; // Only active slide is interactive
+      pointer-events: none;
+      cursor: pointer;
 
       @include respond-to("lg") {
-        width: 652px; // Rounded for desktop centering stability
+        width: 652px; // Fixed width for desktop centering
       }
 
       &.swiper-slide-active {
@@ -102,8 +103,8 @@
 
   // ── Card ────────────────────────────────────────
   .success-card {
-    width: 100%; // Constant internal width to prevent text reflow
-    transform: scale(0.65); // Default inactive visual scale
+    width: 100%; // Full width of slide container
+    transform: scale(1); // Standard scale for mobile
     justify-content: space-between;
     padding: 30px;
     border-radius: 16px;
@@ -118,6 +119,7 @@
       opacity 0.7s ease;
 
     @include respond-to("lg") {
+      transform: scale(0.65); // Inactive visual scale for desktop only
       padding: 40px 48px;
     }
 
@@ -167,10 +169,13 @@
 
     .card-stats {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
       gap: 16px;
       margin-bottom: 24px;
       width: 100%;
+
+      @include respond-to("lg") {
+        grid-template-columns: repeat(2, 1fr);
+      }
 
       .stat-box {
         background: #090712;
