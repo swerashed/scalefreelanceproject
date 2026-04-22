@@ -419,6 +419,22 @@ function hungry_register_scaletopia_component()
             setData($fields);
             get_template_part('components/why-us');
         });
+
+    Block::make('Mission Detail')
+        ->add_fields(array(
+            Field::make('html', 'crb_information_text')
+                ->set_html('<h2>Mission Detail</h2>'),
+            Field::make('text', 'label', 'Label (e.g. OUR MISSION)'),
+            Field::make('text', 'title', 'Title'),
+            Field::make('rich_text', 'description', 'Description'),
+        ))
+        ->set_icon('star-filled')
+        ->set_keywords([__('Mission'), __('Detail')])
+        ->set_description(__('Custom section for mission details with left-aligned text'))
+        ->set_render_callback(function ($fields, $attributes, $inner_blocks) {
+            setData($fields);
+            get_template_part('components/mission-detail');
+        });
 }
 
 

@@ -1,0 +1,57 @@
+.mission-detail-section {
+    padding: $sectionPaddingMobile 0;
+    background-color: $darkColor;
+
+    @include respond-to("lg") {
+        padding: $sectionPaddingDesktop 0;
+    }
+
+    .mission-detail-wrapper {
+        .section-header {
+            max-width: 800px;
+            margin: 0;
+            text-align: left;
+
+            .section-label {
+                display: block;
+                font-family: $secondaryFontFamily;
+                font-weight: 700;
+                font-size: 14px;
+                line-height: 1.2;
+                letter-spacing: 0.05em;
+                color: $primaryColor;
+                text-transform: uppercase;
+                margin-bottom: 24px;
+            }
+
+            h2 {
+                text-align: left;
+                margin-bottom: 40px !important;
+                font-family: $serifFontFamily;
+                
+                @include respond-to("lg") {
+                    font-size: 64px;
+                    line-height: 1.1;
+                }
+            }
+
+            .description-content {
+                display: flex;
+                flex-direction: column;
+                gap: 24px;
+
+                p {
+                    font-family: $secondaryFontFamily;
+                    font-size: 18px;
+                    line-height: 1.6;
+                    color: rgba(255, 255, 255, 0.7);
+                    margin-bottom: 0;
+
+                    @include respond-to("lg") {
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+    }
+}
