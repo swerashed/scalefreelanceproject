@@ -31,26 +31,41 @@ $items = isset($data['items']) ? $data['items'] : [];
                         ?>
                         <div class="swiper-slide">
                             <div class="success-card">
-                                <div class="card-header">
-                                    <div class="company-logo">
-                                        <?php if ($logo): ?>
-                                            <?php echo wp_get_attachment_image($logo, 'full'); ?>
-                                        <?php else: ?>
-                                            <div class="placeholder-logo"><?php echo $post_title; ?> Logo</div>
-                                        <?php endif; ?>
+                                <div>
+                                    <div class="card-header">
+                                        <div class="company-logo">
+                                            <?php if ($logo): ?>
+                                                <?php echo wp_get_attachment_image($logo, 'full'); ?>
+                                            <?php else: ?>
+                                                <div class="placeholder-logo">
+                                                    <?php echo $post_title; ?> Logo
+                                                </div>
+                                            <?php endif; ?>
+                                        </div>
+                                        <h3 class="headline">
+                                            <?php echo $post_title; ?>
+                                        </h3>
                                     </div>
-                                    <h3 class="headline"><?php echo $post_title; ?></h3>
+                                    <div class="card-stats">
+                                        <div class="stat-box">
+                                            <span class="stat-value">
+                                                <?php echo $stat_1_val; ?>
+                                            </span>
+                                            <span class="stat-label">
+                                                <?php echo $stat_1_lab; ?>
+                                            </span>
+                                        </div>
+                                        <div class="stat-box">
+                                            <span class="stat-value">
+                                                <?php echo $stat_2_val; ?>
+                                            </span>
+                                            <span class="stat-label">
+                                                <?php echo $stat_2_lab; ?>
+                                            </span>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="card-stats">
-                                    <div class="stat-box">
-                                        <span class="stat-value"><?php echo $stat_1_val; ?></span>
-                                        <span class="stat-label"><?php echo $stat_1_lab; ?></span>
-                                    </div>
-                                    <div class="stat-box">
-                                        <span class="stat-value"><?php echo $stat_2_val; ?></span>
-                                        <span class="stat-label"><?php echo $stat_2_lab; ?></span>
-                                    </div>
-                                </div>
+
                                 <div class="card-footer">
                                     <a href="<?php echo $post_link; ?>" class="animated-button">
                                         <span>Read the case study</span>

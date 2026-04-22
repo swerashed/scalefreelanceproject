@@ -56,21 +56,25 @@ const moreCaseStudiesSwiper = new Swiper(".more-case-studies .swiper", {
 const successStoriesSwiper = new Swiper("#success-stories .swiper", {
   modules: [Navigation, Pagination, Autoplay],
   centeredSlides: true,
-  slidesPerView: 1,
-  spaceBetween: 16,
+  slidesPerView: "auto",
+  spaceBetween: -150, // Negative space to pull narrowed cards closer
   loop: true,
+  loopedSlides: 5,
+  speed: 700,
+  watchSlidesProgress: true,
   autoplay: {
     delay: 5000,
     disableOnInteraction: false,
   },
   breakpoints: {
+    320: {
+      spaceBetween: -36, // Optimized for scale(0.65) on 300px slides
+    },
     768: {
-      slidesPerView: 2,
-      spaceBetween: 20,
+      spaceBetween: -40,
     },
     1024: {
-      slidesPerView: 3,
-      spaceBetween: 24,
+      spaceBetween: -90, // Optimized for scale(0.65) on 652px slides
     },
   },
   navigation: {
