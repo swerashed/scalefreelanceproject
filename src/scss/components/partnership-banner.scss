@@ -6,8 +6,8 @@
   background-color: $darkColor;
 
   @include respond-to("lg") {
-    padding: $sectionPaddingDesktop 0;
-    padding-top: ($sectionPaddingDesktop * 2);
+    padding: $sectionPaddingDesktop 15px;
+    padding-top: 100px;
   }
 
   .banner-content {

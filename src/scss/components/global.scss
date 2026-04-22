@@ -33,6 +33,12 @@
 }
 
 .section-header-variant {
+  margin-bottom: 30px;
+
+  @include respond-to("lg") {
+    margin-bottom: 60px;
+  }
+
   .label-wrapper {
     font-family: $serifFontFamily;
     font-weight: 400;
@@ -46,7 +52,6 @@
     justify-content: start;
     align-items: center;
     margin-bottom: 16px;
-
 
     .number {
       font-style: Italic;
@@ -62,9 +67,6 @@
     .label {
       text-transform: uppercase;
     }
-
-
-
   }
 
   h2 {
