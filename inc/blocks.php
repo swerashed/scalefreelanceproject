@@ -450,6 +450,44 @@ function hungry_register_scaletopia_component()
             setData($fields);
             get_template_part('components/mission-detail');
         });
+
+    Block::make('Included Features')
+        ->add_fields(array(
+            Field::make('html', 'crb_information_text')
+                ->set_html('<h2>Included Features</h2>'),
+            Field::make('text', 'title', 'Section Title'),
+            Field::make('text', 'subtitle', 'Section Subtitle'),
+
+            // Featured Box Header
+            Field::make('text', 'brand_title', 'Brand Title (e.g. Scaletopia)'),
+            Field::make('text', 'brand_suffix', 'Brand Suffix (e.g. Engine)'),
+            Field::make('text', 'box_subtitle', 'Box Subtitle'),
+            Field::make('text', 'btn_text', 'Button Text'),
+            Field::make('text', 'btn_link', 'Button Link'),
+
+            // Columns
+            Field::make('complex', 'columns', 'Feature Columns')
+                ->set_layout('tabbed-vertical')
+                ->add_fields(array(
+                    Field::make('text', 'col_title', 'Column Title'),
+                    Field::make('complex', 'features', 'Features')
+                        ->add_fields(array(
+                            Field::make('text', 'feature_text', 'Feature Text'),
+                        ))
+                )),
+
+            // Footer
+            Field::make('text', 'footer_text', 'Footer Text'),
+            Field::make('text', 'footer_link_text', 'Footer Link Text'),
+            Field::make('text', 'footer_link_url', 'Footer Link URL'),
+        ))
+        ->set_icon('star-filled')
+        ->set_keywords([__('Included'), __('Features')])
+        ->set_description(__('Three-column feature box with branding'))
+        ->set_render_callback(function ($fields, $attributes, $inner_blocks) {
+            setData($fields);
+            get_template_part('components/included-features');
+        });
 }
 
 
