@@ -4,36 +4,36 @@
   overflow-x: clip;
 
   // Top Left Gradient
-  &::before {
-    content: "";
-    position: absolute;
-    width: 600px;
-    height: 600px;
-    border-radius: 50%;
-    z-index: -1;
-    pointer-events: none;
-    background: linear-gradient(90deg, rgba(133, 99, 255, 0.4) 17.91%, rgba(209, 110, 255, 0.4) 73.73%);
-    backdrop-filter: blur(200px);
-    filter: blur(200px);
-    top: -200px;
-    left: -200px;
-  }
+  // &::before {
+  //   content: "";
+  //   position: absolute;
+  //   width: 600px;
+  //   height: 600px;
+  //   border-radius: 50%;
+  //   z-index: -1;
+  //   pointer-events: none;
+  //   background: linear-gradient(90deg, rgba(133, 99, 255, 0.4) 17.91%, rgba(209, 110, 255, 0.4) 73.73%);
+  //   backdrop-filter: blur(200px);
+  //   filter: blur(200px);
+  //   top: -200px;
+  //   left: -200px;
+  // }
 
   // Bottom Right Gradient
-  &::after {
-    content: "";
-    position: absolute;
-    width: 600px;
-    height: 600px;
-    border-radius: 50%;
-    z-index: -1;
-    pointer-events: none;
-    background: linear-gradient(90deg, rgba(133, 99, 255, 0.4) 17.91%, rgba(209, 110, 255, 0.4) 73.73%);
-    backdrop-filter: blur(200px);
-    filter: blur(200px);
-    bottom: -200px;
-    right: -200px;
-  }
+  // &::after {
+  //   content: "";
+  //   position: absolute;
+  //   width: 600px;
+  //   height: 600px;
+  //   border-radius: 50%;
+  //   z-index: -1;
+  //   pointer-events: none;
+  //   background: linear-gradient(90deg, rgba(133, 99, 255, 0.4) 17.91%, rgba(209, 110, 255, 0.4) 73.73%);
+  //   backdrop-filter: blur(200px);
+  //   filter: blur(200px);
+  //   bottom: -200px;
+  //   right: -200px;
+  // }
 
   @include respond-to("xl") {
     padding: $sectionPaddingDesktop 0;
