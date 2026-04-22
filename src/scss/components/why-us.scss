@@ -1,5 +1,5 @@
 .why-us-section {
-    padding: $sectionPaddingMobile 0;
+    padding: $sectionPaddingMobile 15px;
     background-color: $darkColor;
     overflow: hidden;
 
@@ -10,10 +10,10 @@
     .why-us-wrapper {
         display: flex;
         flex-direction: column;
-        gap: 48px;
+        gap: 20px;
 
         @include respond-to("lg") {
-            gap: 64px;
+            gap: 40px;
         }
     }
 
@@ -26,50 +26,31 @@
             .section-label {
                 display: block;
                 font-family: $secondaryFontFamily;
-                font-weight: 700;
+                font-weight: 500;
                 font-size: 14px;
-                line-height: 1.2;
-                letter-spacing: 0.05em;
-                color: $primaryColor;
+                line-height: 150%;
+                letter-spacing: 0%;
                 text-transform: uppercase;
-                margin-bottom: 24px;
+                color: #552AED;
+                margin-bottom: 16px;
             }
 
             h2 {
                 text-align: left;
                 margin-bottom: 20px !important;
-                
-                @include respond-to("lg") {
-                    font-size: 64px;
-                    line-height: 1.1;
-                }
             }
 
             .sub-title {
                 font-family: $secondaryFontFamily;
                 font-weight: 500;
-                font-size: 20px;
-                line-height: 1.4;
-                color: $whiteColor;
-                margin-bottom: 32px;
-
-                @include respond-to("lg") {
-                    font-size: 24px;
-                }
+                font-size: 18px;
+                line-height: 28px;
+                letter-spacing: 0%;
+                color: rgba(255, 255, 255, 0.8);
             }
 
-            .description {
-                p {
-                    font-size: 16px;
-                    line-height: 1.6;
-                    color: rgba(255, 255, 255, 0.7);
-                    max-width: 650px;
-                    margin-bottom: 0;
-
-                    @include respond-to("lg") {
-                        font-size: 18px;
-                    }
-                }
+            p {
+                margin-bottom: 0;
             }
         }
     }
@@ -88,13 +69,11 @@
         }
 
         .stat-card {
+            border-radius: 16px;
+            background: #0F0C1D;
+            border: 1px solid #562CED26;
             position: relative;
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 20px;
             padding: 40px 30px;
-            transition: all 0.3s ease;
-            height: 100%;
 
             &::before {
                 content: "";
@@ -103,50 +82,42 @@
                 left: 20px;
                 right: 20px;
                 height: 1px;
-                background: linear-gradient(90deg, transparent, $primaryColor, transparent);
-                opacity: 0.5;
+                background: linear-gradient(90deg, rgba(86, 44, 237, 0) 0%, #562CED 50%, rgba(86, 44, 237, 0) 100%);
+                opacity: 0.8;
             }
 
-            &:hover {
-                background: rgba(255, 255, 255, 0.04);
-                border-color: rgba(85, 42, 237, 0.3);
-                transform: translateY(-5px);
-
-                &::before {
-                    opacity: 1;
-                    box-shadow: 0 0 15px $primaryColor;
-                }
-            }
 
             .stat-inner {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 text-align: center;
-                gap: 16px;
+                gap: 20px;
             }
 
             .stat-number {
                 font-family: $serifFontFamily;
-                font-size: 48px;
-                line-height: 1;
-                color: $primaryColor;
-
-                @include respond-to("lg") {
-                    font-size: 64px;
-                }
+                font-weight: 400;
+                font-size: 72px;
+                line-height: 72px;
+                letter-spacing: -1.8px;
+                text-align: center;
+                vertical-align: middle;
+                color: #562CED;
+                margin: 0;
             }
 
             .stat-label {
                 font-family: $secondaryFontFamily;
+                font-weight: 400;
                 font-size: 14px;
-                line-height: 1.5;
-                color: rgba(255, 255, 255, 0.6);
+                line-height: 19.25px;
+                letter-spacing: 0%;
+                text-align: center;
+                vertical-align: middle;
+                color: #989FB3;
                 margin: 0;
 
-                @include respond-to("lg") {
-                    font-size: 16px;
-                }
             }
         }
     }
