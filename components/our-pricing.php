@@ -14,7 +14,7 @@ $definition_items = isset($data['definition_items']) ? $data['definition_items']
             <div class="pricing-card">
                 <div class="pricing-grid">
                     <!-- Left Column -->
-                    <div class="pricing-col pilot-section">
+                    <div class="pilot-section">
                         <span class="tag"><?php echo $data['pilot_tag']; ?></span>
                         <h3 class="price serif"><?php echo $data['pilot_price']; ?></h3>
                         <p class="price-note"><?php echo $data['price_note']; ?></p>
@@ -22,8 +22,6 @@ $definition_items = isset($data['definition_items']) ? $data['definition_items']
                         <div class="pilot-desc">
                             <?php echo wpautop($data['pilot_description']); ?>
                         </div>
-
-                        <div class="divider"></div>
 
                         <div class="guarantee">
                             <h4><?php echo $data['guarantee_title']; ?></h4>
@@ -34,12 +32,12 @@ $definition_items = isset($data['definition_items']) ? $data['definition_items']
                     </div>
 
                     <!-- Right Column -->
-                    <div class="pricing-col definition-section">
+                    <div class="definition-section">
                         <span class="tag"><?php echo $data['definition_tag']; ?></span>
                         <h3 class="definition-title serif"><?php echo $data['definition_title']; ?></h3>
 
                         <div class="definition-list">
-                            <?php foreach ($definition_items as $index => $item) : ?>
+                            <?php foreach ($definition_items as $index => $item): ?>
                                 <div class="definition-item">
                                     <div class="item-number"><?php echo sprintf('%02d', $index + 1); ?></div>
                                     <div class="item-content">
