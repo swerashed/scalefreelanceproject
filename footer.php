@@ -20,8 +20,10 @@
 
 				<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
 					<rect width="32" height="32" rx="16" fill="white" fill-opacity="0.1" />
-					<path d="M10 21L21.3137 9.68629" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-					<path d="M10 10L21.3137 21.3137" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+					<path d="M10 21L21.3137 9.68629" stroke="white" stroke-width="1.5" stroke-linecap="round"
+						stroke-linejoin="round" />
+					<path d="M10 10L21.3137 21.3137" stroke="white" stroke-width="1.5" stroke-linecap="round"
+						stroke-linejoin="round" />
 				</svg>
 
 			</button>
@@ -46,7 +48,6 @@
 <footer>
 	<div class="container">
 		<div class="footer-wrapper">
-
 			<!-- Footer top / CTA header -->
 			<div class="footer-top">
 				<div class="footer-top-left">
@@ -57,7 +58,11 @@
 					<a href="#" class="animated-button"><span>Apply for 30-day pilot</span></a>
 				</div>
 				<div class="footer-top-right">
-					<p>Scaletopia is the outbound infrastructure built exclusively for marketing agencies. We don't just run lead gen — we build and operate the full system: signal-based targeting in Clay, AI-personalised email and SMS sequences, and isolated sending infrastructure that protects your domain. The result is qualified meetings on your calendar every week. Apply for a 30-day performance-backed pilot to see what we can do for your agency.</p>
+					<p>Scaletopia is the outbound infrastructure built exclusively for marketing agencies. We don't just
+						run lead gen — we build and operate the full system: signal-based targeting in Clay,
+						AI-personalised email and SMS sequences, and isolated sending infrastructure that protects your
+						domain. The result is qualified meetings on your calendar every week. Apply for a 30-day
+						performance-backed pilot to see what we can do for your agency.</p>
 				</div>
 			</div><!-- .footer-top -->
 
@@ -103,19 +108,32 @@
 					<ul class="footer-nav footer-socials">
 						<li>
 							<a href="https://linkedin.com/company/scaletopia" target="_blank" rel="noopener noreferrer">
-								<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<rect width="20" height="20" rx="4" fill="#0A66C2"/>
-									<path d="M5.5 8H7.5V14.5H5.5V8ZM6.5 7C5.95 7 5.5 6.55 5.5 6C5.5 5.45 5.95 5 6.5 5C7.05 5 7.5 5.45 7.5 6C7.5 6.55 7.05 7 6.5 7ZM9 8H10.9V8.9H10.93C11.18 8.44 11.78 7.95 12.67 7.95C14.7 7.95 15.07 9.26 15.07 10.99V14.5H13.07V11.39C13.07 10.66 13.06 9.73 12.06 9.73C11.05 9.73 10.9 10.52 10.9 11.34V14.5H9V8Z" fill="white"/>
+								<svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+									xmlns="http://www.w3.org/2000/svg">
+									<g clip-path="url(#clip0_1271_3994)">
+										<path
+											d="M13.6313 13.6347H11.262V9.922C11.262 9.03667 11.244 7.89733 10.0273 7.89733C8.792 7.89733 8.60333 8.86067 8.60333 9.85667V13.6347H6.234V6H8.51V7.04067H8.54067C8.85867 6.44067 9.632 5.80733 10.7873 5.80733C13.188 5.80733 13.632 7.38733 13.632 9.444V13.6347H13.6313ZM3.558 4.95533C3.19295 4.95551 2.84283 4.81048 2.58483 4.55223C2.32682 4.29398 2.18214 3.94371 2.18267 3.57867C2.18304 2.81872 2.79939 2.20297 3.55933 2.20333C4.31928 2.2037 4.93503 2.82006 4.93467 3.58C4.9343 4.33994 4.31794 4.9557 3.558 4.95533ZM4.746 13.6347H2.37V6H4.746V13.6347ZM14.8167 0H1.18067C0.528 0 0 0.516 0 1.15267V14.8473C0 15.4847 0.528 16 1.18067 16H14.8147C15.4667 16 16 15.4847 16 14.8473V1.15267C16 0.516 15.4667 0 14.8147 0H14.8167Z"
+											fill="#989FB3" />
+									</g>
+									<defs>
+										<clipPath id="clip0_1271_3994">
+											<rect width="16" height="16" fill="white" />
+										</clipPath>
+									</defs>
 								</svg>
+
 								LinkedIn
 							</a>
 						</li>
 						<li>
 							<a href="https://youtube.com/@scaletopia" target="_blank" rel="noopener noreferrer">
-								<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<rect width="20" height="20" rx="4" fill="#FF0000"/>
-									<path d="M15.8 7.2C15.6 6.5 15.1 5.9 14.4 5.7C13.1 5.4 10 5.4 10 5.4C10 5.4 6.9 5.4 5.6 5.7C4.9 5.9 4.4 6.5 4.2 7.2C4 8.5 4 10 4 10C4 10 4 11.5 4.2 12.8C4.4 13.5 4.9 14.1 5.6 14.3C6.9 14.6 10 14.6 10 14.6C10 14.6 13.1 14.6 14.4 14.3C15.1 14.1 15.6 13.5 15.8 12.8C16 11.5 16 10 16 10C16 10 16 8.5 15.8 7.2ZM8.5 12.1V7.9L11.9 10L8.5 12.1Z" fill="white"/>
+								<svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+									xmlns="http://www.w3.org/2000/svg">
+									<path
+										d="M15.6653 4.12395C15.4814 3.43102 14.9424 2.88846 14.2507 2.69995C13.0033 2.36328 8 2.36328 8 2.36328C8 2.36328 2.99667 2.36328 1.74867 2.69995C1.05729 2.88879 0.518628 3.43126 0.334667 4.12395C0 5.37995 0 7.99995 0 7.99995C0 7.99995 0 10.6199 0.334667 11.8759C0.518624 12.5689 1.05763 13.1114 1.74933 13.2999C2.99667 13.6366 8 13.6366 8 13.6366C8 13.6366 13.0033 13.6366 14.2513 13.2999C14.9431 13.1116 15.4822 12.5689 15.666 11.8759C16 10.6199 16 7.99995 16 7.99995C16 7.99995 16 5.37995 15.6653 4.12395ZM6.36333 10.3786V5.62128L10.5453 7.99995L6.36333 10.3786Z"
+										fill="#989FB3" />
 								</svg>
+
 								YouTube
 							</a>
 						</li>
