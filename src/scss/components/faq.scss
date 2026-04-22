@@ -1,4 +1,5 @@
-#faq {
+// ─── FAQ Section ─────────────────────────────────────────────
+.faq-section {
   position: relative;
   padding: $sectionPaddingMobile 15px;
 
@@ -6,230 +7,116 @@
     padding: $sectionPaddingDesktop 0;
   }
 
-  .faq-wrapper {
+  .faq-accordion {
+    max-width: 780px;
+    margin: 0 auto;
     display: flex;
-    gap: 40px;
     flex-direction: column;
+    gap: 12px;
 
-    @include respond-to("xl") {
-      gap: 90px;
-      flex-direction: row;
-    }
-
-    .left-part {
-      @include respond-to("xl") {
-        max-width: 630px;
-      }
-
-      width: 100%;
-
-      .accordion {
-        position: relative;
-
-        .accordion-item {
-          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-          padding-bottom: 30px;
-          margin-bottom: 30px;
-          position: relative;
-          transition: all 0.3s ease;
-
-          &.active {
-            &::before {
-              position: absolute;
-              content: "";
-              left: -30px;
-              top: 0;
-              height: 90%;
-              width: 2px;
-              background: $buttonGradientColor;
-            }
-
-            .accordion-header img {
-              transform: rotate(180deg);
-            }
-
-            .accordion-body {
-              max-height: 500px; // Adjust this value to fit the maximum height of your content
-              padding-top: 30px;
-            }
-          }
-
-          .accordion-header {
-            display: flex;
-            gap: 20px;
-            align-items: center;
-            cursor: pointer;
-
-            .number {
-              width: 36px;
-              /* Circle diameter */
-              height: 32px;
-              /* Circle diameter (equal to width) */
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              background: $buttonGradientColor;
-              color: $whiteColor;
-              font-family: $secondaryFontFamily;
-              font-size: 14px;
-              line-height: 24px;
-              font-weight: 600;
-              border-radius: 50%;
-              /* Makes it a perfect circle */
-              overflow: hidden;
-              /* Ensures no overflow if content exceeds */
-            }
-
-            span {
-              font-family: $secondaryFontFamily;
-              font-size: 24px;
-              line-height: 34px;
-              font-weight: 500;
-              color: rgba(255, 255, 255, 1);
-              display: flex;
-              justify-content: space-between;
-              width: 100%;
-
-              img {
-                transition: transform 0.3s ease-in-out;
-              }
-            }
-          }
-
-          .accordion-body {
-            max-height: 0;
-            overflow: hidden;
-            padding-left: 60px;
-            transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
-            padding-top: 0;
-
-            p {
-              margin: 0;
-              font-family: $secondaryFontFamily;
-              font-size: 16px;
-              line-height: 26px;
-              font-weight: 400;
-              color: rgba(255, 255, 255, 0.8);
-            }
-          }
-        }
-      }
-    }
-
-    .right-part {
-      text-align: center;
+    // ── Single item card ──────────────────────────────────
+    &__item {
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 12px;
+      padding: 20px 24px;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease,
+        background 0.3s ease;
+      background: transparent;
 
       @include respond-to("xl") {
-        text-align: right;
+        padding: 24px 28px;
       }
 
-      flex: 1;
-
-      img {
-        border-radius: 10px;
+      &:hover {
+        border-color: rgba($primaryColor, 0.45);
       }
-    }
-  }
-}
 
-.pricing-faq {
-  max-width: 850px;
-  margin: 0 auto;
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-bottom: $sectionPaddingMobile;
-
-  @include respond-to("lg") {
-    padding-bottom: $sectionPaddingDesktop;
-  }
-
-  .accordion {
-    position: relative;
-
-    .accordion-item {
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      padding-bottom: 30px;
-      margin-bottom: 30px;
-      position: relative;
-      transition: all 0.3s ease;
-
+      // Active / expanded state
       &.active {
-        &::before {
-          position: absolute;
-          content: "";
-          left: -30px;
-          top: 0;
-          height: 90%;
-          width: 2px;
-          background: $buttonGradientColor;
+        border-color: rgba($primaryColor, 0.55);
+        box-shadow: 0 0 20px rgba($primaryColor, 0.08);
+        background: rgba(255, 255, 255, 0.02);
+
+        .faq-accordion__icon {
+          color: $primaryColor;
         }
 
-        .accordion-header img {
-          transform: rotate(180deg);
+        .faq-accordion__icon-vertical {
+          transform: rotate(90deg);
+          opacity: 0;
         }
 
-        .accordion-body {
-          max-height: 500px; // Adjust this value to fit the maximum height of your content
-          padding-top: 30px;
-        }
-      }
-
-      .accordion-header {
-        display: flex;
-        gap: 20px;
-        align-items: center;
-        cursor: pointer;
-
-        .number {
-          width: 36px;
-          /* Circle diameter */
-          height: 32px;
-          /* Circle diameter (equal to width) */
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          background: $buttonGradientColor;
-          color: $whiteColor;
-          font-family: $secondaryFontFamily;
-          font-size: 14px;
-          line-height: 24px;
-          font-weight: 600;
-          border-radius: 50%;
-          /* Makes it a perfect circle */
-          overflow: hidden;
-          /* Ensures no overflow if content exceeds */
-        }
-
-        span {
-          font-family: $secondaryFontFamily;
-          font-size: 24px;
-          line-height: 34px;
-          font-weight: 500;
-          color: rgba(255, 255, 255, 1);
-          display: flex;
-          justify-content: space-between;
-          width: 100%;
-
-          img {
-            transition: transform 0.3s ease-in-out;
-          }
+        .faq-accordion__body {
+          max-height: 500px;
+          padding-top: 16px;
+          opacity: 1;
         }
       }
+    }
 
-      .accordion-body {
-        max-height: 0;
-        overflow: hidden;
-        padding-left: 60px;
-        transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
-        padding-top: 0;
+    // ── Header row ────────────────────────────────────────
+    &__header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      gap: 16px;
+    }
 
-        p {
-          margin: 0;
-          font-family: $secondaryFontFamily;
+    &__title {
+      font-family: $secondaryFontFamily;
+      font-size: 17px;
+      line-height: 26px;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.92);
+
+      @include respond-to("xl") {
+        font-size: 20px;
+        line-height: 30px;
+      }
+    }
+
+    // ── Plus / minus icon ─────────────────────────────────
+    &__icon {
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255, 255, 255, 0.5);
+      transition: color 0.3s ease;
+
+      svg {
+        display: block;
+      }
+    }
+
+    &__icon-vertical {
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      transform-origin: center;
+    }
+
+    // ── Body / answer ─────────────────────────────────────
+    &__body {
+      max-height: 0;
+      overflow: hidden;
+      padding-top: 0;
+      opacity: 0;
+      transition: max-height 0.35s ease, padding-top 0.3s ease,
+        opacity 0.3s ease;
+
+      p {
+        margin: 0;
+        font-family: $secondaryFontFamily;
+        font-size: 15px;
+        line-height: 25px;
+        font-weight: 400;
+        color: rgba(255, 255, 255, 0.6);
+
+        @include respond-to("xl") {
           font-size: 16px;
           line-height: 26px;
-          font-weight: 400;
-          color: rgba(255, 255, 255, 0.8);
         }
       }
     }

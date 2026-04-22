@@ -53,18 +53,18 @@ const moreCaseStudiesSwiper = new Swiper(".more-case-studies .swiper", {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-  const accordionItems = document.querySelectorAll(".accordion-item");
+  const accordionItems = document.querySelectorAll(".faq-accordion__item");
 
   accordionItems.forEach((item) => {
-    const header = item.querySelector(".accordion-header");
-    const body = item.querySelector(".accordion-body");
+    const header = item.querySelector(".faq-accordion__header");
+    const body = item.querySelector(".faq-accordion__body");
 
     header.addEventListener("click", () => {
       // Close any currently active accordion item
-      const activeItem = document.querySelector(".accordion-item.active");
+      const activeItem = document.querySelector(".faq-accordion__item.active");
       if (activeItem && activeItem !== item) {
         activeItem.classList.remove("active");
-        activeItem.querySelector(".accordion-body").style.maxHeight = null;
+        activeItem.querySelector(".faq-accordion__body").style.maxHeight = null;
       }
 
       // Toggle the clicked accordion item

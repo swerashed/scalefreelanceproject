@@ -123,27 +123,7 @@ function hungry_register_scaletopia_component()
         });
 
 
-    Block::make('FAQ (Home)')
-        ->add_fields(array(
-            Field::make('html', 'crb_information_text')
-                ->set_html('<h2>FAQ (Home)</h2>'),
-            Field::make('text', 'title', 'Title'),
-            Field::make('image', 'img', 'Image'),
-            Field::make('complex', 'items', 'Items')
-                ->set_layout('tabbed-vertical')
-                ->add_fields(array(
-                    Field::make('text', 'title', 'Title'),
-                    Field::make('rich_text', 'description', 'Description'),
-                ))
 
-        ))
-        ->set_icon('star-filled')
-        ->set_keywords([__('FAQ (Home)')])
-        ->set_description(__('Custom Block'))
-        ->set_render_callback(function ($fields, $attributes, $inner_blocks) {
-            setData($fields);
-            get_template_part('components/faq-home');
-        });
 
     Block::make('Contact')
         ->add_fields(array(
@@ -278,10 +258,10 @@ function hungry_register_scaletopia_component()
             get_template_part('components/our-pricing');
         });
 
-    Block::make('FAQ (Inner)')
+    Block::make('FAQ')
         ->add_fields(array(
             Field::make('html', 'crb_information_text')
-                ->set_html('<h2>FAQ (Inner)</h2>'),
+                ->set_html('<h2>FAQ</h2>'),
             Field::make('text', 'title', 'Title'),
             Field::make('rich_text', 'description', 'Description'),
             Field::make('complex', 'items', 'Items')
@@ -292,11 +272,11 @@ function hungry_register_scaletopia_component()
                 ))
         ))
         ->set_icon('star-filled')
-        ->set_keywords([__('FAQ (Inner)')])
+        ->set_keywords([__('FAQ')])
         ->set_description(__('Custom Block'))
         ->set_render_callback(function ($fields, $attributes, $inner_blocks) {
             setData($fields);
-            get_template_part('components/faq-inner');
+            get_template_part('components/faq');
         });
 
     Block::make('Why Choose Us Comparison')
