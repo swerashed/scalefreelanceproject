@@ -240,17 +240,30 @@ function hungry_register_scaletopia_component()
         ->add_fields(array(
             Field::make('html', 'crb_information_text')
                 ->set_html('<h2>Our Pricing</h2>'),
-            Field::make('text', 'title', 'Title'),
-            Field::make('rich_text', 'details', 'Details'),
+            Field::make('text', 'title', 'Section Title'),
+            Field::make('rich_text', 'subtitle', 'Section Subtitle'),
 
-            // card title
-            Field::make('text', 'card_title', 'Card Title'),
-            Field::make('complex', 'items', 'Items')
+            // Card Left Column (Pilot)
+            Field::make('text', 'pilot_tag', 'Pilot Tag'),
+            Field::make('text', 'pilot_price', 'Pilot Price Range'),
+            Field::make('text', 'price_note', 'Price Note'),
+            Field::make('textarea', 'pilot_description', 'Pilot Description'),
+            Field::make('text', 'guarantee_title', 'Guarantee Title'),
+            Field::make('textarea', 'guarantee_description', 'Guarantee Description'),
+
+            // Card Right Column (Definition)
+            Field::make('text', 'definition_tag', 'Definition Tag'),
+            Field::make('text', 'definition_title', 'Definition Title'),
+            Field::make('complex', 'definition_items', 'Definition Items')
                 ->set_layout('tabbed-vertical')
                 ->add_fields(array(
                     Field::make('text', 'title', 'Title'),
+                    Field::make('textarea', 'description', 'Description'),
                 )),
-            Field::make('textarea', 'bottom_description', 'Bottom Description'),
+
+            // Bottom CTA
+            Field::make('text', 'cta_text', 'CTA Text'),
+            Field::make('text', 'cta_link', 'CTA Link'),
         ))
         ->set_icon('star-filled')
         ->set_keywords([__('Our Pricing')])
