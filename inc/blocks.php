@@ -585,6 +585,37 @@ function hungry_register_scaletopia_component()
             get_template_part('components/how-it-works');
         });
 
+    Block::make('The Model')
+        ->add_fields(array(
+            Field::make('html', 'crb_information_text')
+                ->set_html('<h2>The Model</h2>'),
+            Field::make('text', 'section_number', 'Section Number (e.g. 03)'),
+            Field::make('text', 'label', 'Section Label (e.g. THE MODEL)'),
+            Field::make('text', 'title', 'Title (Use <span> for purple text)'),
+            Field::make('rich_text', 'description', 'Top Description'),
+
+            // Left Column
+            Field::make('text', 'content_title', 'Content Column Title (Left)'),
+            Field::make('rich_text', 'content_description', 'Content Column Description (Left)'),
+
+            // Right Column
+            Field::make('complex', 'cards', 'Right Column Cards')
+                ->set_layout('tabbed-vertical')
+                ->add_fields(array(
+                    Field::make('text', 'number', 'Card Number (e.g. 01)'),
+                    Field::make('text', 'title', 'Card Title'),
+                    Field::make('textarea', 'description', 'Card Description'),
+                ))
+        ))
+        ->set_icon('star-filled')
+        ->set_keywords([__('Model'), __('Economics'), __('Pricing')])
+        ->set_description(__('Two-column economics section with cards'))
+        ->set_render_callback(function ($fields, $attributes, $inner_blocks) {
+            setData($fields);
+            get_template_part('components/the-model');
+        });
+
+
 
 }
 
