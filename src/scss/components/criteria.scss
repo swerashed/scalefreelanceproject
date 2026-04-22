@@ -1,6 +1,5 @@
 .criteria {
-    padding: $sectionPaddingMobile 0;
-    background-color: $darkColor;
+    padding: $sectionPaddingMobile 15px;
 
     @include respond-to("lg") {
         padding: $sectionPaddingDesktop 0;
@@ -8,11 +7,20 @@
 
     .section-description {
         max-width: 600px;
-        margin-bottom: 60px;
+        margin-bottom: 30px;
+
+        @include respond-to("lg") {
+            margin-bottom: 60px;
+        }
 
         p {
-            font-size: 16px;
+            font-size: 14px;
             line-height: 1.6;
+
+            @include respond-to("md") {
+                font-size: 16px;
+            }
+
             color: rgba(255, 255, 255, 0.6);
             margin: 0;
         }
@@ -29,83 +37,124 @@
     }
 
     &-card {
-        background: #0d0a16;
-        border: 1px solid rgba(255, 255, 255, 0.05);
+        background: #0F0C1D;
+        border: 1px solid #2C293D;
         border-radius: 20px;
-        padding: 40px 32px;
+        padding: 24px;
         display: flex;
         flex-direction: column;
-        gap: 32px;
-        transition: all 0.3s ease;
 
-        &:hover {
-            border-color: rgba(85, 42, 237, 0.3);
-            background: #120f1e;
+        @include respond-to("md") {
+            padding: 35px;
         }
 
         .card-header {
             display: flex;
-            align-items: center;
-            gap: 20px;
+            align-items: end;
+            gap: 15px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #2C293D;
+            margin-bottom: 20px;
+
+            @include respond-to("md") {
+                gap: 20px;
+                padding-bottom: 23px;
+            }
 
             .card-number {
-                font-size: 40px;
-                line-height: 1;
-                color: $primaryColor;
+                font-family: $serifFontFamily;
+                font-weight: 400;
                 font-style: italic;
+                font-size: 32px;
+                line-height: 1;
+                vertical-align: middle;
+                color: #562CED;
+                margin: 0;
+
+                @include respond-to("md") {
+                    font-size: 44px;
+                    line-height: 44px;
+                }
             }
 
             .card-label {
                 font-family: $secondaryFontFamily;
-                font-size: 12px;
-                font-weight: 600;
+                font-weight: 500;
+                font-size: 10px;
+                line-height: 1.5;
+                letter-spacing: 2.2px;
+                vertical-align: middle;
                 text-transform: uppercase;
-                letter-spacing: 2px;
-                color: rgba(255, 255, 255, 0.4);
+                color: #989FB399;
+                margin: 0;
+                margin-bottom: 4px;
+
+                @include respond-to("md") {
+                    font-size: 11px;
+                    line-height: 16.5px;
+                    margin-bottom: 0;
+                }
             }
         }
 
-        .card-divider {
-            width: 100%;
-            height: 1px;
-            background: rgba(255, 255, 255, 0.05);
-        }
 
         .card-content {
             .card-title {
-                font-size: 32px;
-                line-height: 1.2;
-                color: $whiteColor;
-                margin: 0 0 24px;
+                font-family: $serifFontFamily;
                 font-weight: 400;
+                font-size: 22px;
+                line-height: 1.2;
+                letter-spacing: -0.65px;
+                vertical-align: middle;
+                color: #F8FAFC;
+                margin: 0;
+                margin-bottom: 15px;
 
-                span {
-                    color: $primaryColor;
-                    font-style: italic;
+                @include respond-to("md") {
+                    font-size: 26px;
+                    line-height: 32.5px;
+                    margin-bottom: 17px;
                 }
 
-                @include respond-to("lg") {
-                    font-size: 36px;
+                span {
+                    color: #562CED;
+                    font-style: italic;
                 }
             }
 
             .card-description {
                 p {
-                    font-size: 16px;
-                    line-height: 1.5;
-                    color: rgba(255, 255, 255, 0.6);
-                    margin-bottom: 20px;
+                    font-family: $secondaryFontFamily;
+                    font-weight: 400;
+                    font-size: 14px;
+                    line-height: 1.6;
+                    letter-spacing: 0%;
+                    vertical-align: middle;
+                    color: #989FB3;
+                    margin-bottom: 0;
 
-                    &:last-child {
-                        margin-bottom: 0;
+                    @include respond-to("md") {
+                        font-size: 15px;
+                        line-height: 24.75px;
                     }
                 }
 
-                em, i {
+                em,
+                strong,
+                i {
                     font-style: italic;
-                    color: rgba(255, 255, 255, 0.7);
-                    display: block;
-                    margin-top: 24px;
+                    font-family: $serifFontFamily;
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 1.6;
+                    letter-spacing: 0%;
+                    vertical-align: middle;
+                    color: #F8FAFC;
+
+                    @include respond-to("md") {
+                        font-size: 17px;
+                        line-height: 28.05px;
+                    }
                 }
             }
         }

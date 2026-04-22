@@ -40,7 +40,6 @@ $items = isset($data['items']) ? $data['items'] : [];
                             <?php endif; ?>
                         </div>
 
-                        <div class="card-divider"></div>
 
                         <div class="card-content">
                             <?php if (!empty($item['title'])): ?>
