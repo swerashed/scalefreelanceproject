@@ -12,7 +12,7 @@ $data = getData();
                 <div class="desc">
                     <?php echo $data['description']; ?>
                 </div>
-                <div class="group-cta">
+                <div class="partnership-group-cta">
                     <div class="cta-wrapper">
                         <a href="<?php echo esc_url($data['btn_link']); ?>" class="animated-button">
                             <span><?php echo esc_html($data['btn_title']); ?></span>

@@ -15,7 +15,7 @@
     flex-wrap: wrap;
     justify-content: flex-start;
     gap: 30px;
-    align-items: center;
+    align-items: flex-start;
     flex-direction: column;
 
     @include respond-to("xl") {
@@ -23,11 +23,10 @@
     }
 
     .left-content {
-      text-align: center;
+      text-align: left;
       width: 100%;
 
       @include respond-to("xl") {
-        text-align: left;
         max-width: 800px; // Ensure it doesn't stretch too wide
       }
 
@@ -73,24 +72,22 @@
         }
       }
 
-      .group-cta {
+      .partnership-group-cta {
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: flex-start;
 
         @include respond-to("xl") {
-          justify-content: flex-start;
           flex-direction: row;
         }
 
         .cta-wrapper {
           display: flex;
           flex-direction: column;
-          align-items: center;
+          align-items: flex-start;
           gap: 12px;
 
           @include respond-to("xl") {
-            align-items: flex-start;
             gap: 14px;
           }
 

@@ -466,7 +466,7 @@ img {
     flex-direction: column;
     gap: 20px;
 
-    @include respond-to("lg") {
+    @include respond-to("xl") {
       flex-direction: row;
       gap: 60px;
     }
