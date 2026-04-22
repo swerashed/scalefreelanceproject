@@ -1,0 +1,134 @@
+.how-it-works {
+    padding: $sectionPaddingMobile 0;
+    background-color: $darkColor;
+
+    @include respond-to("lg") {
+        padding: $sectionPaddingDesktop 0;
+    }
+
+    .section-description {
+        max-width: 600px;
+        margin-bottom: 40px;
+
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.6);
+            margin: 0;
+        }
+    }
+
+    &-box {
+        background: #0d0a16;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        border-radius: 24px;
+        padding: 40px 24px;
+
+        @include respond-to("lg") {
+            padding: 60px 80px;
+        }
+    }
+
+    &-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 60px;
+
+        @include respond-to("lg") {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0;
+            position: relative;
+
+            // Vertical separator between columns
+            &::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 50%;
+                width: 1px;
+                height: 100%;
+                background: rgba(255, 255, 255, 0.05);
+                transform: translateX(-50%);
+            }
+        }
+    }
+
+    &-col {
+        @include respond-to("lg") {
+            &:first-child {
+                padding-right: 60px;
+            }
+            &:last-child {
+                padding-left: 60px;
+            }
+        }
+
+        .col-label {
+            display: block;
+            font-family: $secondaryFontFamily;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: $primaryColor;
+            margin-bottom: 24px;
+        }
+
+        .col-heading {
+            font-size: 32px;
+            line-height: 1.2;
+            color: $whiteColor;
+            margin: 0 0 40px;
+            font-weight: 400;
+
+            span {
+                color: $primaryColor;
+                font-style: italic;
+            }
+
+            @include respond-to("lg") {
+                font-size: 36px;
+            }
+        }
+    }
+
+    &-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+            font-family: $secondaryFontFamily;
+            font-size: 16px;
+            line-height: 1.5;
+            color: rgba(255, 255, 255, 0.7);
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            position: relative;
+            padding-left: 24px;
+
+            &::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 28px;
+                width: 6px;
+                height: 6px;
+                background: $primaryColor;
+                border-radius: 50%;
+            }
+
+            &:first-child {
+                padding-top: 0;
+                &::before {
+                    top: 8px;
+                }
+            }
+
+            &:last-child {
+                border-bottom: none;
+                padding-bottom: 0;
+            }
+        }
+    }
+}

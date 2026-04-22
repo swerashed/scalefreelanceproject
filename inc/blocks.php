@@ -557,6 +557,35 @@ function hungry_register_scaletopia_component()
             get_template_part('components/who-its-for');
         });
 
+    Block::make('How It Works')
+        ->add_fields(array(
+            Field::make('html', 'crb_information_text')
+                ->set_html('<h2>How It Works</h2>'),
+            Field::make('text', 'section_number', 'Section Number (e.g. 02)'),
+            Field::make('text', 'label', 'Section Label (e.g. HOW IT WORKS)'),
+            Field::make('text', 'title', 'Title (Use <span> for purple text)'),
+            Field::make('rich_text', 'description', 'Description'),
+
+            Field::make('complex', 'columns', 'Content Columns')
+                ->set_layout('tabbed-vertical')
+                ->add_fields(array(
+                    Field::make('text', 'label', 'Column Label (e.g. WHAT YOU OWN)'),
+                    Field::make('text', 'heading', 'Column Heading (Use <span> for purple text)'),
+                    Field::make('complex', 'list_items', 'List Items')
+                        ->add_fields(array(
+                            Field::make('text', 'text', 'Item Text'),
+                        ))
+                ))
+        ))
+        ->set_icon('star-filled')
+        ->set_keywords([__('How'), __('Workflow')])
+        ->set_description(__('Two-column comparison section'))
+        ->set_render_callback(function ($fields, $attributes, $inner_blocks) {
+            setData($fields);
+            get_template_part('components/how-it-works');
+        });
+
+
 }
 
 
