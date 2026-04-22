@@ -9,7 +9,7 @@ $data = getData();
                 <?php if (!empty($data['label'])): ?>
                     <span class="section-label"><?php echo esc_html($data['label']); ?></span>
                 <?php endif; ?>
-                
+
                 <?php if (!empty($data['title'])): ?>
                     <h2><?php echo $data['title']; ?></h2>
                 <?php endif; ?>
