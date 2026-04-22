@@ -1,0 +1,114 @@
+#partnership-banner {
+  padding: $sectionPaddingMobile 0px;
+  padding-top: ($sectionPaddingMobile * 2);
+  position: relative;
+  overflow-x: clip;
+  background-color: $darkColor;
+
+  @include respond-to("lg") {
+    padding: $sectionPaddingDesktop 0;
+    padding-top: ($sectionPaddingDesktop * 2);
+  }
+
+  .banner-content {
+    padding: 0 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 30px;
+    align-items: center;
+    flex-direction: column;
+
+    @include respond-to("xl") {
+      flex-direction: row;
+    }
+
+    .left-content {
+      text-align: center;
+      width: 100%;
+
+      @include respond-to("xl") {
+        text-align: left;
+        max-width: 800px; // Ensure it doesn't stretch too wide
+      }
+
+      .title {
+        font-family: $serifFontFamily;
+        font-weight: 400;
+        font-size: 40px;
+        line-height: 110%;
+        letter-spacing: -0.8px;
+        margin: 0 0 30px;
+        margin-bottom: 15px;
+
+        @include respond-to("xl") {
+          font-weight: 400;
+          font-size: 64px;
+          line-height: 100%;
+          letter-spacing: -1.28px;
+          margin-bottom: 20px;
+        }
+
+        span {
+          font-weight: 400;
+          font-size: 1em;
+          line-height: 100%;
+          font-family: $serifFontFamily;
+          color: $primaryColor;
+        }
+      }
+
+      .desc {
+        max-width: 100%;
+        font-family: $secondaryFontFamily;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 150%;
+        letter-spacing: 0%;
+        margin-bottom: 30px;
+
+        @include respond-to("xl") {
+          max-width: 85%;
+          font-size: 16px;
+          margin-bottom: 48px;
+        }
+      }
+
+      .group-cta {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        @include respond-to("xl") {
+          justify-content: flex-start;
+          flex-direction: row;
+        }
+
+        .cta-wrapper {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 12px;
+
+          @include respond-to("xl") {
+            align-items: flex-start;
+            gap: 14px;
+          }
+
+          .button-description {
+            font-family: $secondaryFontFamily;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 150%;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 0;
+
+            @include respond-to("xl") {
+              font-size: 16px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

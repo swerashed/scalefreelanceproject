@@ -1,0 +1,185 @@
+.post-trial-options {
+  padding: $sectionPaddingMobile 15px;
+  background-color: transparent;
+
+  @include respond-to(lg) {
+    padding: $sectionPaddingDesktop 15px;
+  }
+
+  .section-header {
+    margin-bottom: 40px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include respond-to(lg) {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__badge {
+    display: inline-block;
+    background: rgba(85, 42, 237, 0.1);
+    color: #552AED;
+    padding: 6px 16px;
+    border-radius: 100px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    border: 1px solid rgba(85, 42, 237, 0.2);
+  }
+
+  &__title {
+    font-family: $serifFontFamily;
+    font-size: 36px;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    font-weight: 400;
+
+    @include respond-to(lg) {
+      font-size: 64px;
+    }
+
+    span {
+      color: #7c3aed; // Fixed color for acquisition costs
+    }
+  }
+
+  &__description {
+    font-size: 16px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.7);
+    max-width: 800px;
+    margin: 0 auto;
+
+    @include respond-to(lg) {
+      font-size: 18px;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    max-width: 1100px;
+    margin: 0 auto 50px;
+
+    @include respond-to(lg) {
+      grid-template-columns: 1fr 1fr;
+      margin-bottom: 70px;
+    }
+  }
+
+  &__card {
+    background: #171429;
+    border: 1px solid #2C293D;
+    border-radius: 32px;
+    padding: 40px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    @include respond-to(lg) {
+      padding: 60px;
+    }
+
+    &:hover {
+      background: linear-gradient(0deg, #171429, #171429),
+        linear-gradient(180deg, #171429 0%, rgba(86, 44, 237, 0.04) 100%);
+      border: 1px solid #562CED73;
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    }
+  }
+
+  &__card-tag {
+    display: block;
+    color: #552AED;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    opacity: 0.8;
+  }
+
+  &__card-price {
+    font-size: 48px;
+    line-height: 1;
+    margin-bottom: 15px;
+
+    @include respond-to(lg) {
+      font-size: 64px;
+    }
+  }
+
+  &__card-price-sub {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.4);
+    margin-bottom: 5px;
+    font-style: italic;
+  }
+
+  &__card-commitment {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 40px;
+  }
+
+  &__card-desc {
+    flex-grow: 1;
+
+    p,
+    li {
+      font-size: 15px;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 20px;
+
+      @include respond-to(lg) {
+        font-size: 16px;
+      }
+    }
+
+    strong {
+      color: #fff;
+    }
+  }
+
+  &__card-footer-line {
+    margin-top: 30px;
+    font-size: 14px;
+    color: #552AED;
+    font-weight: 500;
+  }
+
+  &__footer-note {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 30px 40px;
+    text-align: center;
+    border: 1px dashed rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.02);
+
+    p {
+      font-size: 14px;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.5);
+      font-style: italic;
+      margin: 0;
+
+      @include respond-to(lg) {
+        font-size: 16px;
+      }
+    }
+  }
+}

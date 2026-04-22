@@ -488,7 +488,53 @@ function hungry_register_scaletopia_component()
             setData($fields);
             get_template_part('components/included-features');
         });
+    Block::make('Post-Trial Options')
+        ->add_fields(array(
+            Field::make('html', 'crb_information_text')
+                ->set_html('<h2>Post-Trial Options</h2>'),
+            Field::make('text', 'label', 'Section Label (e.g. POST-TRIAL OPTIONS)'),
+            Field::make('text', 'title', 'Title (Use <span> for purple text)'),
+            Field::make('rich_text', 'description', 'Description'),
+            Field::make('complex', 'cards', 'Price Cards')
+                ->set_layout('tabbed-vertical')
+                ->add_fields(array(
+                    Field::make('text', 'card_label', 'Card Label (e.g. MOST CHOSEN)'),
+                    Field::make('text', 'price', 'Price (e.g. $400 - $1k)'),
+                    Field::make('text', 'price_subtext', 'Price Subtext (e.g. per qualified show)'),
+                    Field::make('text', 'commitment', 'Commitment (e.g. 3-MONTH COMMITMENT)'),
+                    Field::make('rich_text', 'card_description', 'Card Content'),
+                    Field::make('text', 'footer_line', 'Footer Line (Colored text at bottom)'),
+                )),
+            Field::make('textarea', 'footer_note', 'Bottom Footer Note'),
+        ))
+        ->set_icon('star-filled')
+        ->set_keywords([__('Post-Trial'), __('Pricing')])
+        ->set_description(__('Custom section for post-pilot pricing options'))
+        ->set_render_callback(function ($fields, $attributes, $inner_blocks) {
+            setData($fields);
+            get_template_part('components/post-trial-options');
+        });
+
+    Block::make('Partnership Banner')
+        ->add_fields(array(
+            Field::make('html', 'crb_information_text')
+                ->set_html('<h2>Partnership Banner</h2>'),
+            Field::make('text', 'title', 'Title (Use <span> for purple text)'),
+            Field::make('rich_text', 'description', 'Description'),
+            Field::make('text', 'btn_title', 'Button Title'),
+            Field::make('text', 'btn_link', 'Button Link'),
+            Field::make('text', 'button_description', 'Button Description (Bottom text)'),
+        ))
+        ->set_icon('star-filled')
+        ->set_keywords([__('Hero Banner'), __('Partnership')])
+        ->set_description(__('Hero-style banner without media or gradients'))
+        ->set_render_callback(function ($fields, $attributes, $inner_blocks) {
+            setData($fields);
+            get_template_part('components/partnership-banner');
+        });
+
 }
+
 
 
 
