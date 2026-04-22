@@ -4,91 +4,68 @@
 
   @include respond-to("lg") {
     padding-top: 100px;
-    padding-bottom: 40px;
+    padding-bottom: 50px;
   }
 
-  background: linear-gradient(
-    180deg,
-    rgba(133, 99, 255, 0.2) 19.07%,
-    rgba(19, 22, 29, 0) 76%
-  );
+  .section-header {
+    margin: 0 auto;
+  }
 
   h2 {
-    font-family: "Lexend Deca", sans-serif;
-    font-size: 38px;
-    font-weight: 600;
-    line-height: 55px;
-    letter-spacing: -0.02em;
+    text-align: center;
 
     @include respond-to("lg") {
-      font-size: 46px;
-      font-weight: 600;
+      font-size: 64px;
     }
   }
 
   p {
-    font-family: Urbanist;
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 28px;
     text-align: center;
+    margin-bottom: 0;
   }
 }
 
 
 .pricing-banner {
-  padding: 80px 0;
-  background-color: $darkColor;
 
-  @include respond-to(lg) {
-    padding: 120px 0;
+  padding-bottom: 30px;
+  padding-top: 100px;
+  padding-inline: 15px;
+
+  @include respond-to("lg") {
+    padding-top: 100px;
+    padding-bottom: 60px;
+    padding-inline: 0;
   }
 
   .section-header {
-    max-width: 850px;
+    max-width: 650px;
     margin: 0 auto;
 
     h2 {
-      font-size: 40px;
-      margin-bottom: 24px !important;
+      text-align: center;
 
-      @include respond-to(lg) {
+      @include respond-to("lg") {
         font-size: 64px;
-        line-height: 1;
-      }
-
-      span {
-        background: linear-gradient(93.28deg, #552aed 0.77%, #bdabff 104.99%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        text-fill-color: transparent;
       }
     }
 
     p {
-      max-width: 650px;
-      margin: 0 auto 40px;
-      font-size: 16px;
-      line-height: 1.5;
-      color: rgba(255, 255, 255, 0.7);
-
-      @include respond-to(lg) {
-        font-size: 18px;
-        margin-bottom: 48px;
-      }
+      text-align: center;
+      margin-bottom: 0;
     }
   }
 
   .banner-btn-wrapper {
     display: flex;
     justify-content: center;
+    margin-top: 32px;
 
     .banner-link {
       display: inline-flex;
       align-items: center;
       gap: 12px;
-      color: rgba(255, 255, 255, 0.6);
+      color: #989FB3;
       font-family: $secondaryFontFamily;
       font-size: 14px;
       font-weight: 500;
@@ -97,26 +74,18 @@
 
       &:hover {
         color: $whiteColor;
-
-        .icon-circle {
-          border-color: $whiteColor;
-          transform: translateY(3px);
-        }
       }
 
       .icon-circle {
-        width: 28px;
-        height: 28px;
-        border: 1px solid rgba(255, 255, 255, 0.3);
-        border-radius: 50%;
+
         display: flex;
         align-items: center;
         justify-content: center;
         transition: all 0.3s ease;
 
         svg {
-          width: 14px;
-          height: 14px;
+          width: 18px;
+          height: 18px;
         }
       }
     }
