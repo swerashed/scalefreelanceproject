@@ -52,6 +52,32 @@ const moreCaseStudiesSwiper = new Swiper(".more-case-studies .swiper", {
   },
 });
 
+// Success Stories slider
+const successStoriesSwiper = new Swiper("#success-stories .swiper", {
+  modules: [Navigation, Pagination, Autoplay],
+  centeredSlides: true,
+  slidesPerView: "auto",
+  spaceBetween: 16,
+  loop: true,
+  autoplay: {
+    delay: 5000,
+    disableOnInteraction: false,
+  },
+  breakpoints: {
+    768: {
+      spaceBetween: 24,
+    },
+  },
+  navigation: {
+    nextEl: "#success-stories .nav-arrow.next",
+    prevEl: "#success-stories .nav-arrow.prev",
+  },
+  pagination: {
+    el: "#success-stories .swiper-pagination",
+    clickable: true,
+  },
+});
+
 document.addEventListener("DOMContentLoaded", () => {
   const accordionItems = document.querySelectorAll(".faq-accordion__item");
 

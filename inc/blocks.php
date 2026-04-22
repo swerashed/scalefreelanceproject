@@ -370,6 +370,28 @@ function hungry_register_scaletopia_component()
             setData($fields);
             get_template_part('components/launch-cta');
         });
+
+    Block::make('Success Stories')
+        ->add_fields(array(
+            Field::make('html', 'crb_information_text')
+                ->set_html('<h2>Success Stories</h2>'),
+            Field::make('text', 'title', 'Title'),
+            Field::make('rich_text', 'description', 'Description'),
+            Field::make('association', 'items', 'Case Studies')
+                ->set_types(array(
+                    array(
+                        'type'      => 'post',
+                        'post_type' => 'case_study',
+                    )
+                ))
+        ))
+        ->set_icon('star-filled')
+        ->set_keywords([__('Success Stories'), __('Case Studies')])
+        ->set_description(__('Custom Block for Agency Success Stories Slider'))
+        ->set_render_callback(function ($fields, $attributes, $inner_blocks) {
+            setData($fields);
+            get_template_part('components/success-stories');
+        });
 }
 
 
