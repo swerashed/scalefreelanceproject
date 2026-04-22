@@ -1,0 +1,151 @@
+.who-its-for {
+    padding: $sectionPaddingMobile 0;
+    background-color: $darkColor;
+
+    @include respond-to("lg") {
+        padding: $sectionPaddingDesktop 0;
+    }
+
+    .section-header-variant {
+        margin-bottom: 48px;
+
+        @include respond-to("lg") {
+            margin-bottom: 64px;
+        }
+
+        .who-its-for__label-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        .who-its-for__label {
+            font-family: $secondaryFontFamily;
+            font-weight: 700;
+            font-size: 14px;
+            letter-spacing: 0.1em;
+            color: $primaryColor;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+            span {
+                opacity: 0.5;
+            }
+        }
+
+        h2 {
+            font-size: 40px;
+            line-height: 1.2;
+            margin-bottom: 24px;
+            color: $whiteColor;
+
+            @include respond-to("lg") {
+                font-size: 72px;
+                line-height: 1.1;
+            }
+
+            span {
+                color: $secondaryColor;
+                font-style: italic;
+            }
+        }
+
+        .who-its-for__description {
+            max-width: 600px;
+
+            p {
+                color: rgba(255, 255, 255, 0.7);
+                font-size: 16px;
+                line-height: 1.6;
+                margin-bottom: 0;
+
+                @include respond-to("lg") {
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+
+        @include respond-to("md") {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include respond-to("lg") {
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+    }
+
+    &__card {
+        background: #0d0a16;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        border-radius: 16px;
+        padding: 40px 32px;
+        transition: all 0.3s ease;
+        height: 100%;
+
+        &:hover {
+            border-color: rgba(85, 42, 237, 0.3);
+            background: #120f1e;
+            transform: translateY(-5px);
+        }
+
+        &-inner {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        &-icon {
+            width: 24px;
+            height: 24px;
+            color: $primaryColor;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+                filter: brightness(0) saturate(100%) invert(29%) sepia(87%) saturate(7465%) hue-rotate(248deg) brightness(97%) contrast(101%);
+            }
+
+            svg {
+                width: 100%;
+                height: 100%;
+                fill: currentColor;
+            }
+        }
+
+        &-title {
+            font-size: 24px;
+            line-height: 1.3;
+            color: $whiteColor;
+            margin: 0;
+            font-weight: 400;
+
+            @include respond-to("lg") {
+                font-size: 28px;
+            }
+        }
+
+        &-description {
+            p {
+                font-size: 15px;
+                line-height: 1.6;
+                color: rgba(255, 255, 255, 0.5);
+                margin: 0;
+
+                @include respond-to("lg") {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}

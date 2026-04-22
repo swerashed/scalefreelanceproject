@@ -533,6 +533,29 @@ function hungry_register_scaletopia_component()
             get_template_part('components/partnership-banner');
         });
 
+    Block::make('Who It\'s For')
+        ->add_fields(array(
+            Field::make('html', 'crb_information_text')
+                ->set_html('<h2>Who It\'s For</h2>'),
+            Field::make('text', 'label', 'Section Label (e.g. [01] WHO IT\'S FOR)'),
+            Field::make('text', 'title', 'Title (Use <span> for purple text)'),
+            Field::make('rich_text', 'description', 'Description'),
+            Field::make('complex', 'items', 'Cards')
+                ->set_layout('tabbed-vertical')
+                ->add_fields(array(
+                    Field::make('image', 'icon', 'Icon'),
+                    Field::make('text', 'title', 'Title'),
+                    Field::make('textarea', 'description', 'Description'),
+                ))
+        ))
+        ->set_icon('star-filled')
+        ->set_keywords([__('Who'), __('Agency')])
+        ->set_description(__('Custom section for who the service is for'))
+        ->set_render_callback(function ($fields, $attributes, $inner_blocks) {
+            setData($fields);
+            get_template_part('components/who-its-for');
+        });
+
 }
 
 
