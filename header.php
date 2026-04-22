@@ -66,9 +66,7 @@
 			?>
 		</nav>
 		<div class="mobile-menu-cta">
-			<a href="<?php echo carbon_get_theme_option('scaletopia_footer') ?>" class="animated-button"
-				target="__blank">Schedule a
-				call</a>
+			<a href="/application" class="animated-button">Apply for risk-free pilot</a>
 		</div>
 	</div>
 	<div id="main-content">
@@ -106,8 +104,7 @@
 						?>
 					</nav>
 					<div class="cta">
-						<a href="<?php echo carbon_get_theme_option('scaletopia_book_now_link') ?>"
-							class="animated-button" target="__blank">Schedule a call</a>
+						<a href="/application" class="animated-button">Apply for risk-free pilot</a>
 					</div>
 				</div>
 			</div>

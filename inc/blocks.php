@@ -657,6 +657,26 @@ function hungry_register_scaletopia_component()
             get_template_part('components/booking-section');
         });
 
+    Block::make('Trust Statistics')
+        ->add_fields(array(
+            Field::make('html', 'crb_information_text')
+                ->set_html('<h2>Trust Statistics</h2>'),
+            Field::make('text', 'title', 'Section Title (e.g. Trusted by marketing agencies across the US)'),
+            Field::make('complex', 'stats', 'Statistics')
+                ->set_layout('tabbed-vertical')
+                ->add_fields(array(
+                    Field::make('text', 'number', 'Number (e.g. 85+)'),
+                    Field::make('text', 'label', 'Label (e.g. Agencies)'),
+                ))
+        ))
+        ->set_icon('chart-bar')
+        ->set_keywords([__('Trust'), __('Stats'), __('Statistics'), __('Numbers')])
+        ->set_description(__('Centered statistics section with a title'))
+        ->set_render_callback(function ($fields, $attributes, $inner_blocks) {
+            setData($fields);
+            get_template_part('components/trust-stats');
+        });
+
 }
 
 
