@@ -24,11 +24,12 @@
     width: 800px;
     height: 500px;
     max-width: 100%;
-    background: #562ced0f;
-    filter: blur(120px);
+    background: #562ced;
+    filter: blur(80px);
     border-radius: 9999px;
     z-index: -1;
     pointer-events: none;
+    opacity: 0.1;
   }
 
   .section-header {
@@ -36,15 +37,9 @@
     margin-bottom: 40px;
 
     .title {
-      font-family: $serifFontFamily;
-      font-size: 36px;
       line-height: 1.1;
       margin-bottom: 24px;
       color: $whiteColor;
-
-      @include respond-to("xl") {
-        font-size: 58px;
-      }
 
       span {
         color: $primaryColor;

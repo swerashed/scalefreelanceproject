@@ -5,7 +5,7 @@ $data = getData();
 <section id="launch-cta">
     <div class="container relative">
         <div class="launch-cta-glow"></div>
-        
+
         <div class="section-header">
             <h2 class="title">
                 <?php echo $data['title']; ?>
