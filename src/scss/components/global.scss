@@ -32,6 +32,70 @@
   }
 }
 
+.section-header-variant {
+  .label-wrapper {
+    font-family: $serifFontFamily;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0;
+    vertical-align: middle;
+    color: #562CED;
+    gap: 16px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-bottom: 16px;
+
+
+    .number {
+      font-style: Italic;
+    }
+
+    .line {
+      background: #562CED80;
+      width: 32px;
+      height: 1px;
+      display: inline-block;
+    }
+
+    .label {
+      text-transform: uppercase;
+    }
+
+
+
+  }
+
+  h2 {
+    font-family: $serifFontFamily;
+    font-weight: 400;
+    font-size: 44px;
+    line-height: 110.00000000000001%;
+    letter-spacing: -2px;
+    text-align: left;
+    color: $whiteColor;
+    margin-bottom: 16px;
+    margin-top: 0px;
+
+    span {
+      color: $primaryColor;
+    }
+
+    @include respond-to("lg") {
+      font-size: 56px;
+      line-height: 110.00000000000001%;
+    }
+  }
+
+  p {
+    color: rgba(255, 255, 255, 0.7);
+    font-family: $secondaryFontFamily;
+    font-size: 18px;
+    line-height: 28px;
+  }
+}
+
 .text-center {
   text-align: center;
 }
@@ -208,14 +272,8 @@ img {
 
 .hidden {
   display: none;
-  /* Hide content initially */
 }
 
-// #main-content {
-//   display: block; /* Ensure content is displayed when visible */
-//   opacity: 0; /* Start with 0 opacity */
-//   transition: opacity 0.5s ease; /* Smooth fade-in effect */
-// }
 
 .cursor {
   position: fixed;

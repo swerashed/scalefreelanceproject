@@ -6,68 +6,7 @@
         padding: $sectionPaddingDesktop 0;
     }
 
-    .section-header-variant {
-        margin-bottom: 48px;
 
-        @include respond-to("lg") {
-            margin-bottom: 64px;
-        }
-
-        .who-its-for-label-wrapper {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 24px;
-        }
-
-        .who-its-for-label {
-            font-family: $secondaryFontFamily;
-            font-weight: 700;
-            font-size: 14px;
-            letter-spacing: 0.1em;
-            color: $primaryColor;
-            text-transform: uppercase;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-
-            span {
-                opacity: 0.5;
-            }
-        }
-
-        h2 {
-            font-size: 40px;
-            line-height: 1.2;
-            margin-bottom: 24px;
-            color: $whiteColor;
-
-            @include respond-to("lg") {
-                font-size: 72px;
-                line-height: 1.1;
-            }
-
-            span {
-                color: $secondaryColor;
-                font-style: italic;
-            }
-        }
-
-        .who-its-for-description {
-            max-width: 600px;
-
-            p {
-                color: rgba(255, 255, 255, 0.7);
-                font-size: 16px;
-                line-height: 1.6;
-                margin-bottom: 0;
-
-                @include respond-to("lg") {
-                    font-size: 18px;
-                }
-            }
-        }
-    }
 
     &-grid {
         display: grid;

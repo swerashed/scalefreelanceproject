@@ -537,7 +537,8 @@ function hungry_register_scaletopia_component()
         ->add_fields(array(
             Field::make('html', 'crb_information_text')
                 ->set_html('<h2>Who It\'s For</h2>'),
-            Field::make('text', 'label', 'Section Label (e.g. [01] WHO IT\'S FOR)'),
+            Field::make('text', 'section_number', 'Section Number (e.g. 01)'),
+            Field::make('text', 'label', 'Section Label (e.g. WHO IT\'S FOR)'),
             Field::make('text', 'title', 'Title (Use <span> for purple text)'),
             Field::make('rich_text', 'description', 'Description'),
             Field::make('complex', 'items', 'Cards')
