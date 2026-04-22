@@ -52,9 +52,22 @@
     border: 1px solid #2C293D;
     padding: 24px;
     border-radius: 20px;
-    background: linear-gradient(0deg, #171429, #171429),
-      linear-gradient(180deg, #171429 0%, rgba(86, 44, 237, 0.04) 100%);
+    background: #171429;
     transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(120% 100% at 50% 0%, rgba(86, 44, 237, 0.2) 0%, rgba(23, 20, 41, 0) 100%),
+        #171429;
+      z-index: -1;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
 
     @include respond-to(md) {
       padding: 35px;
@@ -66,9 +79,11 @@
     }
 
     &:hover {
-      background: linear-gradient(0deg, #171429, #171429),
-        linear-gradient(180deg, #171429 0%, rgba(86, 44, 237, 0.04) 100%);
       border: 1px solid #562CED73;
+
+      &::before {
+        opacity: 1;
+      }
     }
   }
 
