@@ -84,18 +84,20 @@ const successStoriesSwiper = new Swiper("#success-stories .swiper", {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-  const accordionItems = document.querySelectorAll(".faq-accordion__item");
+  const accordionItems = document.querySelectorAll(".faq-accordion-item");
 
   accordionItems.forEach((item) => {
-    const header = item.querySelector(".faq-accordion__header");
-    const body = item.querySelector(".faq-accordion__body");
+    const body = item.querySelector(".faq-accordion-body");
 
-    header.addEventListener("click", () => {
+    item.addEventListener("click", (e) => {
+      // If the user clicked a link inside the accordion, don't toggle
+      if (e.target.tagName === "A" || e.target.closest("a")) return;
+
       // Close any currently active accordion item
-      const activeItem = document.querySelector(".faq-accordion__item.active");
+      const activeItem = document.querySelector(".faq-accordion-item.active");
       if (activeItem && activeItem !== item) {
         activeItem.classList.remove("active");
-        activeItem.querySelector(".faq-accordion__body").style.maxHeight = null;
+        activeItem.querySelector(".faq-accordion-body").style.maxHeight = null;
       }
 
       // Toggle the clicked accordion item
@@ -276,7 +278,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Enlarge cursor when hovering over anchor tags or buttons
   const interactiveElements = document.querySelectorAll(
-    "a, button, img, .service-item, .cards .card-item"
+    "a, button, img, .service-item, .cards .card-item, .faq-accordion-item"
   );
 
   interactiveElements.forEach((element) => {

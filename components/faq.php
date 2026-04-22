@@ -24,10 +24,8 @@ $items = isset($data['items']) ? $data['items'] : [];
                             <?php echo $faq['title']; ?>
                         </span>
                         <span class="faq-accordion-icon">
-                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path class="faq-accordion-icon-vertical" d="M7 0V14" stroke="currentColor"
-                                    stroke-width="1.5" />
-                                <path d="M0 7H14" stroke="currentColor" stroke-width="1.5" />
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </span>
                     </div>

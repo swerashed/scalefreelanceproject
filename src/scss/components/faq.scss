@@ -16,34 +16,30 @@
 
     // ── Single item card ──────────────────────────────────
     &-item {
-      border: 1px solid rgba(255, 255, 255, 0.15);
+      border: 1px solid #2C293D;
       border-radius: 12px;
       padding: 20px 24px;
       transition: border-color 0.3s ease, box-shadow 0.3s ease,
         background 0.3s ease;
       background: transparent;
-
-      @include respond-to("xl") {
-        padding: 24px 28px;
-      }
+      cursor: pointer;
 
       &:hover {
-        border-color: rgba($primaryColor, 0.45);
+        border-color: rgba($primaryColor, 0.3);
       }
 
       // Active / expanded state
       &.active {
-        border-color: rgba($primaryColor, 0.55);
+        border-color: #552AED80;
         box-shadow: 0 0 20px rgba($primaryColor, 0.08);
         background: rgba(255, 255, 255, 0.02);
 
         .faq-accordion-icon {
           color: $primaryColor;
-        }
 
-        .faq-accordion-icon-vertical {
-          transform: rotate(90deg);
-          opacity: 0;
+          svg {
+            transform: rotate(180deg);
+          }
         }
 
         .faq-accordion-body {
@@ -59,21 +55,16 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      cursor: pointer;
       gap: 16px;
     }
 
     &-title {
       font-family: $secondaryFontFamily;
-      font-size: 17px;
-      line-height: 26px;
-      font-weight: 500;
-      color: rgba(255, 255, 255, 0.92);
-
-      @include respond-to("xl") {
-        font-size: 20px;
-        line-height: 30px;
-      }
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 150%;
+      letter-spacing: 0%;
+      color: $whiteColor;
     }
 
     // ── Plus / minus icon ─────────────────────────────────
@@ -89,12 +80,8 @@
 
       svg {
         display: block;
+        transition: transform 0.3s ease;
       }
-    }
-
-    &-icon-vertical {
-      transition: transform 0.3s ease, opacity 0.3s ease;
-      transform-origin: center;
     }
 
     // ── Body / answer ─────────────────────────────────────
@@ -109,15 +96,11 @@
       p {
         margin: 0;
         font-family: $secondaryFontFamily;
-        font-size: 15px;
-        line-height: 25px;
+        color: $whiteColor;
         font-weight: 400;
-        color: rgba(255, 255, 255, 0.6);
-
-        @include respond-to("xl") {
-          font-size: 16px;
-          line-height: 26px;
-        }
+        font-size: 14px;
+        line-height: 150%;
+        letter-spacing: 0%;
       }
     }
   }
