@@ -225,6 +225,8 @@ function hungry_register_scaletopia_component()
                 ->set_html('<h2>Pricing Banner (Inner)</h2>'),
             Field::make('text', 'title', 'Title'),
             Field::make('rich_text', 'description', 'Description'),
+            Field::make('text', 'btn_title', 'Button Title'),
+            Field::make('text', 'btn_link', 'Button Link'),
         ))
         ->set_icon('star-filled')
         ->set_keywords([__('Pricing Banner (Inner)')])
