@@ -35,58 +35,6 @@
   }
 }
 
-.generic-section-banner {
-  padding-top: 50px;
-  padding-bottom: 50px;
-  position: relative;
-  padding-left: 15px;
-  padding-right: 15px;
-  overflow: hidden;
-
-  &::after {
-    content: "";
-    position: absolute;
-    bottom: 0px;
-    left: 0;
-    max-width: 810px;
-    width: 100%;
-    height: 700px;
-    background-image: url("../img/services-vector.png");
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    background-position: bottom left;
-    z-index: -1;
-  }
-
-  @include respond-to("lg") {
-    padding-top: 100px;
-    padding-bottom: 100px;
-  }
-
-  .generic-section-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-direction: column;
-    gap: 20px;
-
-    @include respond-to("lg") {
-      flex-direction: row;
-      gap: 60px;
-    }
-
-    .left-content {
-      max-width: 575px;
-      width: 100%;
-    }
-  }
-
-  .right-content {
-    img {
-      border-radius: 10px;
-    }
-  }
-}
 
 .pricing-banner {
   padding: 80px 0;

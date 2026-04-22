@@ -441,3 +441,57 @@ img {
     border-radius: 50%;
   }
 }
+
+
+.generic-section-banner {
+  padding-top: 50px;
+  padding-bottom: 30px;
+  position: relative;
+  padding-left: 15px;
+  padding-right: 15px;
+  overflow: hidden;
+
+
+  @include respond-to("lg") {
+    padding-top: 100px;
+    padding-bottom: 60px;
+  }
+
+  .generic-section-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 20px;
+
+    @include respond-to("lg") {
+      flex-direction: row;
+      gap: 60px;
+    }
+
+    .left-content {
+      max-width: 575px;
+      width: 100%;
+
+      .section-header {
+        margin: 0;
+
+        h2 {
+          text-align: left;
+        }
+
+        p {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  .right-content {
+    max-width: 600px;
+
+    img {
+      border-radius: 10px;
+    }
+  }
+}
