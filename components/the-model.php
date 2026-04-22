@@ -30,7 +30,7 @@ $cards = isset($data['cards']) ? $data['cards'] : [];
         <div class="the-model-grid">
             <div class="the-model-content">
                 <?php if (!empty($data['content_title'])): ?>
-                    <h3 class="content-title serif"><?php echo $data['content_title']; ?></h3>
+                    <h3 class="content-title"><?php echo $data['content_title']; ?></h3>
                 <?php endif; ?>
 
                 <?php if (!empty($data['content_description'])): ?>
