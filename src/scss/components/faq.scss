@@ -15,7 +15,7 @@
     gap: 12px;
 
     // ── Single item card ──────────────────────────────────
-    &__item {
+    &-item {
       border: 1px solid rgba(255, 255, 255, 0.15);
       border-radius: 12px;
       padding: 20px 24px;
@@ -37,16 +37,16 @@
         box-shadow: 0 0 20px rgba($primaryColor, 0.08);
         background: rgba(255, 255, 255, 0.02);
 
-        .faq-accordion__icon {
+        .faq-accordion-icon {
           color: $primaryColor;
         }
 
-        .faq-accordion__icon-vertical {
+        .faq-accordion-icon-vertical {
           transform: rotate(90deg);
           opacity: 0;
         }
 
-        .faq-accordion__body {
+        .faq-accordion-body {
           max-height: 500px;
           padding-top: 16px;
           opacity: 1;
@@ -55,7 +55,7 @@
     }
 
     // ── Header row ────────────────────────────────────────
-    &__header {
+    &-header {
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -63,7 +63,7 @@
       gap: 16px;
     }
 
-    &__title {
+    &-title {
       font-family: $secondaryFontFamily;
       font-size: 17px;
       line-height: 26px;
@@ -77,7 +77,7 @@
     }
 
     // ── Plus / minus icon ─────────────────────────────────
-    &__icon {
+    &-icon {
       flex-shrink: 0;
       width: 28px;
       height: 28px;
@@ -92,13 +92,13 @@
       }
     }
 
-    &__icon-vertical {
+    &-icon-vertical {
       transition: transform 0.3s ease, opacity 0.3s ease;
       transform-origin: center;
     }
 
     // ── Body / answer ─────────────────────────────────────
-    &__body {
+    &-body {
       max-height: 0;
       overflow: hidden;
       padding-top: 0;

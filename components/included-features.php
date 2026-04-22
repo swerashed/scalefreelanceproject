@@ -18,14 +18,14 @@ $box_subtitle = isset($data['box_subtitle']) ? $data['box_subtitle'] : '';
         </div>
 
         <div class="features-box">
-            <div class="features-box__header">
-                <div class="features-box__branding">
+            <div class="features-box-header">
+                <div class="features-box-branding">
                     <h3 class="brand">
                         <?php echo $brand_title; ?> <span class="serif-italic"><?php echo $brand_suffix; ?></span>
                     </h3>
                     <p class="box-subtitle"><?php echo $box_subtitle; ?></p>
                 </div>
-                <div class="features-box__cta">
+                <div class="features-box-cta">
                     <a href="<?php echo isset($data['btn_link']) ? $data['btn_link'] : '#'; ?>" class="animated-button">
                         <span><?php echo isset($data['btn_text']) ? $data['btn_text'] : ''; ?></span>
                         <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -35,22 +35,22 @@ $box_subtitle = isset($data['box_subtitle']) ? $data['box_subtitle'] : '';
                 </div>
             </div>
 
-            <div class="features-box__grid">
+            <div class="features-box-grid">
                 <?php foreach ($columns as $column) : ?>
-                    <div class="features-box__col">
+                    <div class="features-box-col">
                         <h4 class="col-title"><?php echo $column['col_title']; ?></h4>
                         <ul class="features-list">
                             <?php 
                             $features = isset($column['features']) ? $column['features'] : [];
                             foreach ($features as $feature) : 
                             ?>
-                                <li class="features-list__item">
-                                    <span class="features-list__icon">
+                                <li class="features-list-item">
+                                    <span class="features-list-icon">
                                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M16.6666 5L7.49992 14.1667L3.33325 10" stroke="#552AED" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
                                         </svg>
                                     </span>
-                                    <span class="features-list__text"><?php echo $feature['feature_text']; ?></span>
+                                    <span class="features-list-text"><?php echo $feature['feature_text']; ?></span>
                                 </li>
                             <?php endforeach; ?>
                         </ul>
@@ -58,7 +58,7 @@ $box_subtitle = isset($data['box_subtitle']) ? $data['box_subtitle'] : '';
                 <?php endforeach; ?>
             </div>
 
-            <div class="features-box__footer">
+            <div class="features-box-footer">
                 <p>
                     <?php echo isset($data['footer_text']) ? $data['footer_text'] : ''; ?>
                     <a href="<?php echo isset($data['footer_link_url']) ? $data['footer_link_url'] : '#'; ?>"><?php echo isset($data['footer_link_text']) ? $data['footer_link_text'] : ''; ?></a>

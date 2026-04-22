@@ -17,7 +17,7 @@
     }
   }
 
-  &__badge {
+  &-badge {
     display: inline-block;
     background: rgba(85, 42, 237, 0.1);
     color: #552AED;
@@ -31,7 +31,7 @@
     border: 1px solid rgba(85, 42, 237, 0.2);
   }
 
-  &__title {
+  &-title {
     font-family: $serifFontFamily;
     font-size: 36px;
     line-height: 1.1;
@@ -47,7 +47,7 @@
     }
   }
 
-  &__description {
+  &-description {
     font-size: 16px;
     line-height: 1.6;
     color: rgba(255, 255, 255, 0.7);
@@ -59,7 +59,7 @@
     }
   }
 
-  &__grid {
+  &-grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: 24px;
@@ -72,7 +72,7 @@
     }
   }
 
-  &__card {
+  &-card {
     background: #171429;
     border: 1px solid #2C293D;
     border-radius: 32px;
@@ -97,7 +97,7 @@
     }
   }
 
-  &__card-tag {
+  &-card-tag {
     display: block;
     color: #552AED;
     font-size: 11px;
@@ -108,7 +108,7 @@
     opacity: 0.8;
   }
 
-  &__card-price {
+  &-card-price {
     font-size: 48px;
     line-height: 1;
     margin-bottom: 15px;
@@ -118,14 +118,14 @@
     }
   }
 
-  &__card-price-sub {
+  &-card-price-sub {
     font-size: 14px;
     color: rgba(255, 255, 255, 0.4);
     margin-bottom: 5px;
     font-style: italic;
   }
 
-  &__card-commitment {
+  &-card-commitment {
     font-size: 12px;
     font-weight: 600;
     letter-spacing: 0.05em;
@@ -134,7 +134,7 @@
     margin-bottom: 40px;
   }
 
-  &__card-desc {
+  &-card-desc {
     flex-grow: 1;
 
     p,
@@ -154,14 +154,14 @@
     }
   }
 
-  &__card-footer-line {
+  &-card-footer-line {
     margin-top: 30px;
     font-size: 14px;
     color: #552AED;
     font-weight: 500;
   }
 
-  &__footer-note {
+  &-footer-note {
     max-width: 900px;
     margin: 0 auto;
     padding: 30px 40px;

@@ -4,7 +4,7 @@ $data = getData();
 
 <section id="launch-cta">
     <div class="container relative">
-        <div class="launch-cta__glow"></div>
+        <div class="launch-cta-glow"></div>
         
         <div class="section-header">
             <h2 class="title">

@@ -22,20 +22,20 @@ $cards = isset($data['cards']) ? $data['cards'] : [];
                     ?>
                     <div class="social-proof-card">
                         <?php if ($image_url): ?>
-                            <div class="social-proof-card__media">
+                            <div class="social-proof-card-media">
                                 <img src="<?php echo esc_url($image_url); ?>" alt=""
-                                    class="social-proof-card__img">
+                                    class="social-proof-card-img">
                             </div>
                         <?php endif; ?>
 
-                        <div class="social-proof-card__footer">
+                        <div class="social-proof-card-footer">
                             <?php if (!empty($card['footer_title'])): ?>
-                                <div class="social-proof-card__footer-title">
+                                <div class="social-proof-card-footer-title">
                                     <?php echo esc_html($card['footer_title']); ?>
                                 </div>
                             <?php endif; ?>
                             <?php if (!empty($card['footer_subtitle'])): ?>
-                                <div class="social-proof-card__footer-subtitle">
+                                <div class="social-proof-card-footer-subtitle">
                                     <?php echo esc_html($card['footer_subtitle']); ?>
                                 </div>
                             <?php endif; ?>

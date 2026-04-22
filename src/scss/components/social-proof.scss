@@ -58,18 +58,18 @@
     transform: translateY(-2px);
   }
 
-  &__media {
+  &-media {
     width: 100%;
     background: rgba(255, 255, 255, 0.02);
   }
 
-  &__img {
+  &-img {
     width: 100%;
     height: auto;
     display: block;
   }
 
-  &__footer {
+  &-footer {
     padding: 16px 16px 18px;
     background: rgba(19, 22, 29, 0.6);
     border-top: 1px solid rgba(255, 255, 255, 0.06);
@@ -80,7 +80,7 @@
     }
   }
 
-  &__footer-title {
+  &-footer-title {
     font-family: $secondaryFontFamily;
     font-weight: 500;
     font-size: 12px;
@@ -91,7 +91,7 @@
     margin-bottom: 6px;
   }
 
-  &__footer-subtitle {
+  &-footer-subtitle {
     font-family: $secondaryFontFamily;
     font-weight: 600;
     font-size: 14px;

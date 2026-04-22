@@ -7,48 +7,48 @@ $cards = isset($data['cards']) ? $data['cards'] : [];
     <div class="container">
         <div class="section-header text-center">
             <?php if (!empty($data['label'])): ?>
-                <span class="post-trial-options__badge"><?php echo $data['label']; ?></span>
+                <span class="post-trial-options-badge"><?php echo $data['label']; ?></span>
             <?php endif; ?>
 
             <?php if (!empty($data['title'])): ?>
-                <h2 class="post-trial-options__title"><?php echo $data['title']; ?></h2>
+                <h2 class="post-trial-options-title"><?php echo $data['title']; ?></h2>
             <?php endif; ?>
 
             <?php if (!empty($data['description'])): ?>
-                <div class="post-trial-options__description">
+                <div class="post-trial-options-description">
                     <?php echo wpautop($data['description']); ?>
                 </div>
             <?php endif; ?>
         </div>
 
-        <div class="post-trial-options__grid">
+        <div class="post-trial-options-grid">
             <?php foreach ($cards as $card): ?>
-                <div class="post-trial-options__card">
-                    <div class="post-trial-options__card-content">
+                <div class="post-trial-options-card">
+                    <div class="post-trial-options-card-content">
                         <?php if (!empty($card['card_label'])): ?>
-                            <span class="post-trial-options__card-tag"><?php echo $card['card_label']; ?></span>
+                            <span class="post-trial-options-card-tag"><?php echo $card['card_label']; ?></span>
                         <?php endif; ?>
 
                         <?php if (!empty($card['price'])): ?>
-                            <h3 class="post-trial-options__card-price serif"><?php echo $card['price']; ?></h3>
+                            <h3 class="post-trial-options-card-price serif"><?php echo $card['price']; ?></h3>
                         <?php endif; ?>
 
                         <?php if (!empty($card['price_subtext'])): ?>
-                            <p class="post-trial-options__card-price-sub"><?php echo $card['price_subtext']; ?></p>
+                            <p class="post-trial-options-card-price-sub"><?php echo $card['price_subtext']; ?></p>
                         <?php endif; ?>
 
                         <?php if (!empty($card['commitment'])): ?>
-                            <p class="post-trial-options__card-commitment"><?php echo $card['commitment']; ?></p>
+                            <p class="post-trial-options-card-commitment"><?php echo $card['commitment']; ?></p>
                         <?php endif; ?>
 
                         <?php if (!empty($card['card_description'])): ?>
-                            <div class="post-trial-options__card-desc">
+                            <div class="post-trial-options-card-desc">
                                 <?php echo wpautop($card['card_description']); ?>
                             </div>
                         <?php endif; ?>
 
                         <?php if (!empty($card['footer_line'])): ?>
-                            <div class="post-trial-options__card-footer-line">
+                            <div class="post-trial-options-card-footer-line">
                                 <?php echo $card['footer_line']; ?>
                             </div>
                         <?php endif; ?>
@@ -58,7 +58,7 @@ $cards = isset($data['cards']) ? $data['cards'] : [];
         </div>
 
         <?php if (!empty($data['footer_note'])): ?>
-            <div class="post-trial-options__footer-note">
+            <div class="post-trial-options-footer-note">
                 <p><?php echo nl2br($data['footer_note']); ?></p>
             </div>
         <?php endif; ?>

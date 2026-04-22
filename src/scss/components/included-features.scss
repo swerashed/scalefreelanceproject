@@ -50,7 +50,7 @@
       padding: 60px 80px;
     }
 
-    &__header {
+    &-header {
       display: flex;
       flex-direction: column;
       gap: 20px;
@@ -67,7 +67,7 @@
       }
     }
 
-    &__branding {
+    &-branding {
       .brand {
         font-size: 32px;
         font-weight: 600;
@@ -98,7 +98,7 @@
       }
     }
 
-    &__grid {
+    &-grid {
       display: grid;
       grid-template-columns: 1fr;
       gap: 40px;
@@ -115,7 +115,7 @@
       }
     }
 
-    &__col {
+    &-col {
       @include respond-to(lg) {
         padding: 0 40px;
         border-right: 1px solid rgba(255, 255, 255, 0.1);
@@ -149,7 +149,7 @@
       padding: 0;
       margin: 0;
 
-      &__item {
+      &-item {
         display: flex;
         gap: 12px;
         margin-bottom: 20px;
@@ -162,7 +162,7 @@
           margin-bottom: 25px;
         }
 
-        .features-list__icon {
+        .features-list-icon {
           flex-shrink: 0;
           margin-top: 2px;
           display: flex;
@@ -170,13 +170,13 @@
           justify-content: center;
         }
 
-        .features-list__text {
+        .features-list-text {
           flex: 1;
         }
       }
     }
 
-    &__footer {
+    &-footer {
       border-top: 1px solid rgba(255, 255, 255, 0.1);
       padding-top: 30px;
       text-align: center;

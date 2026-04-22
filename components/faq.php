@@ -18,20 +18,20 @@ $items = isset($data['items']) ? $data['items'] : [];
             <?php
             $count = 1;
             foreach ($items as $faq): ?>
-                <div class="faq-accordion__item <?php echo $count === 1 ? 'active' : '' ?>">
-                    <div class="faq-accordion__header">
-                        <span class="faq-accordion__title">
+                <div class="faq-accordion-item <?php echo $count === 1 ? 'active' : '' ?>">
+                    <div class="faq-accordion-header">
+                        <span class="faq-accordion-title">
                             <?php echo $faq['title']; ?>
                         </span>
-                        <span class="faq-accordion__icon">
+                        <span class="faq-accordion-icon">
                             <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path class="faq-accordion__icon-vertical" d="M7 0V14" stroke="currentColor"
+                                <path class="faq-accordion-icon-vertical" d="M7 0V14" stroke="currentColor"
                                     stroke-width="1.5" />
                                 <path d="M0 7H14" stroke="currentColor" stroke-width="1.5" />
                             </svg>
                         </span>
                     </div>
-                    <div class="faq-accordion__body">
+                    <div class="faq-accordion-body">
                         <?php echo $faq['description']; ?>
                     </div>
                 </div>
