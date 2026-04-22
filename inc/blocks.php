@@ -641,9 +641,21 @@ function hungry_register_scaletopia_component()
             setData($fields);
             get_template_part('components/criteria');
         });
-
-
-
+    Block::make('Booking Section')
+        ->add_fields(array(
+            Field::make('html', 'crb_information_text')
+                ->set_html('<h2>Booking Section</h2>'),
+            Field::make('text', 'label', 'Label (e.g. APPLICATIONS ONLY)'),
+            Field::make('text', 'title', 'Title (Use <span> for purple text)'),
+            Field::make('rich_text', 'description', 'Description'),
+        ))
+        ->set_icon('calendar-alt')
+        ->set_keywords([__('Booking'), __('Calendly'), __('Qualify')])
+        ->set_description(__('Section with header and Calendly embed container'))
+        ->set_render_callback(function ($fields, $attributes, $inner_blocks) {
+            setData($fields);
+            get_template_part('components/booking-section');
+        });
 
 }
 
