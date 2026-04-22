@@ -502,6 +502,7 @@ function hungry_register_scaletopia_component()
                     Field::make('text', 'price', 'Price (e.g. $400 - $1k)'),
                     Field::make('text', 'price_subtext', 'Price Subtext (e.g. per qualified show)'),
                     Field::make('text', 'commitment', 'Commitment (e.g. 3-MONTH COMMITMENT)'),
+                    Field::make('text', 'card_subtitle', 'Card Subtitle (e.g. Quarterly cadence...)'),
                     Field::make('rich_text', 'card_description', 'Card Content'),
                     Field::make('text', 'footer_line', 'Footer Line (Colored text at bottom)'),
                 )),

@@ -11,12 +11,14 @@ $cards = isset($data['cards']) ? $data['cards'] : [];
             <?php endif; ?>
 
             <?php if (!empty($data['title'])): ?>
-                <h2 class="post-trial-options-title"><?php echo $data['title']; ?></h2>
+                <h2><?php echo $data['title']; ?></h2>
             <?php endif; ?>
 
             <?php if (!empty($data['description'])): ?>
-                <div class="post-trial-options-description">
-                    <?php echo wpautop($data['description']); ?>
+                <div>
+                    <p>
+                        <?php echo wpautop($data['description']); ?>
+                    </p>
                 </div>
             <?php endif; ?>
         </div>
@@ -30,7 +32,7 @@ $cards = isset($data['cards']) ? $data['cards'] : [];
                         <?php endif; ?>
 
                         <?php if (!empty($card['price'])): ?>
-                            <h3 class="post-trial-options-card-price serif"><?php echo $card['price']; ?></h3>
+                            <h3 class="post-trial-options-card-price"><?php echo $card['price']; ?></h3>
                         <?php endif; ?>
 
                         <?php if (!empty($card['price_subtext'])): ?>
@@ -39,6 +41,10 @@ $cards = isset($data['cards']) ? $data['cards'] : [];
 
                         <?php if (!empty($card['commitment'])): ?>
                             <p class="post-trial-options-card-commitment"><?php echo $card['commitment']; ?></p>
+                        <?php endif; ?>
+
+                        <?php if (!empty($card['card_subtitle'])): ?>
+                            <h4 class="post-trial-options-card-subtitle"><?php echo $card['card_subtitle']; ?></h4>
                         <?php endif; ?>
 
                         <?php if (!empty($card['card_description'])): ?>
