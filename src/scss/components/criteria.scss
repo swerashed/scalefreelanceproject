@@ -1,0 +1,113 @@
+.criteria {
+    padding: $sectionPaddingMobile 0;
+    background-color: $darkColor;
+
+    @include respond-to("lg") {
+        padding: $sectionPaddingDesktop 0;
+    }
+
+    .section-description {
+        max-width: 600px;
+        margin-bottom: 60px;
+
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.6);
+            margin: 0;
+        }
+    }
+
+    &-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 24px;
+
+        @include respond-to("lg") {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    &-card {
+        background: #0d0a16;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        border-radius: 20px;
+        padding: 40px 32px;
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        transition: all 0.3s ease;
+
+        &:hover {
+            border-color: rgba(85, 42, 237, 0.3);
+            background: #120f1e;
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+
+            .card-number {
+                font-size: 40px;
+                line-height: 1;
+                color: $primaryColor;
+                font-style: italic;
+            }
+
+            .card-label {
+                font-family: $secondaryFontFamily;
+                font-size: 12px;
+                font-weight: 600;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                color: rgba(255, 255, 255, 0.4);
+            }
+        }
+
+        .card-divider {
+            width: 100%;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .card-content {
+            .card-title {
+                font-size: 32px;
+                line-height: 1.2;
+                color: $whiteColor;
+                margin: 0 0 24px;
+                font-weight: 400;
+
+                span {
+                    color: $primaryColor;
+                    font-style: italic;
+                }
+
+                @include respond-to("lg") {
+                    font-size: 36px;
+                }
+            }
+
+            .card-description {
+                p {
+                    font-size: 16px;
+                    line-height: 1.5;
+                    color: rgba(255, 255, 255, 0.6);
+                    margin-bottom: 20px;
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+
+                em, i {
+                    font-style: italic;
+                    color: rgba(255, 255, 255, 0.7);
+                    display: block;
+                    margin-top: 24px;
+                }
+            }
+        }
+    }
+}

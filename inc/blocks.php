@@ -615,6 +615,33 @@ function hungry_register_scaletopia_component()
             get_template_part('components/the-model');
         });
 
+    Block::make('Criteria')
+        ->add_fields(array(
+            Field::make('html', 'crb_information_text')
+                ->set_html('<h2>Criteria (Fit)</h2>'),
+            Field::make('text', 'section_number', 'Section Number (e.g. 05)'),
+            Field::make('text', 'label', 'Section Label (e.g. FIT)'),
+            Field::make('text', 'title', 'Title (Use <span> for purple text)'),
+            Field::make('rich_text', 'description', 'Description (Top)'),
+
+            Field::make('complex', 'items', 'Criteria Cards')
+                ->set_layout('tabbed-vertical')
+                ->add_fields(array(
+                    Field::make('text', 'number', 'Card Number (e.g. 01)'),
+                    Field::make('text', 'label', 'Card Label (e.g. CRITERION ONE)'),
+                    Field::make('text', 'title', 'Card Title (Use <span> for purple text)'),
+                    Field::make('rich_text', 'description', 'Card Description'),
+                ))
+        ))
+        ->set_icon('star-filled')
+        ->set_keywords([__('Fit'), __('Criteria'), __('Partnership')])
+        ->set_description(__('Two-column criteria cards section'))
+        ->set_render_callback(function ($fields, $attributes, $inner_blocks) {
+            setData($fields);
+            get_template_part('components/criteria');
+        });
+
+
 
 
 }
