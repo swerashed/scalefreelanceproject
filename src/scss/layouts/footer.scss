@@ -2,10 +2,12 @@ footer {
   position: relative;
   background-color: transparent;
   padding-inline: 15px;
+  padding-top: 30px;
 
   @include respond-to("lg") {
     padding-top: 60px;
     padding-bottom: 40px;
+
   }
 
   @include respond-to("xl") {
