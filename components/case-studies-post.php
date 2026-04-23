@@ -57,9 +57,9 @@
                     <div class="new-case-study-item <?php echo $term_classes; ?>">
                         <div>
                             <div class="card-header">
-                                <?php if ($logo): ?>
+                                <?php if ($logoID): ?>
                                     <div class="company-logo">
-                                        <?php echo $logo; ?>
+                                        <?php echo wp_get_attachment_image($logoID, 'full'); ?>
                                         <?php if ($tag): ?>
                                             <span class="case-study-tag"><?php echo esc_html($tag); ?></span>
                                         <?php endif; ?>

@@ -119,7 +119,6 @@
     }
 
     .case-studies-empty {
-
       padding: 40px;
       max-width: 500px;
       width: 100%;
@@ -141,626 +140,179 @@
         transform: rotate(360deg);
       }
     }
-
-    .case-studies-item {
-      background: linear-gradient(0deg,
-          rgba(23, 27, 36, 0.3),
-          rgba(23, 27, 36, 0.3)),
-        radial-gradient(153.38% 1055.88% at 17.55% 50%,
-          rgba(85, 43, 237, 0.06) 0%,
-          rgba(189, 171, 255, 0.12) 100%);
-      border-radius: 25px;
-      padding: 25px;
-      transition: all 0.5s ease;
-
-      &:hover {
-        background: linear-gradient(0deg,
-            rgba(24, 28, 37, 0.3),
-            rgba(24, 28, 37, 0.3)),
-          radial-gradient(79.91% 199.77% at 16.67% 27.36%,
-            rgba(85, 43, 237, 0.2) 0%,
-            rgba(0, 0, 0, 0) 100%);
-      }
-
-      .case-studies-item-img {
-        margin-bottom: 30px;
-
-        img {
-          width: 100%;
-          border-radius: 10px;
-        }
-
-        .video-thumb {
-          position: relative;
-          display: inline-block;
-          cursor: pointer;
-          text-decoration: none;
-
-          .hero-image {
-            display: block;
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-
-            img {
-              max-width: 100%;
-              height: auto;
-              width: 100%;
-            }
-          }
-
-          &::before {
-            content: "";
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 100px;
-            /* Size of the pulse */
-            height: 100px;
-            background: $buttonGradientColor;
-            /* Light purple */
-            border-radius: 50%;
-            z-index: 0;
-            /* Behind the play icon */
-            animation: pulse 2s infinite ease-in-out;
-            /* Pulse animation */
-          }
-
-          .play-icon {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 2;
-            /* Ensures the SVG appears above the pulse effect */
-            transition: all 0.3s ease;
-          }
-
-          &:hover .play-icon rect {
-            fill: #ffffff32;
-            stroke: $buttonGradientColor;
-          }
-
-          &:hover .play-icon path {
-            fill: $darkColor;
-            stroke: $darkColor;
-          }
-        }
-      }
-
-      .case-studies-item-content {
-        h3 {
-          font-family: "Urbanist", sans-serif;
-          font-size: 24px;
-          font-weight: 600;
-          line-height: 34px;
-          margin-top: 25px;
-          margin-bottom: 25px;
-        }
-      }
-    }
   }
 }
 
-.case-studies-generic {
+// ── Slider Section (Renamed from success-stories) ───────────────────────────
+#case-studies-slider {
+  padding: $sectionPaddingMobile 15px;
   position: relative;
-  padding-left: 15px;
-  padding-right: 15px;
+  overflow: hidden;
+  background-color: #090712;
 
-  &::after {
-    content: "";
-    position: absolute;
-    bottom: 0px;
-    left: 0;
-    max-width: 810px;
-    width: 100%;
-    height: 700px;
-    background-image: url("../img/services-vector.png");
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    background-position: bottom left;
-    z-index: -1;
+  @include respond-to("xl") {
+    padding: $sectionPaddingDesktop 0;
   }
 
-  .case-studies-generic-wrapper {
-    max-width: 1110px;
-    margin: 0 auto;
-    padding-top: ($sectionPaddingMobile * 1.33);
-    padding-bottom: ($sectionPaddingMobile * 1.33);
+  .section-header {
+    max-width: 700px;
+    margin-bottom: 56px;
 
-    @include respond-to("lg") {
-      padding-top: ($sectionPaddingDesktop * 1.33);
-      padding-bottom: ($sectionPaddingDesktop * 1.33);
-    }
-  }
-
-  h2 {
-    font-family: "Lexend Deca", sans-serif;
-    font-size: 38px;
-    font-weight: 600;
-    line-height: 55px;
-    letter-spacing: -0.02em;
-
-    @include respond-to("lg") {
-      font-size: 46px;
-      font-weight: 600;
-    }
-  }
-
-  .middle-wrapepr {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 12px;
-    padding-bottom: 12px;
-    margin-bottom: 30px;
-
-    .meta-wrapepr {
-      display: flex;
-      justify-content: space-between;
-      gap: 15px;
-      align-items: center;
-      margin-bottom: 20px;
-
-      .meta {
-        span {
-          font-family: "Urbanist", sans-serif;
-          font-size: 16px;
-          font-weight: 600;
-          line-height: 26px;
-          text-align: left;
-          color: rgba(255, 255, 255, 0.8);
-          margin-bottom: 5px;
-        }
-
-        p {
-          margin: 0;
-          //styleName: Desktop/H4 (Medium);
-          font-family: "Urbanist", sans-serif;
-          font-size: 24px;
-          font-weight: 500;
-          line-height: 34px;
-        }
-      }
-    }
-  }
-
-  .bottom-wrapper {
-    .card-wrapper {
-      display: flex;
-      gap: 15px;
-
-      .card {
-        background: rgba(24, 28, 37, 1);
-        padding: 24px;
-        border-radius: 10px;
-        transition: all 0.5s ease;
-        box-sizing: border-box;
-        width: 50%;
-        height: auto;
-
-        @include respond-to("lg") {
-          width: 270px;
-        }
-
-        transition: all 0.5s ease;
-
-        &:hover {
-          background: linear-gradient(90deg, #8563ff 17.91%, #9c2cd0 73.73%);
-        }
-
-        h4 {
-          font-family: "Urbanist", sans-serif;
-          font-size: 30px;
-          font-weight: 700;
-          line-height: 40px;
-          margin-top: 0px;
-          margin-bottom: 8px;
-        }
-
-        span {
-          font-family: "Urbanist", sans-serif;
-          font-size: 16px;
-          font-weight: 400;
-          line-height: 26px;
-          color: rgba(255, 255, 255, 0.8);
-        }
-      }
-    }
-  }
-}
-
-.case-studies-details {
-  position: relative;
-  padding-left: 15px;
-  padding-right: 15px;
-
-  .case-studies-details-wrapper {
-    max-width: 1110px;
-    margin: 0 auto;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    margin-bottom: 60px;
-    padding: 0 0 60px;
-    display: flex;
-    justify-content: space-between;
-    gap: 45px;
-    flex-direction: column;
-
-    @include respond-to("lg") {
-      flex-direction: row;
-    }
-
-    .left-content {
-      max-width: 660px;
-      width: 100%;
-
-      .case-studies-item-img {
-        margin-bottom: 30px;
-
-        img {
-          max-width: 100%;
-          width: 100%;
-          border-radius: 10px;
-        }
-
-        iframe {
-          width: 100%;
-          height: 400px;
-        }
-
-        .video-thumb {
-          position: relative;
-          display: block;
-          cursor: pointer;
-          text-decoration: none;
-
-          .hero-image {
-            display: block;
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-
-            img {
-              max-width: 100%;
-              height: auto;
-              width: 100%;
-            }
-          }
-
-          &::before {
-            content: "";
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 100px;
-            /* Size of the pulse */
-            height: 100px;
-            background: $buttonGradientColor;
-            /* Light purple */
-            border-radius: 50%;
-            z-index: 0;
-            /* Behind the play icon */
-            animation: pulse 2s infinite ease-in-out;
-            /* Pulse animation */
-          }
-
-          .play-icon {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 2;
-            /* Ensures the SVG appears above the pulse effect */
-            transition: all 0.3s ease;
-          }
-
-          &:hover .play-icon rect {
-            fill: #ffffff32;
-            stroke: $buttonGradientColor;
-          }
-
-          &:hover .play-icon path {
-            fill: $darkColor;
-            stroke: $darkColor;
-          }
-        }
-      }
-
-      .company-info-wrapper {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 25px;
-        justify-content: space-between;
-        align-items: flex-start;
-        margin-bottom: 30px;
-        padding: 25px;
-        border-radius: 10px;
-        background: linear-gradient(0deg,
-            rgba(24, 28, 37, 0.6),
-            rgba(24, 28, 37, 0.6)),
-          radial-gradient(81.81% 95.07% at 18.19% 20.41%,
-            rgba(85, 43, 237, 0.07) 0%,
-            rgba(24, 28, 37, 0) 100%)
-          /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
-        ;
-
-        .company-info {
-          // border-right: 1px solid rgba(255, 255, 255, 0.1);
-          // padding-right: 25px;
-          flex: 1;
-
-          &:last-child {
-            border-right: none;
-          }
-
-          h3 {
-            font-family: "Urbanist", sans-serif;
-            font-size: 16px;
-            font-weight: 600;
-            line-height: 26px;
-            margin-top: 0;
-            margin-bottom: 5px;
-          }
-
-          p {
-            //styleName: Desktop/Body 1 (Regular);
-            font-family: Urbanist;
-            font-size: 16px;
-            font-weight: 400;
-            line-height: 26px;
-            margin: 0;
-            color: rgba(255, 255, 255, 0.8);
-          }
-        }
-      }
-
-      .case-studies-content {
-        h3 {
-          font-family: "Urbanist", sans-serif;
-          font-size: 30px;
-          font-weight: 700;
-          line-height: 40px;
-          margin-top: 0;
-          margin-bottom: 15px;
-          color: rgba(255, 255, 255, 1);
-        }
-
-        p {
-          font-family: "Urbanist", sans-serif;
-          font-size: 16px;
-          font-weight: 400;
-          line-height: 26px;
-          color: rgba(255, 255, 255, 0.8);
-          margin-bottom: 40px;
-        }
-      }
-
-      .results {
-        .results-wrapper {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 15px;
-
-          .results-item {
-            background: rgba(24, 28, 37, 1);
-            padding: 24px;
-            border-radius: 10px;
-            transition: all 0.5s ease;
-            box-sizing: border-box;
-            max-width: 270px;
-            max-height: 122px;
-            width: 100%;
-            height: 100%;
-            transition: all 0.5s ease;
-
-            &:hover {
-              background: linear-gradient(90deg,
-                  #8563ff 17.91%,
-                  #9c2cd0 73.73%);
-            }
-
-            h4 {
-              font-family: "Urbanist", sans-serif;
-              font-size: 30px;
-              font-weight: 700;
-              line-height: 40px;
-              margin-top: 0px;
-              margin-bottom: 8px;
-            }
-
-            span {
-              font-family: "Urbanist", sans-serif;
-              font-size: 16px;
-              font-weight: 400;
-              line-height: 26px;
-              color: rgba(255, 255, 255, 0.8);
-            }
-          }
-        }
-      }
-    }
-
-    .sidebar {
-      width: 100%;
-      position: sticky;
-      top: 100px;
-      /* Distance from the top of the viewport */
-      height: 100%;
+    .title {
+      font-family: $serifFontFamily;
+      font-weight: 400;
+      font-size: 38px;
+      line-height: 110%;
+      letter-spacing: -1px;
+      margin-bottom: 18px;
+      color: $whiteColor;
 
       @include respond-to("lg") {
-        max-width: 400px;
-      }
-
-      .author-profile {
-        padding: 50px;
-        border-radius: 25px;
-        background: linear-gradient(120deg, #171b24, #552bed13),
-          radial-gradient(153.38% 1055.88% at 17.55% 50%,
-            rgba(85, 43, 237, 0.2) 0%,
-            rgba(189, 171, 255, 0.4) 100%);
-
-        .author-bio {
-          margin-bottom: 30px;
-
-          span {
-            font-family: "Urbanist", sans-serif;
-            font-size: 24px;
-            font-weight: 500;
-            line-height: 34px;
-            color: rgba(255, 255, 255, 0.8);
-          }
-        }
-
-        .author-info {
-          display: flex;
-          gap: 20px;
-          align-items: center;
-
-          .author-details {
-            h4 {
-              margin-top: 0;
-              margin-bottom: 0px;
-              font-family: "Urbanist", sans-serif;
-              font-size: 20px;
-              font-weight: 600;
-              line-height: 30px;
-            }
-
-            span {
-              font-family: "Urbanist", sans-serif;
-              font-size: 16px;
-              font-weight: 400;
-              line-height: 26px;
-              color: rgba(255, 255, 255, 0.8);
-            }
-          }
-        }
-      }
-
-      .sidebar-cta {
-        margin-top: 30px;
-
-        .btn {
-          display: block;
-          text-align: center;
-        }
-      }
-    }
-  }
-}
-
-.more-case-studies {
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-bottom: $sectionPaddingMobile;
-
-  @include respond-to("lg") {
-    padding-bottom: $sectionPaddingDesktop;
-  }
-
-  .swiper {
-    .swiper-slide {
-      max-width: 630px;
-      width: 100%;
-      box-sizing: border-box;
-      border-radius: 25px;
-      background: linear-gradient(0deg,
-          rgba(23, 27, 36, 0.3),
-          rgba(23, 27, 36, 0.3)),
-        radial-gradient(153.38% 1055.88% at 17.55% 50%,
-          rgba(85, 43, 237, 0.06) 0%,
-          rgba(189, 171, 255, 0.12) 100%);
-      padding: 50px;
-
-      .case-studies-item {
-        .case-studies-item-content {
-          h3 {
-            font-family: "Urbanist", sans-serif;
-            font-size: 24px;
-            font-weight: 500;
-            line-height: 34px;
-            color: rgba(255, 255, 255, 1);
-          }
-        }
+        font-size: 58px;
       }
     }
 
-    .pagination {
-      display: flex;
-      gap: 10px;
-      justify-content: space-between;
+    .description {
+      font-family: $secondaryFontFamily;
+      font-size: 16px;
+      line-height: 26px;
+      color: rgba(255, 255, 255, 0.65);
+
+      @include respond-to("lg") {
+        font-size: 19px;
+        line-height: 28px;
+      }
+    }
+  }
+
+  .case-studies-slider-container {
+    position: relative;
+
+    .case-studies-slider-glow {
       position: absolute;
-      left: 0;
-      right: 0;
       top: 50%;
-      transform: translateY(-50%);
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 700px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(85, 43, 237, 0.1) 0%, rgba(85, 43, 237, 0) 70%);
+      filter: blur(100px);
+      z-index: 0;
+      pointer-events: none;
+
+      @include respond-to("lg") {
+        width: 1000px;
+        height: 700px;
+      }
+    }
+
+    .swiper {
+      padding-top: 60px;
+      padding-bottom: 80px;
+      margin-top: -60px;
+      margin-bottom: -32px;
+
+      @include respond-to("lg") {
+        margin-bottom: -24px;
+      }
+    }
+
+    .swiper-slide {
       width: 100%;
-      z-index: 10;
+      opacity: 0.35;
+      transition: opacity 0.6s ease;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      pointer-events: none;
+      cursor: pointer;
 
-      .navigation {
-        background-color: rgba(30, 36, 52, 1);
-        width: 36px;
-        height: 36px;
-        border-radius: 100%;
-        align-items: center;
-        justify-content: center;
-        display: flex;
-        cursor: pointer;
-        transition: all 0.3s ease;
+      @include respond-to("lg") {
+        width: 652px;
+      }
 
-        @include respond-to("lg") {
-          width: 56px;
-          height: 56px;
-        }
+      &.swiper-slide-active {
+        opacity: 1;
+        z-index: 10;
+        pointer-events: auto;
 
-        svg {
-          width: 15px;
-          height: 15px;
-
-          @include respond-to("lg") {
-            width: auto;
-            height: auto;
-          }
-        }
-
-        &:hover {
-          svg {
-            path {
-              stroke: $secondaryColor;
-              stroke-opacity: 1;
-            }
-          }
-        }
-
-        &.prev {
-          left: 0;
-          position: relative;
-
-          @include respond-to("lg") {
-            left: 15px;
-          }
-
-          svg {
-            transform: rotate(180deg);
-          }
-        }
-
-        &.next {
-          right: 0;
-          position: relative;
-
-          @include respond-to("lg") {
-            right: 15px;
-          }
+        .case-study-card {
+          width: 100%;
+          transform: scale(1);
         }
       }
     }
   }
+
+  .slider-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    position: relative;
+    z-index: 10;
+
+    .nav-arrow {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: rgba(30, 30, 40, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      flex-shrink: 0;
+
+      svg {
+        width: 18px;
+        height: 18px;
+
+        path {
+          stroke: rgba(255, 255, 255, 0.6);
+          transition: stroke 0.3s ease;
+        }
+      }
+
+      &:hover {
+        background: rgba(40, 40, 55, 0.8);
+        border-color: rgba(85, 43, 237, 0.4);
+
+        svg path {
+          stroke: white;
+        }
+      }
+    }
+
+    .swiper-pagination {
+      position: static;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      width: auto;
+    }
+  }
+
+  .swiper-pagination-bullet {
+    width: 24px;
+    height: 4px;
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 100px;
+    transition: all 0.4s ease;
+    opacity: 1;
+    margin: 0 !important;
+
+    &.swiper-pagination-bullet-active {
+      background: linear-gradient(90deg, #552AED 0%, #7C52FF 100%);
+    }
+  }
 }
 
-// ── Card ────────────────────────────────────────
+// ── Shared Card Styles (For Grid and Slider) ────────────────────────────────
+.case-study-card,
 .new-case-study-item {
+  // width: 100%;
   justify-content: space-between;
   padding: 24px;
   border-radius: 16px;
@@ -922,5 +474,12 @@
         }
       }
     }
+  }
+}
+
+// Slider-specific card behavior
+#case-studies-slider .case-study-card {
+  @include respond-to("lg") {
+    transform: scale(0.65);
   }
 }

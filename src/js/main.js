@@ -52,8 +52,8 @@ const moreCaseStudiesSwiper = new Swiper(".more-case-studies .swiper", {
   },
 });
 
-// Success Stories slider
-const successStoriesSwiper = new Swiper("#success-stories .swiper", {
+// Case Studies slider
+const caseStudiesSliderSwiper = new Swiper("#case-studies-slider .swiper", {
   modules: [Navigation, Pagination, Autoplay],
   centeredSlides: true,
   slidesPerView: "auto",
@@ -78,11 +78,11 @@ const successStoriesSwiper = new Swiper("#success-stories .swiper", {
     },
   },
   navigation: {
-    nextEl: "#success-stories .nav-arrow.next",
-    prevEl: "#success-stories .nav-arrow.prev",
+    nextEl: "#case-studies-slider .nav-arrow.next",
+    prevEl: "#case-studies-slider .nav-arrow.prev",
   },
   pagination: {
-    el: "#success-stories .swiper-pagination",
+    el: "#case-studies-slider .swiper-pagination",
     clickable: true,
   },
 });
