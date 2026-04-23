@@ -1,5 +1,5 @@
 .mission-detail-section {
-    padding: $sectionPaddingMobile 0;
+    padding: $sectionPaddingMobile 15px;
     background-color: $darkColor;
 
     @include respond-to("lg") {

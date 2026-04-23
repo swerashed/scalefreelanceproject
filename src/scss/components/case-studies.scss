@@ -71,6 +71,7 @@
     grid-template-columns: 1fr;
     gap: 30px;
     min-height: 400px; // Maintain height while loading
+    overflow: hidden;
 
     @include respond-to("lg") {
       grid-template-columns: repeat(2, 1fr);
@@ -83,7 +84,6 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 60px 20px;
       width: 100%;
 
       p {

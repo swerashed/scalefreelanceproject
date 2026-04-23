@@ -1,6 +1,7 @@
 .section-banner {
   padding-top: 50px;
   padding-bottom: 20px;
+  padding-inline: 15px;
 
   @include respond-to("lg") {
     padding-top: 100px;
