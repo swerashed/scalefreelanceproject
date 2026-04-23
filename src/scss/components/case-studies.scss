@@ -70,9 +70,76 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: 30px;
+    min-height: 400px; // Maintain height while loading
 
     @include respond-to("lg") {
       grid-template-columns: repeat(2, 1fr);
+    }
+
+    .case-studies-status {
+      grid-column: 1 / -1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 60px 20px;
+      width: 100%;
+
+      p {
+        color: rgba(255, 255, 255, 0.7);
+        font-family: $secondaryFontFamily;
+        font-size: 18px;
+        margin-top: 20px;
+      }
+    }
+
+    .case-studies-loader {
+      width: 48px;
+      height: 48px;
+      border: 3px solid rgba($primaryColor, 0.1);
+      border-radius: 50%;
+      display: inline-block;
+      position: relative;
+      box-sizing: border-box;
+      animation: rotation 1s linear infinite;
+
+      &::after {
+        content: "";
+        box-sizing: border-box;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background: $primaryColor;
+        width: 16px;
+        height: 16px;
+        transform: translate(-50%, 50%);
+        border-radius: 50%;
+      }
+    }
+
+    .case-studies-empty {
+
+      padding: 40px;
+      max-width: 500px;
+      width: 100%;
+
+      h3 {
+        font-family: $serifFontFamily;
+        font-size: 32px;
+        color: $whiteColor;
+        margin: 0;
+      }
+    }
+
+    @keyframes rotation {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
     }
 
     .case-studies-item {
@@ -695,16 +762,14 @@
 // ── Card ────────────────────────────────────────
 .new-case-study-item {
   justify-content: space-between;
-  padding: 30px;
+  padding: 24px;
   border-radius: 16px;
-  background: #0F0C1D;
-  border: 1px solid #562CED33;
-  border-left: 3px solid #562CED;
+  background: #0f0c1d;
+  border: 1px solid #562ced33;
+  border-left: 3px solid #562ced;
   display: flex;
   flex-direction: column;
-  min-height: 450px;
-  transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1),
-    opacity 0.7s ease;
+  transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.7s ease;
 
   @include respond-to("lg") {
     padding: 40px 48px;
@@ -719,14 +784,41 @@
 
     .company-logo {
       margin-bottom: 24px;
-      height: 50px;
       display: flex;
-      align-items: center;
+      flex-direction: column-reverse;
+      align-items: flex-start;
+      gap: 16px;
+
+      @include respond-to("lg") {
+        height: 50px;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+      }
 
       img {
-        max-height: 100%;
+        max-height: 40px;
         width: auto;
         object-fit: contain;
+
+        @include respond-to("lg") {
+          max-height: 100%;
+        }
+      }
+
+      .case-study-tag {
+        font-family: $secondaryFontFamily;
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: #562ced;
+        background-color: #562ced14;
+        border-radius: 9999px;
+        padding: 4px 12px;
+        white-space: nowrap;
+        margin: 0;
+        font-weight: 500;
       }
 
       .placeholder-logo {
@@ -745,28 +837,34 @@
     .headline {
       font-family: $serifFontFamily;
       font-weight: 400;
-      font-size: 32px;
-      line-height: 38.4px;
+      font-size: 24px;
+      line-height: 120%;
       letter-spacing: -0.8px;
       vertical-align: middle;
       color: $whiteColor;
       margin: 0;
+
+      @include respond-to("lg") {
+        font-size: 32px;
+        line-height: 38.4px;
+      }
     }
   }
 
   .card-stats {
     display: grid;
-    gap: 16px;
+    gap: 12px;
     margin-bottom: 24px;
     width: 100%;
 
     @include respond-to("lg") {
+      gap: 16px;
       grid-template-columns: repeat(2, 1fr);
     }
 
     .stat-box {
       background: #090712;
-      border: 1px solid #562CED26;
+      border: 1px solid #562ced26;
       padding: 16px 20px;
       border-radius: 14px;
       display: flex;
@@ -775,12 +873,17 @@
       .stat-value {
         font-family: $serifFontFamily;
         font-weight: 400;
-        font-size: 32px;
-        line-height: 32px;
+        font-size: 24px;
+        line-height: 110%;
         letter-spacing: -0.8px;
         vertical-align: middle;
         margin: 0;
         color: $whiteColor;
+
+        @include respond-to("lg") {
+          font-size: 32px;
+          line-height: 32px;
+        }
       }
 
       .stat-label {
@@ -789,7 +892,7 @@
         line-height: 18px;
         letter-spacing: 0px;
         vertical-align: middle;
-        color: #989FB3;
+        color: #989fb3;
       }
     }
   }

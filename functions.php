@@ -8,7 +8,7 @@
  * @package scaletopia
  */
 
-if (! defined('_S_VERSION')) {
+if (!defined('_S_VERSION')) {
 	// Replace the version number of the theme on each release.
 	define('_S_VERSION', '1.0.0');
 }
@@ -32,45 +32,45 @@ function scaletopia_setup()
 
 
 	/*
-		* Make theme available for translation.
-		* Translations can be filed in the /languages/ directory.
-		* If you're building a theme based on scaletopia, use a find and replace
-		* to change 'scaletopia' to the name of your theme in all the template files.
-		*/
+	 * Make theme available for translation.
+	 * Translations can be filed in the /languages/ directory.
+	 * If you're building a theme based on scaletopia, use a find and replace
+	 * to change 'scaletopia' to the name of your theme in all the template files.
+	 */
 	load_theme_textdomain('scaletopia', get_template_directory() . '/languages');
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support('automatic-feed-links');
 
 	/*
-		* Let WordPress manage the document title.
-		* By adding theme support, we declare that this theme does not use a
-		* hard-coded <title> tag in the document head, and expect WordPress to
-		* provide it for us.
-		*/
+	 * Let WordPress manage the document title.
+	 * By adding theme support, we declare that this theme does not use a
+	 * hard-coded <title> tag in the document head, and expect WordPress to
+	 * provide it for us.
+	 */
 	add_theme_support('title-tag');
 
 	/*
-		* Enable support for Post Thumbnails on posts and pages.
-		*
-		* @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
-		*/
+	 * Enable support for Post Thumbnails on posts and pages.
+	 *
+	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
+	 */
 	add_theme_support('post-thumbnails');
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(
-			'primary'               => esc_html__('Primary', 'scaletopia'),
-			'footer-company'        => esc_html__('Footer: Company', 'scaletopia'),
-			'footer-case-studies'   => esc_html__('Footer: Case Studies', 'scaletopia'),
+			'primary' => esc_html__('Primary', 'scaletopia'),
+			'footer-company' => esc_html__('Footer: Company', 'scaletopia'),
+			'footer-case-studies' => esc_html__('Footer: Case Studies', 'scaletopia'),
 			'footer-case-studies-2' => esc_html__('Footer: Case Studies (overflow)', 'scaletopia'),
 		)
 	);
 
 	/*
-		* Switch default core markup for search form, comment form, and comments
-		* to output valid HTML5.
-		*/
+	 * Switch default core markup for search form, comment form, and comments
+	 * to output valid HTML5.
+	 */
 	add_theme_support(
 		'html5',
 		array(
@@ -97,9 +97,9 @@ function scaletopia_setup()
 	add_theme_support(
 		'custom-logo',
 		array(
-			'height'      => 250,
-			'width'       => 250,
-			'flex-width'  => true,
+			'height' => 250,
+			'width' => 250,
+			'flex-width' => true,
 			'flex-height' => true,
 		)
 	);
@@ -200,59 +200,82 @@ function filter_case_studies()
 	if ($query->have_posts()) {
 		ob_start(); // Start output buffering
 
-		while ($query->have_posts()) : $query->the_post();
-			$thumbnail_url = get_the_post_thumbnail_url(get_the_ID(), 'full');
+		while ($query->have_posts()):
+			$query->the_post();
 			$logoID = carbon_get_post_meta(get_the_ID(), 'logo');
 			$logo = wp_get_attachment_image($logoID, 'full');
-			$video = carbon_get_post_meta(get_the_ID(), 'video');
-?>
-			<div class="case-studies-item">
-				<div class="case-studies-item-img">
-					<a href="<?php the_permalink(); ?>" <?php echo $video ? 'class="video-thumb"' : '' ?>>
-						<img src="<?php echo esc_url($thumbnail_url); ?>" alt="<?php the_title(); ?>" />
-						<?php if ($video) : ?>
-						     <svg
-                                    class="play-icon"
-                                    width="96"
-                                    height="96"
-                                    viewBox="0 0 96 96"
-                                    fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <rect
-                                        width="96"
-                                        height="96"
-                                        rx="48"
-                                        fill="#1C1D20"
-                                        fill-opacity="0.2" />
-                                    <rect
-                                        x="0.5"
-                                        y="0.5"
-                                        width="95"
-                                        height="95"
-                                        rx="47.5"
-                                        stroke="white"
-                                        stroke-opacity="0.6" />
-                                    <path
-                                        d="M49.6172 43.2809C50.978 44.054 52.0473 44.6615 52.8092 45.218C53.5762 45.7783 54.1435 46.3639 54.3467 47.1361C54.4957 47.7022 54.4957 48.2979 54.3467 48.8641C54.1435 49.6362 53.5762 50.2218 52.8092 50.7821C52.0473 51.3386 50.978 51.9461 49.6172 52.7192C48.3027 53.466 47.1942 54.0957 46.3527 54.4537C45.5045 54.8145 44.7312 54.9974 43.9795 54.7844C43.4272 54.6278 42.9246 54.3307 42.5197 53.9222C41.9702 53.3679 41.7497 52.6016 41.6453 51.6796C41.5417 50.7641 41.5417 49.5659 41.5417 48.0418V47.9583C41.5417 46.4342 41.5417 45.236 41.6453 44.3206C41.7497 43.3985 41.9702 42.6322 42.5197 42.0778C42.9246 41.6694 43.4272 41.3723 43.9795 41.2157C44.7312 41.0028 45.5045 41.1856 46.3527 41.5464C47.1942 41.9044 48.3027 42.5341 49.6172 43.2809Z"
-                                        fill="white" />
-                                </svg>
+			$tag = carbon_get_post_meta(get_the_ID(), 'tag');
+			$top_cards = carbon_get_post_meta(get_the_ID(), 'top_cards_items');
+
+			// Get categories for filtering classes (optional but good for consistency)
+			$post_terms = get_the_terms(get_the_ID(), 'case_study_category');
+			$term_classes = '';
+			if (!empty($post_terms) && !is_wp_error($post_terms)) {
+				foreach ($post_terms as $term) {
+					$term_classes .= ' ' . esc_attr($term->slug);
+				}
+			}
+			?>
+			<div class="new-case-study-item <?php echo $term_classes; ?>">
+				<div>
+					<div class="card-header">
+						<?php if ($logo): ?>
+							<div class="company-logo">
+								<?php echo $logo; ?>
+								<?php if ($tag): ?>
+									<span class="case-study-tag"><?php echo esc_html($tag); ?></span>
+								<?php endif; ?>
+							</div>
 						<?php endif; ?>
+
+						<h3 class="headline">
+							<?php the_title(); ?>
+						</h3>
+					</div>
+
+					<div class="card-stats">
+						<?php if (!empty($top_cards)): ?>
+							<?php foreach ($top_cards as $card): ?>
+								<div class="stat-box">
+									<span class="stat-value">
+										<?php echo esc_html($card['title']); ?>
+									</span>
+									<span class="stat-label">
+										<?php echo esc_html($card['description']); ?>
+									</span>
+								</div>
+							<?php endforeach; ?>
+						<?php endif; ?>
+					</div>
+				</div>
+
+				<div class="card-footer">
+					<a href="<?php the_permalink(); ?>" class="animated-button">
+						<span>Read the case study</span>
+						<svg width="14" height="12" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M1 6H13M13 6L8.5 1.5M13 6L8.5 10.5" stroke="white" stroke-width="2" stroke-linecap="round"
+								stroke-linejoin="round" />
+						</svg>
 					</a>
 				</div>
-				<div class="case-studies-item-content">
-					<?php echo $logo; ?>
-					<h3><?php the_title(); ?></h3>
-					<a href="<?php the_permalink(); ?>" class="btn">Read the story</a>
-				</div>
 			</div>
-<?php
+			<?php
 		endwhile;
 
 		wp_reset_postdata();
 		$html = ob_get_clean();
 		wp_send_json_success(['html' => $html]);
 	} else {
-		wp_send_json_success(['html' => '<p>No case studies found.</p>']);
+		wp_send_json_success([
+			'html' => '
+			<div class="case-studies-status">
+				<div class="case-studies-empty">
+					<h3>No Case Studies Yet</h3>
+					<p>We couldn\'t find any case studies in this category. Check back soon for more updates!</p>
+				</div>
+			</div>
+		'
+		]);
 	}
 }
 

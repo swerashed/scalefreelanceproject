@@ -14,6 +14,7 @@ function crb_attach_theme_options()
             Field::make('html', 'crb_information_text')
                 ->set_html('<h2><b>Banner Section</b></h2>'),
             Field::make('image', 'logo', 'Logo'),
+            Field::make('text', 'tag', 'Tag'),
             Field::make('text', 'services', 'Services'),
             Field::make('text', 'target_audience', 'Target Audience'),
             Field::make('complex', 'top_cards_items', 'Banner Cards Items')

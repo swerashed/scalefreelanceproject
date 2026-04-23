@@ -384,9 +384,11 @@ jQuery(document).ready(function ($) {
         nonce: scaletopia_ajax_object.nonce,
       },
       beforeSend: function () {
-        // Optional: Add a loading indicator (if needed)
         $(".case-studies-wrapper").html(
-          "<p class='text-center'>Loading...</p>"
+          '<div class="case-studies-status">' +
+          '<span class="case-studies-loader"></span>' +
+          '<p>Finding the perfect success stories...</p>' +
+          '</div>'
         );
       },
       success: function (response) {
