@@ -34,11 +34,38 @@ function scaletopia_option_register()
     Container::make('theme_options', "Footer")
         ->set_page_parent($basic_options_container) // reference to a top level container
         ->add_fields(array(
-            Field::make('text', 'scaletopia_footer', "Copyright Text"),
+            // Top Section
+            Field::make('image', 'scaletopia_footer_logo', "Footer Logo"),
+            Field::make('text', 'scaletopia_footer_title', "Footer Title")
+                ->set_help_text('Use <span> tags for highlights'),
+            Field::make('textarea', 'scaletopia_footer_description', "Footer Description"),
+            Field::make('text', 'scaletopia_footer_cta_text', "CTA Button Text"),
+            Field::make('text', 'scaletopia_footer_cta_url', "CTA Button URL"),
+
+            // Navigation Columns
+            Field::make('complex', 'scaletopia_footer_nav_cols', "Navigation Columns")
+                ->add_fields(array(
+                    Field::make('text', 'heading', "Column Heading"),
+                    Field::make('complex', 'links', "Links")
+                        ->add_fields(array(
+                            Field::make('text', 'label', "Link Label"),
+                            Field::make('text', 'url', "Link URL"),
+                        ))
+                )),
+
+            // Socials
             Field::make('text', 'scaletopia_linkedin', "LinkedIn URL"),
+            Field::make('image', 'scaletopia_linkedin_icon', "LinkedIn Icon"),
             Field::make('text', 'scaletopia_youtube', "YouTube URL"),
+            Field::make('image', 'scaletopia_youtube_icon', "YouTube Icon"),
+
+            // Contact Info
+            Field::make('text', 'scaletopia_footer_email', "Contact Email"),
             Field::make('textarea', 'scaletopia_address_usa', "USA Address"),
             Field::make('textarea', 'scaletopia_address_dubai', "Dubai Address"),
+
+            // Bottom Bar
+            Field::make('text', 'scaletopia_footer', "Copyright Text"),
             Field::make('text', 'scaletopia_privacy_policy', "Privacy Policy URL"),
             Field::make('text', 'scaletopia_terms_of_service', "Terms of Service URL"),
         ));
