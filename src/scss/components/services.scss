@@ -213,6 +213,7 @@
             height: 48px;
             display: flex;
             margin-bottom: 24px;
+            display: none;
 
             @include respond-to("xl") {
               width: 64px;
