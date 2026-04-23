@@ -11,11 +11,6 @@ $items = isset($data['items']) ? $data['items'] : [];
                         <?php echo $data['title']; ?>
                     </h2>
                     <?php echo $data['description']; ?>
-
-                    <div class="cta">
-                        <a target="__blank" href="<?php echo carbon_get_theme_option('scaletopia_book_now_link') ?>"
-                            class="btn animated-button">Book a Free Call</a>
-                    </div>
                 </div>
             </div>
             <div class="right-part">

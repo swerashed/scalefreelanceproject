@@ -250,7 +250,7 @@ function filter_case_studies()
 				</div>
 
 				<div class="card-footer">
-					<a href="<?php the_permalink(); ?>" class="animated-button">
+					<a href="<?php the_permalink(); ?>" class="animated-button stop-animation">
 						<span>Read the case study</span>
 						<svg width="14" height="12" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg">
 							<path d="M1 6H13M13 6L8.5 1.5M13 6L8.5 10.5" stroke="white" stroke-width="2" stroke-linecap="round"

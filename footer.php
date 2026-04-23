@@ -55,7 +55,7 @@
 						<img src="<?php echo get_template_directory_uri(); ?>/src/img/logo.svg" alt="Scaletopia" />
 					</a>
 					<h2 class="footer-top-title">Predictable Pipeline.<br><span>For Marketing Agencies.</span></h2>
-					<a href="#" class="animated-button"><span>Apply for 30-day pilot</span></a>
+					<a href="#" class="animated-button stop-animation"><span>Apply for 30-day pilot</span></a>
 				</div>
 				<div class="footer-top-right">
 					<p>Scaletopia is the outbound infrastructure built exclusively for marketing agencies. We don't just

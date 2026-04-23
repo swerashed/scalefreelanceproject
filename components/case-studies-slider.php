@@ -75,7 +75,7 @@ $items = isset($data['items']) ? $data['items'] : [];
                                 </div>
 
                                 <div class="card-footer">
-                                    <a href="<?php echo $post_link; ?>" class="animated-button">
+                                    <a href="<?php echo $post_link; ?>" class="animated-button stop-animation">
                                         <span>Read the case study</span>
                                         <svg width="14" height="12" viewBox="0 0 14 12" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">

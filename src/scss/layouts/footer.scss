@@ -66,6 +66,28 @@ footer {
       }
     }
 
+    .animated-button {
+      background: $whiteColor;
+      color: rgb(9, 7, 18);
+      border-color: $whiteColor;
+
+      span {
+        color: rgb(9, 7, 18);
+      }
+
+      &::after {
+        background: linear-gradient(120deg,
+            rgba(0, 0, 0, 0) 20%,
+            rgba(0, 0, 0, 0.1) 50%,
+            rgba(0, 0, 0, 0) 80%);
+      }
+
+      &:hover {
+
+        box-shadow: 0 10px 25px rgba(255, 255, 255, 0.15);
+      }
+    }
+
     .footer-top-right {
       max-width: 527px;
 

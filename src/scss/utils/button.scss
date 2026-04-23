@@ -102,22 +102,21 @@ a.btn {
   line-height: 26px;
   letter-spacing: -0.18px;
 
-  // Horizontal Shine Effect
-  // &::after {
-  //   content: "";
-  //   position: absolute;
-  //   top: 0;
-  //   left: -150%;
-  //   width: 80%;
-  //   height: 100%;
-  //   background: linear-gradient(120deg,
-  //       rgba(255, 255, 255, 0) 20%,
-  //       rgba(255, 255, 255, 0.45) 50%,
-  //       rgba(255, 255, 255, 0) 80%);
-  //   transform: skewX(-25deg);
-  //   // animation: shine-glow 2s infinite linear;
-  //   z-index: 0;
-  // }
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 80%;
+    height: 100%;
+    background: linear-gradient(120deg,
+        rgba(255, 255, 255, 0) 20%,
+        rgba(255, 255, 255, 0.45) 50%,
+        rgba(255, 255, 255, 0) 80%);
+    transform: skewX(-25deg);
+    animation: shine-glow 2s infinite linear;
+    z-index: 0;
+  }
 
   &:hover {
     transform: translateY(-2px);

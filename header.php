@@ -66,7 +66,7 @@
 			?>
 		</nav>
 		<div class="mobile-menu-cta">
-			<a href="/application" class="animated-button">Apply for risk-free pilot</a>
+			<a href="/application" class="animated-button stop-animation">Apply for risk-free pilot</a>
 		</div>
 	</div>
 	<div id="main-content">
@@ -104,7 +104,7 @@
 						?>
 					</nav>
 					<div class="cta">
-						<a href="/application" class="animated-button">Apply for risk-free pilot</a>
+						<a href="/application" class="animated-button stop-animation">Apply for risk-free pilot</a>
 					</div>
 				</div>
 			</div>
