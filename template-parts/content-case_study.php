@@ -23,7 +23,7 @@ $contact_title = carbon_get_post_meta(get_the_ID(), 'contact_title') ?: 'Ready t
                 <?php if ($tag): ?>
                     <span class="case-study-tag"><?php echo esc_html($tag); ?></span>
                 <?php endif; ?>
-                <h2>
+                <h2 class="case-study-title">
                     <?php the_title(); ?>
                 </h2>
             </div>
@@ -56,12 +56,15 @@ $contact_title = carbon_get_post_meta(get_the_ID(), 'contact_title') ?: 'Ready t
                     <div class="card-wrapper">
                         <?php foreach ($top_cards_items as $item): ?>
                             <div class="card">
-                                <h4>
-                                    <?php echo $item['title']; ?>
-                                </h4>
-                                <span>
-                                    <?php echo $item['description']; ?>
-                                </span>
+                                <div class="card-inner">
+                                    <h4 class="stat-title">
+                                        <?php echo $item['title']; ?>
+                                    </h4>
+                                    <span class="stat-description">
+                                        <?php echo $item['description']; ?>
+                                    </span>
+                                </div>
+
                             </div>
                         <?php endforeach; ?>
                     </div>
@@ -78,46 +81,24 @@ $contact_title = carbon_get_post_meta(get_the_ID(), 'contact_title') ?: 'Ready t
     <div class="container">
         <div class="case-studies-details-wrapper">
             <div class="left-content">
+                <?php
+                $client_message_screenshot = carbon_get_post_meta(get_the_ID(), 'client_message_screenshot');
+                ?>
                 <div class="case-studies-item-img">
                     <?php if ($video): ?>
                         <iframe src="<?php echo $video; ?>" frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                        <!-- <a href="<?php echo $video; ?>" class="video-thumb youtube-popup">
-                            <?php the_post_thumbnail('full'); ?>
-                            <?php if ($video): ?>
-                                <svg
-                                    class="play-icon"
-                                    width="96"
-                                    height="96"
-                                    viewBox="0 0 96 96"
-                                    fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <rect
-                                        width="96"
-                                        height="96"
-                                        rx="48"
-                                        fill="#1C1D20"
-                                        fill-opacity="0.2" />
-                                    <rect
-                                        x="0.5"
-                                        y="0.5"
-                                        width="95"
-                                        height="95"
-                                        rx="47.5"
-                                        stroke="white"
-                                        stroke-opacity="0.6" />
-                                    <path
-                                        d="M49.6172 43.2809C50.978 44.054 52.0473 44.6615 52.8092 45.218C53.5762 45.7783 54.1435 46.3639 54.3467 47.1361C54.4957 47.7022 54.4957 48.2979 54.3467 48.8641C54.1435 49.6362 53.5762 50.2218 52.8092 50.7821C52.0473 51.3386 50.978 51.9461 49.6172 52.7192C48.3027 53.466 47.1942 54.0957 46.3527 54.4537C45.5045 54.8145 44.7312 54.9974 43.9795 54.7844C43.4272 54.6278 42.9246 54.3307 42.5197 53.9222C41.9702 53.3679 41.7497 52.6016 41.6453 51.6796C41.5417 50.7641 41.5417 49.5659 41.5417 48.0418V47.9583C41.5417 46.4342 41.5417 45.236 41.6453 44.3206C41.7497 43.3985 41.9702 42.6322 42.5197 42.0778C42.9246 41.6694 43.4272 41.3723 43.9795 41.2157C44.7312 41.0028 45.5045 41.1856 46.3527 41.5464C47.1942 41.9044 48.3027 42.5341 49.6172 43.2809Z"
-                                        fill="white" />
-                                </svg>
-                            <?php endif; ?>
-                        </a> -->
+                    <?php elseif ($client_message_screenshot): ?>
+                        <?php echo wp_get_attachment_image($client_message_screenshot, 'full'); ?>
                     <?php else: ?>
                         <?php the_post_thumbnail('full'); ?>
                     <?php endif; ?>
                 </div>
-                <?php if ($info_cards_items): ?>
+                <?php if ($video || $client_message_screenshot): ?>
+                    <span class="verified-message">VERIFIED CLIENT MESSAGE</span>
+                <?php endif; ?>
+                <?php if (!empty($info_cards_items)): ?>
                     <div class="company-info-wrapper">
                         <?php foreach ($info_cards_items as $item): ?>
                             <div class="company-info">

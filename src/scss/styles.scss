@@ -17,6 +17,7 @@
 @import "components/faq";
 @import "components/contact-us";
 @import "components/case-studies";
+@import "components/case-study-details-page";
 @import "components/mission-vision";
 @import "components/lead-cards";
 @import "components/pricing";
@@ -48,7 +49,7 @@ html {
 
 body {
   background-color: $darkColor;
-  font-family: $primaryFontFamily;
+  font-family: $instrumentFontFamily;
   color: $whiteColor;
   margin: 0;
   padding: 0;

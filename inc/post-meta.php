@@ -27,6 +27,7 @@ function crb_attach_theme_options()
             Field::make('html', 'crb_case_study_content_text')
                 ->set_html('<h2><b>Case Study Content Section</b></h2>'),
             Field::make('text', 'video', '(Youtube) Video'),
+            Field::make('image', 'client_message_screenshot', 'Client Message Screenshot'),
             Field::make('complex', 'info_cards_items', 'Info Cards Items')
                 ->set_layout('tabbed-horizontal')
                 ->add_fields(array(
