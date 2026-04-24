@@ -12,8 +12,6 @@ $quote = carbon_get_post_meta(get_the_ID(), 'quote');
 $author_image = carbon_get_post_meta(get_the_ID(), 'author_image');
 $author_name = carbon_get_post_meta(get_the_ID(), 'author_name');
 $author_position = carbon_get_post_meta(get_the_ID(), 'author_position');
-$contact_title = carbon_get_post_meta(get_the_ID(), 'contact_title') ?: 'Ready to grow?
-                <span>Let’s book a free growth call</span>';
 ?>
 <!-- Section Banner -->
 <section class="case-studies-generic">
@@ -291,20 +289,15 @@ $contact_title = carbon_get_post_meta(get_the_ID(), 'contact_title') ?: 'Ready t
     </div>
 </section>
 
-<!-- Contact Us -->
-<section id="contact-us">
-    <div class="container">
-        <div class="section-header text-center">
-            <h2>
-                <?php echo $contact_title; ?>
-            </h2>
-        </div>
-        <div class="calendy text-center">
-            <iframe width="100%" height="700" frameborder="0" scrolling="no"
-                src="<?php echo carbon_get_theme_option('scaletopia_book_now_link') ?>"
-                allow="camera; microphone; clipboard-write">
-            </iframe>
-        </div>
-    </div>
-</section>
+<!-- Launch CTA -->
+<?php
+set_query_var('component_data', array(
+    'title' => carbon_get_post_meta(get_the_ID(), 'launch_cta_title') ?: 'Ready to grow? <span>Let’s book a free growth call</span>',
+    'description' => carbon_get_post_meta(get_the_ID(), 'launch_cta_description'),
+    'btn_title' => carbon_get_post_meta(get_the_ID(), 'launch_cta_btn_title') ?: 'Book a free growth call',
+    'btn_link' => carbon_get_post_meta(get_the_ID(), 'launch_cta_btn_link') ?: carbon_get_theme_option('scaletopia_book_now_link'),
+    'footer_text' => carbon_get_post_meta(get_the_ID(), 'launch_cta_footer_text'),
+));
+get_template_part('components/launch-cta');
+?>
 <!-- End Contact Us -->

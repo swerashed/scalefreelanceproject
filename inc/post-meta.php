@@ -49,8 +49,12 @@ function crb_attach_theme_options()
             Field::make('text', 'author_name', 'Author Name'),
             Field::make('text', 'author_position', 'Author Position'),
 
-            Field::make('html', 'crb_contact_us_text')
-                ->set_html('<h2><b>Contact Us Section</b></h2>'),
-            Field::make('text', 'contact_title', 'Title'),
+            Field::make('html', 'crb_launch_cta_text')
+                ->set_html('<h2><b>Launch CTA Section</b></h2>'),
+            Field::make('rich_text', 'launch_cta_title', 'Title'),
+            Field::make('textarea', 'launch_cta_description', 'Description'),
+            Field::make('text', 'launch_cta_btn_title', 'Button Title'),
+            Field::make('text', 'launch_cta_btn_link', 'Button Link'),
+            Field::make('text', 'launch_cta_footer_text', 'Footer Text'),
         ));
 }
