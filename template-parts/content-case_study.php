@@ -8,6 +8,7 @@ $target_audience = carbon_get_post_meta(get_the_ID(), 'target_audience');
 $top_cards_items = carbon_get_post_meta(get_the_ID(), 'top_cards_items');
 $info_cards_items = carbon_get_post_meta(get_the_ID(), 'info_cards_items');
 $result_cards_items = carbon_get_post_meta(get_the_ID(), 'result_cards_items');
+$approach_items = carbon_get_post_meta(get_the_ID(), 'approach_items');
 $quote = carbon_get_post_meta(get_the_ID(), 'quote');
 $author_image = carbon_get_post_meta(get_the_ID(), 'author_image');
 $author_name = carbon_get_post_meta(get_the_ID(), 'author_name');
@@ -145,6 +146,25 @@ $author_position = carbon_get_post_meta(get_the_ID(), 'author_position');
                 <?php endif; ?>
                 <div class="case-studies-content">
                     <?php the_content(); ?>
+
+                    <?php if ($approach_items): ?>
+                        <div class="approach">
+                            <h3>Our <span>Approach</span></h3>
+                            <div class="approach-wrapper">
+                                <?php foreach ($approach_items as $item): ?>
+                                    <div class="approach-item">
+                                        <div class="approach-label">
+                                            <span><?php echo $item['label']; ?></span>
+                                        </div>
+                                        <div class="approach-content">
+                                            <h4><?php echo $item['title']; ?></h4>
+                                            <p><?php echo $item['description']; ?></p>
+                                        </div>
+                                    </div>
+                                <?php endforeach; ?>
+                            </div>
+                        </div>
+                    <?php endif; ?>
 
                     <?php if ($result_cards_items): ?>
                         <div class="results">

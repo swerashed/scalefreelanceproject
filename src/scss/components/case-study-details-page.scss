@@ -584,6 +584,107 @@
                 }
             }
 
+            .approach {
+                padding-top: 60px;
+                margin-bottom: 60px;
+
+                h3 {
+                    font-family: $instrumentFontFamily;
+                    font-weight: 400;
+                    font-size: 36px;
+                    line-height: 1.1;
+                    letter-spacing: -1px;
+                    color: $whiteColor;
+                    margin-bottom: 40px;
+                    text-align: left;
+
+                    span {
+                        color: $primaryColor;
+                        font-style: italic;
+                    }
+
+                    @include respond-to("lg") {
+                        font-size: 56px;
+                        letter-spacing: -2px;
+                    }
+                }
+
+                .approach-wrapper {
+                    display: flex;
+                    flex-direction: column;
+
+                    .approach-item {
+                        display: flex;
+                        flex-direction: column;
+                        padding-top: 40px;
+                        padding-bottom: 40px;
+                        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                        gap: 20px;
+
+                        @include respond-to("lg") {
+                            flex-direction: row;
+                            gap: 0px;
+                        }
+
+                        &:first-child {
+                            padding-top: 0;
+                        }
+
+                        &:last-child {
+                            border-bottom: none;
+                        }
+
+                        .approach-label {
+                            @include respond-to("lg") {
+                                width: 220px;
+                                flex-shrink: 0;
+                            }
+
+                            span {
+                                font-family: $urbanistFontFamily;
+                                font-size: 11px;
+                                font-weight: 600;
+                                letter-spacing: 1.1px;
+                                text-transform: uppercase;
+                                color: #562ced;
+                            }
+                        }
+
+                        .approach-content {
+                            flex-grow: 1;
+
+                            h4 {
+                                font-family: $instrumentFontFamily;
+                                font-weight: 400;
+                                font-size: 24px;
+                                line-height: 1.2;
+                                color: $whiteColor;
+                                margin-top: 0;
+                                margin-bottom: 16px;
+
+                                @include respond-to("lg") {
+                                    font-size: 32px;
+                                }
+                            }
+
+                            p {
+                                font-family: $urbanistFontFamily;
+                                font-size: 16px;
+                                line-height: 1.6;
+                                color: rgba(255, 255, 255, 0.7);
+                                margin: 0;
+                                text-align: left;
+
+                                @include respond-to("lg") {
+                                    font-size: 18px;
+                                    line-height: 28px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
             .results {
                 padding-top: 24px;
 

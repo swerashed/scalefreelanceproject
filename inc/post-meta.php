@@ -42,6 +42,17 @@ function crb_attach_theme_options()
                     Field::make('text', 'title', 'Title'),
                     Field::make('text', 'description', 'Description'),
                 )),
+
+            Field::make('html', 'crb_approach_text')
+                ->set_html('<h2><b>Approach Section</b></h2>'),
+            Field::make('complex', 'approach_items', 'Approach Items')
+                ->set_layout('tabbed-horizontal')
+                ->add_fields(array(
+                    Field::make('text', 'label', 'Label (e.g. PHASE 01)'),
+                    Field::make('text', 'title', 'Title'),
+                    Field::make('textarea', 'description', 'Description'),
+                )),
+
             Field::make('html', 'crb_sidebar_card_text')
                 ->set_html('<h2><b>Sidebar Card Section</b></h2>'),
             Field::make('rich_text', 'quote', 'Quote'),
