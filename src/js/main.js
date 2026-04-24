@@ -373,6 +373,8 @@ jQuery(document).ready(function ($) {
 
     // Get the category slug from the clicked button
     const category = $(this).data("filter");
+    const $loadMoreBtnContainer = $(".load-more-wrapper");
+    const $loadMoreBtn = $("#load-more-case-studies");
 
     // Send AJAX request
     $.ajax({
@@ -382,6 +384,7 @@ jQuery(document).ready(function ($) {
         action: "filter_case_studies",
         category: category.replace(".", ""), // Remove the dot from the slug
         nonce: scaletopia_ajax_object.nonce,
+        page: 1,
       },
       beforeSend: function () {
         $(".case-studies-wrapper").html(
@@ -390,18 +393,77 @@ jQuery(document).ready(function ($) {
           '<p>Finding the perfect success stories...</p>' +
           '</div>'
         );
+        $loadMoreBtnContainer.hide();
       },
       success: function (response) {
-        console.log(response);
         if (response.success) {
           // Update the case studies wrapper with new content
           $(".case-studies-wrapper").html(response.data.html);
+
+          // Update load more button
+          if (response.data.max_pages > 1) {
+            $loadMoreBtnContainer.show();
+            $loadMoreBtn.show();
+            $loadMoreBtn.data("page", 1);
+            $loadMoreBtn.data("max-pages", response.data.max_pages);
+            $loadMoreBtn.attr("data-page", 1);
+            $loadMoreBtn.attr("data-max-pages", response.data.max_pages);
+          } else {
+            $loadMoreBtnContainer.hide();
+            $loadMoreBtn.hide();
+          }
         } else {
           console.error(response.message);
         }
       },
       error: function (xhr, status, error) {
         console.error("AJAX Error:", error);
+      },
+    });
+  });
+
+  // Load More logic
+  $(document).on("click", "#load-more-case-studies", function (e) {
+    e.preventDefault();
+    const $btn = $(this);
+    const categoryQuery = $(".filter button.active").data("filter") || "*";
+    const category = categoryQuery.replace(".", "");
+    const nextPage = parseInt($btn.data("page")) + 1;
+    const maxPages = parseInt($btn.data("max-pages"));
+
+    if (nextPage > maxPages) return;
+
+    $.ajax({
+      url: scaletopia_ajax_object.ajax_url,
+      type: "POST",
+      data: {
+        action: "filter_case_studies",
+        category: category,
+        nonce: scaletopia_ajax_object.nonce,
+        page: nextPage,
+      },
+      beforeSend: function () {
+        $btn.addClass("loading");
+        $btn.find("span").text("Loading...");
+      },
+      success: function (response) {
+        if (response.success) {
+          $(".case-studies-wrapper").append(response.data.html);
+          $btn.data("page", nextPage);
+          $btn.attr("data-page", nextPage);
+          $btn.find("span").text("Load More");
+          $btn.removeClass("loading");
+
+          if (nextPage >= response.data.max_pages) {
+            $btn.parent().hide();
+            $btn.hide();
+          }
+        }
+      },
+      error: function (xhr, status, error) {
+        console.error("AJAX Error:", error);
+        $btn.find("span").text("Load More");
+        $btn.removeClass("loading");
       },
     });
   });

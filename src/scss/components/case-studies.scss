@@ -141,6 +141,22 @@
       }
     }
   }
+
+  .load-more-wrapper {
+    margin-top: 56px;
+    display: flex;
+    justify-content: center;
+
+    .animated-button {
+      cursor: pointer;
+      border: none;
+
+      &.loading {
+        opacity: 0.7;
+        pointer-events: none;
+      }
+    }
+  }
 }
 
 // ── Slider Section (Renamed from success-stories) ───────────────────────────

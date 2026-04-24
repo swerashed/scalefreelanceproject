@@ -175,11 +175,13 @@ function filter_case_studies()
 	}
 
 	$category_slug = sanitize_text_field($_POST['category']); // Get the selected category
+	$page = isset($_POST['page']) ? intval($_POST['page']) : 1;
 
 	// Query arguments
 	$args = array(
 		'post_type' => 'case_study',
-		'posts_per_page' => -1,
+		'posts_per_page' => 8,
+		'paged' => $page,
 		'post_status' => 'publish',
 	);
 
@@ -195,6 +197,7 @@ function filter_case_studies()
 	}
 
 	$query = new WP_Query($args);
+	$max_pages = $query->max_num_pages;
 
 	// Check if posts are found
 	if ($query->have_posts()) {
@@ -264,7 +267,11 @@ function filter_case_studies()
 
 		wp_reset_postdata();
 		$html = ob_get_clean();
-		wp_send_json_success(['html' => $html]);
+		wp_send_json_success([
+			'html' => $html,
+			'max_pages' => $max_pages,
+			'current_page' => $page
+		]);
 	} else {
 		wp_send_json_success([
 			'html' => '
@@ -274,7 +281,9 @@ function filter_case_studies()
 					<p>We couldn\'t find any case studies in this category. Check back soon for more updates!</p>
 				</div>
 			</div>
-		'
+		',
+			'max_pages' => 0,
+			'current_page' => 1
 		]);
 	}
 }

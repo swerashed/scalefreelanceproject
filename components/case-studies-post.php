@@ -27,11 +27,12 @@
             // Query all 'case_study' posts
             $args = array(
                 'post_type' => 'case_study', // Custom post type slug
-                'posts_per_page' => -1, // Retrieve all posts
+                'posts_per_page' => 8, // Retrieve 8 posts
                 'post_status' => 'publish', // Only published posts
             );
 
             $query = new WP_Query($args);
+            $max_pages = $query->max_num_pages;
 
             // Loop through the posts
             if ($query->have_posts()):
@@ -110,6 +111,15 @@
                 </div>
             <?php endif; ?>
         </div>
+
+        <?php if ($max_pages > 1): ?>
+            <div class="load-more-wrapper text-center">
+                <button id="load-more-case-studies" class="btn" data-page="1"
+                    data-max-pages="<?php echo $max_pages; ?>">
+                    <span>Load More</span>
+                </button>
+            </div>
+        <?php endif; ?>
 
     </div>
 </section>
