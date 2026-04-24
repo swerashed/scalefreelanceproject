@@ -16,7 +16,7 @@
     }
 
     h2 {
-      font-family: $serifFontFamily;
+      font-family: $instrumentFontFamily;
       font-size: 40px;
       line-height: 1.1;
       margin-bottom: 20px;
@@ -76,11 +76,11 @@
         vertical-align: middle;
         text-transform: uppercase;
         color: #562CED;
-        font-family: $secondaryFontFamily;
+        font-family: $urbanistFontFamily;
       }
 
       .price {
-        font-family: $serifFontFamily;
+        font-family: $instrumentFontFamily;
         font-weight: 400;
         font-size: 56px;
         line-height: 1;
@@ -110,7 +110,7 @@
         line-height: 20px;
         letter-spacing: 0%;
         vertical-align: middle;
-        font-family: $secondaryFontFamily;
+        font-family: $urbanistFontFamily;
         color: #989FB399;
         margin: 0;
       }
@@ -119,7 +119,7 @@
         margin-block: 40px;
 
         p {
-          font-family: $secondaryFontFamily;
+          font-family: $urbanistFontFamily;
           font-weight: 400;
           font-size: 14px;
           line-height: 23.8px;
@@ -132,7 +132,7 @@
 
       .guarantee {
         h4 {
-          font-family: $serifFontFamily;
+          font-family: $instrumentFontFamily;
           font-weight: 400;
           font-size: 22px;
           line-height: 33px;
@@ -152,7 +152,7 @@
 
         .guarantee-text {
           p {
-            font-family: $secondaryFontFamily;
+            font-family: $urbanistFontFamily;
             font-weight: 400;
             font-size: 15px;
             line-height: 24.75px;
@@ -175,12 +175,12 @@
         vertical-align: middle;
         text-transform: uppercase;
         color: #989FB399;
-        font-family: $secondaryFontFamily;
+        font-family: $urbanistFontFamily;
         margin: 0;
       }
 
       .definition-title {
-        font-family: $serifFontFamily;
+        font-family: $instrumentFontFamily;
         font-weight: 400;
         font-size: 28px;
         line-height: 33.6px;
@@ -219,7 +219,7 @@
           }
 
           .item-number {
-            font-family: $serifFontFamily;
+            font-family: $instrumentFontFamily;
             font-weight: 400;
             font-size: 24px;
             line-height: 22px;

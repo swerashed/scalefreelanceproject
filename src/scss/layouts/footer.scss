@@ -53,7 +53,7 @@ footer {
     }
 
     .footer-top-title {
-      font-family: $serifFontFamily;
+      font-family: $instrumentFontFamily;
       font-weight: 400;
       font-size: 40px;
       line-height: 44px;
@@ -92,7 +92,7 @@ footer {
       max-width: 527px;
 
       p {
-        font-family: $secondaryFontFamily;
+        font-family: $urbanistFontFamily;
         font-weight: 400;
         font-size: 14px;
         line-height: 150%;
@@ -123,7 +123,7 @@ footer {
 
     // ── Column heading ───────────────────────────────────────────────────────
     .footer-col-heading {
-      font-family: $secondaryFontFamily;
+      font-family: $urbanistFontFamily;
       font-weight: 500;
       font-size: 14px;
       line-height: 21px;
@@ -158,7 +158,7 @@ footer {
       }
 
       a {
-        font-family: $secondaryFontFamily;
+        font-family: $urbanistFontFamily;
         font-weight: 400;
         font-size: 14px;
         line-height: 21px;
@@ -198,7 +198,7 @@ footer {
     }
 
     .footer-email {
-      font-family: $secondaryFontFamily;
+      font-family: $urbanistFontFamily;
       font-size: 14px;
       line-height: 1.5;
       color: rgba(255, 255, 255, 0.7);
@@ -214,7 +214,7 @@ footer {
     .footer-address {
       strong {
         display: block;
-        font-family: $secondaryFontFamily;
+        font-family: $urbanistFontFamily;
         font-size: 14px;
         font-weight: 600;
         color: rgba(255, 255, 255, 1);
@@ -222,7 +222,7 @@ footer {
       }
 
       p {
-        font-family: $secondaryFontFamily;
+        font-family: $urbanistFontFamily;
         font-size: 14px;
         line-height: 1.65;
         color: rgba(255, 255, 255, 0.6);
@@ -254,7 +254,7 @@ footer {
       line-height: 18px;
       letter-spacing: 0.3px;
       vertical-align: middle;
-      font-family: $secondaryFontFamily;
+      font-family: $urbanistFontFamily;
       color: #989FB380;
       margin-bottom: 8px;
     }
@@ -280,7 +280,7 @@ footer {
         line-height: 18px;
         letter-spacing: 0.3px;
         vertical-align: middle;
-        font-family: $secondaryFontFamily;
+        font-family: $urbanistFontFamily;
         color: #989FB380;
         text-decoration: none;
         transition: color 0.25s ease;

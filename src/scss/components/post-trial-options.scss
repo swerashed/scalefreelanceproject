@@ -18,7 +18,7 @@
   }
 
   &-badge {
-    font-family: $secondaryFontFamily;
+    font-family: $urbanistFontFamily;
     font-weight: 600;
     font-size: 10.5px;
     line-height: 16.5px;
@@ -88,7 +88,7 @@
   }
 
   &-card-tag {
-    font-family: $secondaryFontFamily;
+    font-family: $urbanistFontFamily;
     font-weight: 500;
     font-size: 14px;
     line-height: 16.5px;
@@ -101,7 +101,7 @@
   }
 
   &-card-price {
-    font-family: $serifFontFamily;
+    font-family: $instrumentFontFamily;
     font-weight: 400;
     font-size: 48px;
     line-height: 1;
@@ -117,7 +117,7 @@
   }
 
   &-card-price-sub {
-    font-family: $secondaryFontFamily;
+    font-family: $urbanistFontFamily;
     font-weight: 400;
     font-size: 15px;
     line-height: 15px;
@@ -128,7 +128,7 @@
   }
 
   &-card-commitment {
-    font-family: $secondaryFontFamily;
+    font-family: $urbanistFontFamily;
     font-weight: 400;
     font-size: 13px;
     line-height: 19.5px;
@@ -139,7 +139,7 @@
   }
 
   &-card-subtitle {
-    font-family: $serifFontFamily;
+    font-family: $instrumentFontFamily;
     font-weight: 400;
     font-size: 20px;
     line-height: 1.4;
@@ -166,7 +166,7 @@
 
   &-card-desc {
     flex-grow: 1;
-    font-family: $secondaryFontFamily;
+    font-family: $urbanistFontFamily;
     font-weight: 400;
     font-size: 14px;
     line-height: 23.8px;
@@ -180,7 +180,7 @@
   &-card-footer-line {
     border-top: 1px solid #2C293D;
     padding-top: 24px;
-    font-family: $secondaryFontFamily;
+    font-family: $urbanistFontFamily;
     font-weight: 500;
     font-size: 13px;
     line-height: 19.5px;
@@ -200,7 +200,7 @@
     background: #562CED02;
     border: 1px solid #562CED24;
     padding: 24px;
-    font-family: $secondaryFontFamily;
+    font-family: $urbanistFontFamily;
     font-weight: 400;
     font-size: 14px;
     line-height: 1.6;
@@ -220,7 +220,7 @@
     em,
     strong,
     i {
-      font-family: $serifFontFamily;
+      font-family: $instrumentFontFamily;
       font-weight: 400;
       font-style: italic;
       font-size: 18px;

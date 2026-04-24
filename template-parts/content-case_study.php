@@ -1,6 +1,7 @@
 <?php
 $logoID = carbon_get_post_meta(get_the_ID(), 'logo');
 $logo = wp_get_attachment_image($logoID, 'full');
+$tag = carbon_get_post_meta(get_the_ID(), 'tag');
 $video = carbon_get_post_meta(get_the_ID(), 'video');
 $services = carbon_get_post_meta(get_the_ID(), 'services');
 $target_audience = carbon_get_post_meta(get_the_ID(), 'target_audience');
@@ -19,15 +20,17 @@ $contact_title = carbon_get_post_meta(get_the_ID(), 'contact_title') ?: 'Ready t
     <div class="case-studies-generic-wrapper">
         <div class="container">
             <div class="top-wrapper">
-                <?php echo $logo; ?>
+                <?php if ($tag): ?>
+                    <span class="case-study-tag"><?php echo esc_html($tag); ?></span>
+                <?php endif; ?>
                 <h2>
                     <?php the_title(); ?>
                 </h2>
             </div>
-            <?php if ($services || $target_audience) : ?>
+            <?php if ($services || $target_audience): ?>
                 <div class="middle-wrapepr">
                     <div class="meta-wrapepr">
-                        <?php if ($services) : ?>
+                        <?php if ($services): ?>
                             <div class="meta">
                                 <span>Service</span>
                                 <p>
@@ -36,7 +39,7 @@ $contact_title = carbon_get_post_meta(get_the_ID(), 'contact_title') ?: 'Ready t
                             </div>
                         <?php endif; ?>
 
-                        <?php if ($target_audience) : ?>
+                        <?php if ($target_audience): ?>
                             <div class="meta">
                                 <span>Target Audience</span>
                                 <p>
@@ -48,10 +51,10 @@ $contact_title = carbon_get_post_meta(get_the_ID(), 'contact_title') ?: 'Ready t
                 </div>
             <?php endif; ?>
 
-            <?php if ($top_cards_items) : ?>
+            <?php if ($top_cards_items): ?>
                 <div class="bottom-wrapper">
                     <div class="card-wrapper">
-                        <?php foreach ($top_cards_items as $item) : ?>
+                        <?php foreach ($top_cards_items as $item): ?>
                             <div class="card">
                                 <h4>
                                     <?php echo $item['title']; ?>
@@ -76,11 +79,13 @@ $contact_title = carbon_get_post_meta(get_the_ID(), 'contact_title') ?: 'Ready t
         <div class="case-studies-details-wrapper">
             <div class="left-content">
                 <div class="case-studies-item-img">
-                    <?php if ($video) : ?>
-                        <iframe  src="<?php echo $video; ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <?php if ($video): ?>
+                        <iframe src="<?php echo $video; ?>" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                         <!-- <a href="<?php echo $video; ?>" class="video-thumb youtube-popup">
                             <?php the_post_thumbnail('full'); ?>
-                            <?php if ($video) : ?>
+                            <?php if ($video): ?>
                                 <svg
                                     class="play-icon"
                                     width="96"
@@ -108,13 +113,13 @@ $contact_title = carbon_get_post_meta(get_the_ID(), 'contact_title') ?: 'Ready t
                                 </svg>
                             <?php endif; ?>
                         </a> -->
-                    <?php else : ?>
+                    <?php else: ?>
                         <?php the_post_thumbnail('full'); ?>
                     <?php endif; ?>
                 </div>
-                <?php if ($info_cards_items) : ?>
+                <?php if ($info_cards_items): ?>
                     <div class="company-info-wrapper">
-                        <?php foreach ($info_cards_items as $item) : ?>
+                        <?php foreach ($info_cards_items as $item): ?>
                             <div class="company-info">
                                 <h3>
                                     <?php echo $item['title']; ?>
@@ -130,11 +135,11 @@ $contact_title = carbon_get_post_meta(get_the_ID(), 'contact_title') ?: 'Ready t
                 <div class="case-studies-content">
                     <?php the_content(); ?>
 
-                    <?php if ($result_cards_items) : ?>
+                    <?php if ($result_cards_items): ?>
                         <div class="results">
                             <h3>Results</h3>
                             <div class="results-wrapper">
-                                <?php foreach ($result_cards_items as $item) : ?>
+                                <?php foreach ($result_cards_items as $item): ?>
                                     <div class="results-item">
                                         <h4>
                                             <?php echo $item['title']; ?>
@@ -172,7 +177,8 @@ $contact_title = carbon_get_post_meta(get_the_ID(), 'contact_title') ?: 'Ready t
                 </div>
 
                 <div class="sidebar-cta">
-                    <a href="<?php echo carbon_get_theme_option('scaletopia_book_now_link') ?>" class="btn" target="__blank">Book a free growth call</a>
+                    <a href="<?php echo carbon_get_theme_option('scaletopia_book_now_link') ?>" class="btn"
+                        target="__blank">Book a free growth call</a>
                 </div>
             </div>
         </div>
@@ -196,12 +202,13 @@ $contact_title = carbon_get_post_meta(get_the_ID(), 'contact_title') ?: 'Ready t
 
                 $query = new WP_Query($args);
 
-                if ($query->have_posts()) :
-                    while ($query->have_posts()) : $query->the_post();
+                if ($query->have_posts()):
+                    while ($query->have_posts()):
+                        $query->the_post();
                         $thumbnail_url = get_the_post_thumbnail_url(get_the_ID(), 'full');
                         $logoID = carbon_get_post_meta(get_the_ID(), 'logo');
                         $logo = wp_get_attachment_image($logoID, 'full');
-                ?>
+                        ?>
 
                         <div class="swiper-slide">
                             <div class="case-studies-item">
@@ -223,40 +230,22 @@ $contact_title = carbon_get_post_meta(get_the_ID(), 'contact_title') ?: 'Ready t
                                 </div>
                             </div>
                         </div>
-                <?php
+                        <?php
                     endwhile;
                 endif;
                 ?>
             </div>
             <div class="pagination">
                 <div class="navigation prev">
-                    <svg
-                        width="12"
-                        height="20"
-                        viewBox="0 0 12 20"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M2.00007 2C2.00007 2 10 7.89187 10 10C10 12.1083 2 18 2 18"
-                            stroke="white"
-                            stroke-width="3"
-                            stroke-linecap="round"
-                            stroke-linejoin="round" />
+                    <svg width="12" height="20" viewBox="0 0 12 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M2.00007 2C2.00007 2 10 7.89187 10 10C10 12.1083 2 18 2 18" stroke="white"
+                            stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                 </div>
                 <div class="navigation next">
-                    <svg
-                        width="12"
-                        height="20"
-                        viewBox="0 0 12 20"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M2.00007 2C2.00007 2 10 7.89187 10 10C10 12.1083 2 18 2 18"
-                            stroke="white"
-                            stroke-width="3"
-                            stroke-linecap="round"
-                            stroke-linejoin="round" />
+                    <svg width="12" height="20" viewBox="0 0 12 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M2.00007 2C2.00007 2 10 7.89187 10 10C10 12.1083 2 18 2 18" stroke="white"
+                            stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                 </div>
             </div>
@@ -273,11 +262,7 @@ $contact_title = carbon_get_post_meta(get_the_ID(), 'contact_title') ?: 'Ready t
             </h2>
         </div>
         <div class="calendy text-center">
-            <iframe
-                width="100%"
-                height="700"
-                frameborder="0"
-                scrolling="no"
+            <iframe width="100%" height="700" frameborder="0" scrolling="no"
                 src="<?php echo carbon_get_theme_option('scaletopia_book_now_link') ?>"
                 allow="camera; microphone; clipboard-write">
             </iframe>

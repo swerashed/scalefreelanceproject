@@ -50,7 +50,7 @@
 
     &-branding {
       .brand {
-        font-family: $serifFontFamily;
+        font-family: $instrumentFontFamily;
         font-weight: 400;
         font-size: 28px;
         line-height: 1.2;
@@ -71,7 +71,7 @@
       }
 
       .box-subtitle {
-        font-family: $secondaryFontFamily;
+        font-family: $urbanistFontFamily;
         font-weight: 400;
         font-size: 13px;
         line-height: 19.5px;
@@ -127,7 +127,7 @@
 
 
       .col-title {
-        font-family: $secondaryFontFamily;
+        font-family: $urbanistFontFamily;
         font-weight: 500;
         font-size: 14px;
         line-height: 16.5px;
@@ -149,7 +149,7 @@
       margin-top: 20px;
 
       &-item {
-        font-family: $secondaryFontFamily;
+        font-family: $urbanistFontFamily;
         display: flex;
         gap: 10px;
         font-weight: 400;
@@ -179,7 +179,7 @@
       padding: 20px;
 
       p {
-        font-family: $secondaryFontFamily;
+        font-family: $urbanistFontFamily;
         font-weight: 400;
         font-size: 13px;
         line-height: 19.5px;
@@ -190,7 +190,7 @@
         margin: 0;
 
         .link {
-          font-family: $secondaryFontFamily;
+          font-family: $urbanistFontFamily;
           font-weight: 500;
           font-size: 13px;
           line-height: 19.5px;

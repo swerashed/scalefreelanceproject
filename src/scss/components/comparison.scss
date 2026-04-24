@@ -2,13 +2,13 @@
   padding: $sectionPaddingMobile 15px;
   background: transparent;
   position: relative;
-  font-family: $secondaryFontFamily !important;
+  font-family: $urbanistFontFamily !important;
 
   p,
   strong,
   div,
   span {
-    font-family: $secondaryFontFamily !important;
+    font-family: $urbanistFontFamily !important;
   }
 
   @include respond-to("xl") {
@@ -94,7 +94,7 @@
 
   .category-col {
     .category-name {
-      font-family: $serifFontFamily !important;
+      font-family: $instrumentFontFamily !important;
       font-weight: 400;
       font-size: 20px;
       line-height: 22.95px;
@@ -136,7 +136,7 @@
 
     &--others {
       .other-label {
-        font-family: $secondaryFontFamily !important;
+        font-family: $urbanistFontFamily !important;
         font-weight: 500;
         font-size: 15px;
         color: #6b6980;
@@ -160,7 +160,7 @@
 
     strong {
       display: block;
-      font-family: $secondaryFontFamily !important;
+      font-family: $urbanistFontFamily !important;
       font-weight: 500;
       font-size: 14px;
       line-height: 19.6px;
@@ -170,7 +170,7 @@
     }
 
     p {
-      font-family: $secondaryFontFamily !important;
+      font-family: $urbanistFontFamily !important;
       font-weight: 400;
       font-size: 12.5px;
       line-height: 18.75px;
@@ -229,7 +229,7 @@
       gap: 12px;
 
       .button-description {
-        font-family: $secondaryFontFamily;
+        font-family: $urbanistFontFamily;
         font-weight: 500;
         font-size: 15px;
         color: white;
@@ -238,7 +238,7 @@
     }
 
     .footer-subtext {
-      font-family: $secondaryFontFamily;
+      font-family: $urbanistFontFamily;
       font-weight: 500;
       font-size: 14px;
       line-height: 150%;
