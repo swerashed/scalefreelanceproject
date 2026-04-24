@@ -386,21 +386,16 @@
       gap: 16px;
 
       @include respond-to("lg") {
-        height: 50px;
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
-        gap: 10px;
+        gap: 20px;
       }
 
       img {
-        max-height: 40px;
+        max-height: 50px;
         width: auto;
         object-fit: contain;
-
-        @include respond-to("lg") {
-          max-height: 100%;
-        }
       }
 
       .case-study-tag {
