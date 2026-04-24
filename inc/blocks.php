@@ -105,7 +105,6 @@ function hungry_register_scaletopia_component()
             Field::make('complex', 'items', 'Items')
                 ->set_layout('tabbed-vertical')
                 ->add_fields(array(
-                    Field::make('image', 'icon', 'Icon'),
                     Field::make('text', 'title', 'Title'),
                     Field::make('rich_text', 'description', 'Description'),
                 ))

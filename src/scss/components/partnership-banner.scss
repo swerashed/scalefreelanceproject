@@ -64,6 +64,17 @@
         line-height: 150%;
         letter-spacing: 0%;
         margin-bottom: 30px;
+        color: #FFFFFFB2;
+
+        p {
+          color: #FFFFFFB2;
+        }
+
+        span,
+        em,
+        strong {
+          color: #FFFFFF;
+        }
 
         @include respond-to("xl") {
           max-width: 85%;

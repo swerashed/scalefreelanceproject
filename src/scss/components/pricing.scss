@@ -63,7 +63,7 @@
 
       @include respond-to(lg) {
         grid-template-columns: 1fr 1fr;
-        gap: 20px;
+        gap: 80px;
       }
     }
 
@@ -229,15 +229,20 @@
           }
 
           .item-content {
+            font-family: $dmFontFamily;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+
             h5 {
               font-weight: 500;
-              font-style: Medium;
               font-size: 15px;
               line-height: 22.5px;
               letter-spacing: 0%;
               vertical-align: middle;
               color: #F8FAFC;
               margin: 0;
+
             }
 
             p {
