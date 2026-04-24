@@ -330,7 +330,7 @@ function hungry_register_scaletopia_component()
                 ->add_fields(array(
                     Field::make('text', 'badge', 'Badge (e.g., Phase 01)'),
                     Field::make('text', 'title', 'Title'),
-                    Field::make('textarea', 'description', 'Description'),
+                    Field::make('rich_text', 'description', 'Description'),
                     Field::make('image', 'img', 'Image'),
                 ))
         ))

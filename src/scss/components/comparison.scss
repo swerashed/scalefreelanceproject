@@ -4,12 +4,7 @@
   position: relative;
   font-family: $urbanistFontFamily !important;
 
-  p,
-  strong,
-  div,
-  span {
-    font-family: $urbanistFontFamily !important;
-  }
+
 
   @include respond-to("xl") {
     padding: $sectionPaddingDesktop 0;
@@ -22,6 +17,7 @@
   .section-header {
     text-align: center;
     margin-bottom: 30px;
+    max-width: 950px;
 
     @include respond-to("xl") {
       margin-bottom: 60px;

@@ -63,7 +63,10 @@
         }
       }
 
-      .item-title {
+      .item-title,
+      h2,
+      h1,
+      h3 {
         font-family: $instrumentFontFamily;
         font-weight: 400;
         font-size: 24px;
@@ -79,10 +82,12 @@
         }
       }
 
-      .item-description {
+      .item-description,
+      p,
+      span {
         font-family: $urbanistFontFamily;
         font-weight: 400;
-        font-size: 14px;
+        font-size: 16px;
         line-height: 150%;
         color: rgba($whiteColor, 0.6);
         margin-bottom: 0;
