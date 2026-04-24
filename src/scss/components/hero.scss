@@ -68,9 +68,19 @@
         margin-bottom: 30px;
         /* Reduced from 48px */
 
+        p,
+        span {
+          font-size: 18px;
+        }
+
         @include respond-to("xl") {
           max-width: 90%;
           margin-bottom: 48px;
+
+          p,
+          span {
+            font-size: 17px;
+          }
         }
       }
 
