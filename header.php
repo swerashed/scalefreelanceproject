@@ -25,19 +25,12 @@
 <body <?php body_class(); ?>>
 	<?php wp_body_open(); ?>
 
-	<div class="cursor"></div>
-	<!-- preloader-->
-	<!-- <div id="loading">
-		<div id="loading-center">
-			<div id="loading-center-absolute">
-				<div class="object" id="object_one"></div>
-				<div class="object" id="object_two"></div>
-				<div class="object" id="object_three"></div>
-				<div class="object" id="object_four"></div>
-			</div>
-		</div>
-	</div> -->
+	<?php
+	$header_btn_text = carbon_get_theme_option('scaletopia_header_btn_text');
+	$header_btn_link = carbon_get_theme_option('scaletopia_header_btn_link');
+	?>
 
+	<div class="cursor"></div>
 	<div id="mobile-menu">
 		<div class="mobile-menu-header">
 			<div class="logo">
@@ -66,7 +59,8 @@
 			?>
 		</nav>
 		<div class="mobile-menu-cta">
-			<a href="/application" class="animated-button stop-animation">Apply for risk-free pilot</a>
+			<a href="<?php echo esc_url($header_btn_link); ?>"
+				class="animated-button stop-animation"><?php echo esc_html($header_btn_text); ?></a>
 		</div>
 	</div>
 	<div id="main-content">
@@ -104,7 +98,8 @@
 						?>
 					</nav>
 					<div class="cta">
-						<a href="/application" class="animated-button stop-animation">Apply for risk-free pilot</a>
+						<a href="<?php echo esc_url($header_btn_link); ?>"
+							class="animated-button stop-animation"><?php echo esc_html($header_btn_text); ?></a>
 					</div>
 				</div>
 			</div>

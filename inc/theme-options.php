@@ -30,6 +30,16 @@ function scaletopia_option_register()
             Field::make('text', 'scaletopia_book_now_link', "Book Now Link"),
         ));
 
+    // Create a container for the header options
+    Container::make('theme_options', __('Header'))
+        ->set_page_parent($basic_options_container) // reference to a top level container
+        ->add_fields(array(
+            Field::make('text', 'scaletopia_header_btn_text', "Header Button Text")
+                ->set_default_value('Apply for risk-free pilot'),
+            Field::make('text', 'scaletopia_header_btn_link', "Header Button Link")
+                ->set_default_value('/application'),
+        ));
+
 
     Container::make('theme_options', "Footer")
         ->set_page_parent($basic_options_container) // reference to a top level container

@@ -18,7 +18,7 @@ $data = getData();
         <div class="comparison-cta">
             <div class="group-cta">
                 <div class="cta-wrapper">
-                    <a href="<?php echo $data['btn_link']; ?>" class="animated-button">
+                    <a href="<?php echo $data['btn_link']; ?>" class="animated-button stop-animation">
                         <?php echo $data['btn_title']; ?>
                     </a>
                 </div>
