@@ -78,24 +78,57 @@ $author_position = carbon_get_post_meta(get_the_ID(), 'author_position');
 <section class="case-studies-details">
     <div class="container">
         <div class="case-studies-details-wrapper">
-            <div class="left-content">
-                <?php
-                $client_message_screenshot = carbon_get_post_meta(get_the_ID(), 'client_message_screenshot');
-                ?>
-                <div class="case-studies-item-img">
-                    <?php if ($video): ?>
-                        <iframe src="<?php echo $video; ?>" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    <?php elseif ($client_message_screenshot): ?>
-                        <?php echo wp_get_attachment_image($client_message_screenshot, 'full'); ?>
-                    <?php else: ?>
-                        <?php the_post_thumbnail('full'); ?>
+            <div class="top-details-row">
+                <div class="left-col">
+                    <?php
+                    $client_message_screenshot = carbon_get_post_meta(get_the_ID(), 'client_message_screenshot');
+                    ?>
+                    <div class="case-studies-item-img">
+                        <?php if ($video): ?>
+                            <iframe src="<?php echo $video; ?>" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <?php elseif ($client_message_screenshot): ?>
+                            <?php echo wp_get_attachment_image($client_message_screenshot, 'full'); ?>
+                        <?php else: ?>
+                            <?php the_post_thumbnail('full'); ?>
+                        <?php endif; ?>
+                    </div>
+                    <?php if ($video || $client_message_screenshot): ?>
+                        <span class="verified-message">VERIFIED CLIENT MESSAGE</span>
                     <?php endif; ?>
                 </div>
-                <?php if ($video || $client_message_screenshot): ?>
-                    <span class="verified-message">VERIFIED CLIENT MESSAGE</span>
-                <?php endif; ?>
+
+                <div class="sidebar">
+                    <div class="author-profile">
+                        <div class="author-bio">
+                            <span>
+                                <?php echo $quote; ?>
+                            </span>
+                        </div>
+                        <div class="author-info">
+                            <div class="author-img">
+                                <?php echo wp_get_attachment_image($author_image, 'full'); ?>
+                            </div>
+                            <div class="author-details">
+                                <h4>
+                                    <?php echo $author_name; ?>
+                                </h4>
+                                <span>
+                                    <?php echo $author_position; ?>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-cta">
+                        <a href="<?php echo carbon_get_theme_option('scaletopia_book_now_link') ?>" class="btn"
+                            target="__blank">Book a free growth call</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="case-studies-content-flow">
                 <?php if (!empty($info_cards_items)): ?>
                     <div class="company-info-wrapper">
                         <?php foreach ($info_cards_items as $item): ?>
@@ -110,13 +143,12 @@ $author_position = carbon_get_post_meta(get_the_ID(), 'author_position');
                         <?php endforeach; ?>
                     </div>
                 <?php endif; ?>
-
                 <div class="case-studies-content">
                     <?php the_content(); ?>
 
                     <?php if ($result_cards_items): ?>
                         <div class="results">
-                            <h3>Results</h3>
+                            <h3>The <span>Results</span></h3>
                             <div class="results-wrapper">
                                 <?php foreach ($result_cards_items as $item): ?>
                                     <div class="results-item">
@@ -131,33 +163,6 @@ $author_position = carbon_get_post_meta(get_the_ID(), 'author_position');
                             </div>
                         </div>
                     <?php endif; ?>
-                </div>
-            </div>
-            <div class="sidebar">
-                <div class="author-profile">
-                    <div class="author-bio">
-                        <span>
-                            <?php echo $quote; ?>
-                        </span>
-                    </div>
-                    <div class="author-info">
-                        <div class="author-img">
-                            <?php echo wp_get_attachment_image($author_image, 'full'); ?>
-                        </div>
-                        <div class="author-details">
-                            <h4>
-                                <?php echo $author_name; ?>
-                            </h4>
-                            <span>
-                                <?php echo $author_position; ?>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="sidebar-cta">
-                    <a href="<?php echo carbon_get_theme_option('scaletopia_book_now_link') ?>" class="btn"
-                        target="__blank">Book a free growth call</a>
                 </div>
             </div>
         </div>
