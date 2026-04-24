@@ -39,16 +39,31 @@ const testiSwiper = new Swiper("#testimonials .swiper", {
 // more-case-studies
 const moreCaseStudiesSwiper = new Swiper(".more-case-studies .swiper", {
   modules: [Navigation, Pagination, Autoplay],
+  centeredSlides: true,
+  slidesPerView: "auto",
+  spaceBetween: -150, // Negative space to pull narrowed cards closer
+  loop: true,
+  loopedSlides: 5,
+  speed: 700,
+  watchSlidesProgress: true,
   autoplay: {
-    delay: 6000,
+    delay: 5000,
     disableOnInteraction: false,
   },
-  slidesPerView: "auto",
-  spaceBetween: 20,
-  loop: true,
+  breakpoints: {
+    320: {
+      spaceBetween: 16, // Normal gap for full-width mobile slides
+    },
+    768: {
+      spaceBetween: 20, // Normal gap for tablets
+    },
+    1024: {
+      spaceBetween: -90, // Maintain negative space for centered desktop slides
+    },
+  },
   navigation: {
-    nextEl: ".more-case-studies .next",
-    prevEl: ".more-case-studies .prev",
+    nextEl: ".more-case-studies .nav-arrow.next",
+    prevEl: ".more-case-studies .nav-arrow.prev",
   },
 });
 

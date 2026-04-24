@@ -3,7 +3,7 @@ $data = getData();
 $items = isset($data['items']) ? $data['items'] : [];
 ?>
 
-<section id="case-studies-slider">
+<section id="case-studies-slider" class="case-studies-slider-section">
     <div class="container">
         <div class="section-header text-center">
             <h2 class="title">

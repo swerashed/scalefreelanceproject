@@ -159,8 +159,35 @@
   }
 }
 
+.more-case-studies {
+  .container {
+    .section-header {
+      display: flex !important;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center !important;
+      max-width: 100%;
+      margin-bottom: 40px;
+
+      .title {
+        margin: 0px;
+        font-size: 32px;
+        margin-bottom: o !important;
+
+        @include respond-to("lg") {
+          font-size: 48px;
+        }
+      }
+
+      .slider-controls {
+        gap: 12px;
+      }
+    }
+  }
+}
+
 // ── Slider Section (Renamed from success-stories) ───────────────────────────
-#case-studies-slider {
+.case-studies-slider-section {
   padding: $sectionPaddingMobile 15px;
   position: relative;
   overflow: hidden;
@@ -494,7 +521,7 @@
 }
 
 // Slider-specific card behavior
-#case-studies-slider .case-study-card {
+.case-studies-slider-section .case-study-card {
   @include respond-to("lg") {
     transform: scale(0.65);
   }

@@ -168,66 +168,123 @@ $contact_title = carbon_get_post_meta(get_the_ID(), 'contact_title') ?: 'Ready t
 <!-- End Case Study Details -->
 
 <!-- More Case Studeis -->
-<section class="more-case-studies">
+<section id="more-case-studies-slider" class="more-case-studies case-studies-slider-section">
     <div class="container">
-        <div class="swiper">
-            <div class="swiper-wrapper">
+        <div class="section-header">
+            <h2 class="title">More <span>Case Studies</span></h2>
+            <div class="slider-controls">
+                <div class="nav-arrow prev">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15.8334 10H4.16675M4.16675 10L9.16675 15M4.16675 10L9.16675 5" stroke="white"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+                <div class="nav-arrow next">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4.16663 10H15.8333M15.8333 10L10.8333 5M15.8333 10L10.8333 15" stroke="white"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+            </div>
+        </div>
 
-                <?php
-                $args = array(
-                    'post_type' => 'case_study',
-                    'posts_per_page' => -1,
-                    'post_status' => 'publish',
-                    'post__not_in' => array(get_the_ID()),
-                );
+        <div class="case-studies-slider-container">
+            <div class="case-studies-slider-glow"></div>
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <?php
+                    $terms = wp_get_post_terms(get_the_ID(), 'case_study_category', array('fields' => 'ids'));
+                    $args = array(
+                        'post_type' => 'case_study',
+                        'posts_per_page' => 8,
+                        'post_status' => 'publish',
+                        'post__not_in' => array(get_the_ID()),
+                    );
 
-                $query = new WP_Query($args);
+                    if (!empty($terms)) {
+                        $args['tax_query'] = array(
+                            array(
+                                'taxonomy' => 'case_study_category',
+                                'field' => 'term_id',
+                                'terms' => $terms,
+                            ),
+                        );
+                    }
 
-                if ($query->have_posts()):
-                    while ($query->have_posts()):
-                        $query->the_post();
-                        $thumbnail_url = get_the_post_thumbnail_url(get_the_ID(), 'full');
-                        $logoID = carbon_get_post_meta(get_the_ID(), 'logo');
-                        $logo = wp_get_attachment_image($logoID, 'full');
-                        ?>
+                    $query = new WP_Query($args);
 
-                        <div class="swiper-slide">
-                            <div class="case-studies-item">
-                                <div class="case-studies-item-img">
-                                    <a href="<?php the_permalink(); ?>">
-                                        <?php echo $logo; ?>
-                                    </a>
-                                </div>
-                                <div class="case-studies-item-content">
-                                    <h3>
-                                        <?php the_title(); ?>
-                                    </h3>
+                    if ($query->have_posts()):
+                        while ($query->have_posts()):
+                            $query->the_post();
+                            $post_id = get_the_ID();
+                            $logo_id = carbon_get_post_meta($post_id, 'logo');
+                            $tag = carbon_get_post_meta($post_id, 'tag');
 
-                                    <div class="cta">
-                                        <a href="<?php the_permalink(); ?>" class="btn">
-                                            Read More
+                            // Pull stats from Banner Cards Items (top_cards_items)
+                            $banner_cards = carbon_get_post_meta($post_id, 'top_cards_items');
+                            $stat_1_val = isset($banner_cards[0]['title']) ? $banner_cards[0]['title'] : '';
+                            $stat_1_lab = isset($banner_cards[0]['description']) ? $banner_cards[0]['description'] : '';
+                            $stat_2_val = isset($banner_cards[1]['title']) ? $banner_cards[1]['title'] : '';
+                            $stat_2_lab = isset($banner_cards[1]['description']) ? $banner_cards[1]['description'] : '';
+                            ?>
+                            <div class="swiper-slide">
+                                <div class="case-study-card">
+                                    <div>
+                                        <div class="card-header">
+                                            <?php if ($logo_id): ?>
+                                                <div class="company-logo">
+                                                    <?php echo wp_get_attachment_image($logo_id, 'full'); ?>
+
+                                                    <?php if ($tag): ?>
+                                                        <span class="case-study-tag"><?php echo esc_html($tag); ?></span>
+                                                    <?php endif; ?>
+                                                </div>
+                                            <?php endif; ?>
+                                            <h3 class="headline">
+                                                <?php the_title(); ?>
+                                            </h3>
+                                        </div>
+                                        <div class="card-stats">
+                                            <?php if ($stat_1_val): ?>
+                                                <div class="stat-box">
+                                                    <span class="stat-value">
+                                                        <?php echo $stat_1_val; ?>
+                                                    </span>
+                                                    <span class="stat-label">
+                                                        <?php echo $stat_1_lab; ?>
+                                                    </span>
+                                                </div>
+                                            <?php endif; ?>
+                                            <?php if ($stat_2_val): ?>
+                                                <div class="stat-box">
+                                                    <span class="stat-value">
+                                                        <?php echo $stat_2_val; ?>
+                                                    </span>
+                                                    <span class="stat-label">
+                                                        <?php echo $stat_2_lab; ?>
+                                                    </span>
+                                                </div>
+                                            <?php endif; ?>
+                                        </div>
+                                    </div>
+
+                                    <div class="card-footer">
+                                        <a href="<?php the_permalink(); ?>" class="animated-button stop-animation">
+                                            <span>Read the case study</span>
+                                            <svg width="14" height="12" viewBox="0 0 14 12" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M1 6H13M13 6L8.5 1.5M13 6L8.5 10.5" stroke="white" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
                                         </a>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <?php
-                    endwhile;
-                endif;
-                ?>
-            </div>
-            <div class="pagination">
-                <div class="navigation prev">
-                    <svg width="12" height="20" viewBox="0 0 12 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M2.00007 2C2.00007 2 10 7.89187 10 10C10 12.1083 2 18 2 18" stroke="white"
-                            stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                </div>
-                <div class="navigation next">
-                    <svg width="12" height="20" viewBox="0 0 12 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M2.00007 2C2.00007 2 10 7.89187 10 10C10 12.1083 2 18 2 18" stroke="white"
-                            stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
+                            <?php
+                        endwhile;
+                        wp_reset_postdata();
+                    endif;
+                    ?>
                 </div>
             </div>
         </div>
