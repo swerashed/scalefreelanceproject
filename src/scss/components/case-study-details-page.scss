@@ -230,10 +230,14 @@
             @include respond-to("lg") {
                 flex-direction: row;
                 justify-content: space-between;
-                align-items: flex-start;
+                align-items: stretch;
             }
 
             .left-col {
+                height: auto;
+                display: flex;
+                flex-direction: column;
+
                 @include respond-to("lg") {
                     max-width: 660px;
                     width: 100%;
@@ -245,16 +249,40 @@
                     border: 1px solid #562ced26;
                     padding: 0px;
                     border-radius: 12px;
+                 
 
                     @include respond-to("lg") {
                         padding: 24px;
                         border-radius: 14px;
                     }
 
-                    img {
+                    .client-message-screenshot {
                         max-width: 100%;
                         width: 100%;
                         border-radius: 10px;
+                    }
+
+                    &.is-logo {
+                        background: linear-gradient(120deg, #171b24, rgba(85, 43, 237, 0.0745098039)), radial-gradient(153.38% 1055.88% at 17.55% 50%, rgba(85, 43, 237, 0.2) 0%, rgba(189, 171, 255, 0.4) 100%);
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        padding-block: 60px;
+                        border: none;
+                        height: 100%;
+
+                        @include respond-to("lg") {
+                            padding-block: 80px;
+                        }
+
+
+
+                        .logo-img {
+                            width: auto !important;
+                            height: auto !important;
+                            max-width: 250px;
+                            object-fit: contain;
+                        }
                     }
 
                     iframe {

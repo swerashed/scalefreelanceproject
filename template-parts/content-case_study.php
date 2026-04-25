@@ -83,19 +83,27 @@ $author_position = carbon_get_post_meta(get_the_ID(), 'author_position');
                 <div class="left-col">
                     <?php
                     $client_message_screenshot = carbon_get_post_meta(get_the_ID(), 'client_message_screenshot');
+                    $companyLogo = carbon_get_post_meta(get_the_ID(), 'logo');
+
+                    $img_wrapper_class = 'case-studies-item-img';
+                    if (!$video && !$client_message_screenshot && $companyLogo) {
+                        $img_wrapper_class .= ' is-logo';
+                    }
                     ?>
-                    <div class="case-studies-item-img">
+                    <div class="<?php echo esc_attr($img_wrapper_class); ?>">
                         <?php if ($video): ?>
                             <iframe src="<?php echo $video; ?>" frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                 referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                         <?php elseif ($client_message_screenshot): ?>
                             <?php echo wp_get_attachment_image($client_message_screenshot, 'full'); ?>
+                        <?php elseif ($companyLogo): ?>
+                            <?php echo wp_get_attachment_image($companyLogo, 'full', false, array('class' => 'logo-img')); ?>
                         <?php else: ?>
                             <?php the_post_thumbnail('full'); ?>
                         <?php endif; ?>
                     </div>
-                    <?php if ($video || $client_message_screenshot): ?>
+                    <?php if ($client_message_screenshot): ?>
                         <span class="verified-message">VERIFIED CLIENT MESSAGE</span>
                     <?php endif; ?>
                 </div>
