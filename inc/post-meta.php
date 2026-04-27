@@ -14,7 +14,7 @@ function crb_attach_theme_options()
             Field::make('html', 'crb_information_text')
                 ->set_html('<h2><b>Banner Section</b></h2>'),
             Field::make('image', 'logo', 'Logo'),
-            Field::make('text', 'tag', 'Tag'),
+
             Field::make('text', 'services', 'Services'),
             Field::make('text', 'target_audience', 'Target Audience'),
             Field::make('complex', 'top_cards_items', 'Banner Cards Items')
@@ -28,12 +28,7 @@ function crb_attach_theme_options()
                 ->set_html('<h2><b>Case Study Content Section</b></h2>'),
             Field::make('text', 'video', '(Youtube) Video'),
             Field::make('image', 'client_message_screenshot', 'Client Message Screenshot'),
-            Field::make('complex', 'info_cards_items', 'Info Cards Items')
-                ->set_layout('tabbed-horizontal')
-                ->add_fields(array(
-                    Field::make('text', 'title', 'Title'),
-                    Field::make('text', 'description', 'Description'),
-                )),
+
 
             Field::make('html', 'crb_result_card_text')->set_html('<h2><b>Result Cards Section</b></h2>'),
             Field::make('complex', 'result_cards_items', 'Result Cards Items')

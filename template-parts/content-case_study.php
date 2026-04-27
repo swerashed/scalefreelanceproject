@@ -6,7 +6,7 @@ $video = carbon_get_post_meta(get_the_ID(), 'video');
 $services = carbon_get_post_meta(get_the_ID(), 'services');
 $target_audience = carbon_get_post_meta(get_the_ID(), 'target_audience');
 $top_cards_items = carbon_get_post_meta(get_the_ID(), 'top_cards_items');
-$info_cards_items = carbon_get_post_meta(get_the_ID(), 'info_cards_items');
+
 $result_cards_items = carbon_get_post_meta(get_the_ID(), 'result_cards_items');
 $approach_items = carbon_get_post_meta(get_the_ID(), 'approach_items');
 $quote = carbon_get_post_meta(get_the_ID(), 'quote');
@@ -146,20 +146,7 @@ $author_position = carbon_get_post_meta(get_the_ID(), 'author_position');
             </div>
 
             <div class="case-studies-content-flow">
-                <?php if (!empty($info_cards_items)): ?>
-                    <div class="company-info-wrapper">
-                        <?php foreach ($info_cards_items as $item): ?>
-                            <div class="company-info">
-                                <h3>
-                                    <?php echo $item['title']; ?>
-                                </h3>
-                                <p>
-                                    <?php echo $item['description']; ?>
-                                </p>
-                            </div>
-                        <?php endforeach; ?>
-                    </div>
-                <?php endif; ?>
+
                 <div class="case-studies-content">
                     <?php the_content(); ?>
 
