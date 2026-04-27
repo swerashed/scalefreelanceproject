@@ -94,13 +94,25 @@
             /* Required for the pseudo-element */
             color: $whiteColor;
             text-decoration: none;
-            font-size: 18px;
-            line-height: 26px;
+            font-size: 20px;
+            line-height: 28px;
+            letter-spacing: 1px;
             font-weight: 600;
-            font-family: $urbanistFontFamily;
+            font-family: $instrumentFontFamily;
             transition: color 0.3s ease;
 
             &:hover {
+              color: $secondaryColor;
+            }
+          }
+
+          &.current-menu-item,
+          &.current-page-item,
+          &.current-menu-ancestor,
+          &.current-menu-parent,
+          &.current-page-ancestor,
+          &.current-page-parent {
+            a {
               color: $secondaryColor;
             }
           }
@@ -210,9 +222,10 @@
 
         a {
           color: $whiteColor;
-          font-family: $urbanistFontFamily;
-          font-size: 18px;
-          line-height: 26px;
+          font-family: $instrumentFontFamily;
+          font-size: 20px;
+          line-height: 28px;
+          letter-spacing: 1px;
           font-weight: 600;
           text-decoration: none;
           transition: color 0.3s ease;
@@ -220,10 +233,21 @@
           display: block;
           padding-bottom: 10px;
 
-          &:hover,
-          &.active &:focus {
+          &:hover {
             outline: none;
-            color: $primaryColor;
+            color: $secondaryColor;
+          }
+        }
+
+        &.current-menu-item,
+        &.current-page-item,
+        &.current-menu-ancestor,
+        &.current-page-ancestor,
+        &.current-menu-parent,
+        &.current-page-parent {
+          a {
+            color: $secondaryColor;
+            border-bottom-color: $secondaryColor;
           }
         }
       }
