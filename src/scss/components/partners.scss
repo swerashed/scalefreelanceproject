@@ -17,76 +17,23 @@
     margin-top: 0px;
   }
 
-  .partners-desktop {
-    display: none;
+  .partners-wrapper {
+    width: 100%;
 
-    @include respond-to("xl") {
-      display: block;
-    }
-  }
-
-  .partners-mobile {
-    display: block;
-
-    @include respond-to("xl") {
-      display: none;
-    }
-
-    .partners-mobile-grid {
+    .partner-grid {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 0px;
+      align-items: center;
+      row-gap: 10px;
       width: 100%;
-    }
-  }
+      max-width: 1020px;
+      margin-inline: auto;
 
-  .marquee-container {
-    overflow: hidden;
-    width: 100%;
-    display: none; // Default hide
+      @include respond-to("xl") {
+        row-gap: 32px;
+      }
 
-    @include respond-to("xl") {
-      display: block;
-      mask-image: linear-gradient(to right,
-          transparent,
-          black 10%,
-          black 90%,
-          transparent);
-    }
-  }
-
-  .partners-row {
-    margin-bottom: 32px;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-
-  .marquee-track {
-    display: flex;
-    align-items: center;
-
-    @include respond-to("xl") {
-      width: max-content;
-      flex-wrap: nowrap;
-      // Use a long duration for smooth movement
-      animation-duration: 40s;
-      animation-timing-function: linear;
-      animation-iteration-count: infinite;
-    }
-  }
-
-  .top .marquee-track {
-    @include respond-to("xl") {
-      animation-name: scroll-right;
-    }
-  }
-
-  .bottom .marquee-track {
-    @include respond-to("xl") {
-      animation-name: scroll-left;
     }
   }
 
@@ -97,44 +44,22 @@
     justify-content: center;
     width: fit-content;
 
-    &.marquee-extra {
-      display: none;
-
-      @include respond-to("xl") {
-        display: flex;
-      }
-    }
-
     img {
       display: block;
       max-width: 150px;
       height: auto;
       object-fit: contain;
+      filter: brightness(0) invert(1);
+      opacity: 0.7;
+      transition: opacity 0.3s ease;
+
+      &:hover {
+        opacity: 1;
+      }
 
       @include respond-to("xl") {
-        max-width: fit-content;
+        max-width: 200px;
       }
     }
-  }
-}
-
-@keyframes scroll-left {
-  0% {
-    transform: translateX(0);
-  }
-
-  100% {
-    // We repeated 3 times, so move by 1/3 of the total width
-    transform: translateX(calc(-100% / 3));
-  }
-}
-
-@keyframes scroll-right {
-  0% {
-    transform: translateX(calc(-100% / 3));
-  }
-
-  100% {
-    transform: translateX(0);
   }
 }

@@ -33,12 +33,7 @@ function hungry_register_scaletopia_component()
             Field::make('html', 'crb_information_text')
                 ->set_html('<h2>Partners (Home)</h2>'),
             Field::make('text', 'title', 'Title'),
-            Field::make('complex', 'items', 'Items Top')
-                ->set_layout('tabbed-vertical')
-                ->add_fields(array(
-                    Field::make('image', 'img', 'Image'),
-                )),
-            Field::make('complex', 'items_bottom', 'Items Bottom')
+            Field::make('complex', 'items', 'Logos')
                 ->set_layout('tabbed-vertical')
                 ->add_fields(array(
                     Field::make('image', 'img', 'Image'),
