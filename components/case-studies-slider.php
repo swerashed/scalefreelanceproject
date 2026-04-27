@@ -28,7 +28,7 @@ $items = isset($data['items']) ? $data['items'] : [];
                         $post_title = get_the_title($post_id);
                         $post_link = get_permalink($post_id);
                         $logo_id = carbon_get_post_meta($post_id, 'logo');
-                        $tag = carbon_get_post_meta($post_id, 'tag');
+                        $post_terms = get_the_terms($post_id, 'case_study_category');
 
                         // Pull stats from Banner Cards Items (top_cards_items)
                         $banner_cards = carbon_get_post_meta($post_id, 'top_cards_items');
@@ -45,8 +45,12 @@ $items = isset($data['items']) ? $data['items'] : [];
                                             <div class="company-logo">
                                                 <?php echo wp_get_attachment_image($logo_id, 'full'); ?>
 
-                                                <?php if ($tag): ?>
-                                                    <span class="case-study-tag"><?php echo esc_html($tag); ?></span>
+                                                <?php if (!empty($post_terms) && !is_wp_error($post_terms)): ?>
+                                                    <div class="case-study-tag-wrapper">
+                                                        <?php foreach ($post_terms as $term): ?>
+                                                            <span class="case-study-tag"><?php echo esc_html($term->name); ?></span>
+                                                        <?php endforeach; ?>
+                                                    </div>
                                                 <?php endif; ?>
                                             </div>
                                         <?php endif; ?>

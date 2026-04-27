@@ -1,7 +1,7 @@
 <?php
 $logoID = carbon_get_post_meta(get_the_ID(), 'logo');
 $logo = wp_get_attachment_image($logoID, 'full');
-$tag = carbon_get_post_meta(get_the_ID(), 'tag');
+
 $video = carbon_get_post_meta(get_the_ID(), 'video');
 $services = carbon_get_post_meta(get_the_ID(), 'services');
 $target_audience = carbon_get_post_meta(get_the_ID(), 'target_audience');
@@ -19,8 +19,14 @@ $author_position = carbon_get_post_meta(get_the_ID(), 'author_position');
     <div class="case-studies-generic-wrapper">
         <div class="container">
             <div class="top-wrapper">
-                <?php if ($tag): ?>
-                    <span class="case-study-tag"><?php echo esc_html($tag); ?></span>
+                <?php
+                $post_terms = get_the_terms(get_the_ID(), 'case_study_category');
+                if (!empty($post_terms) && !is_wp_error($post_terms)): ?>
+                    <div class="case-study-tag-wrapper">
+                        <?php foreach ($post_terms as $term): ?>
+                            <span class="case-study-tag"><?php echo esc_html($term->name); ?></span>
+                        <?php endforeach; ?>
+                    </div>
                 <?php endif; ?>
                 <h2 class="case-study-title">
                     <?php the_title(); ?>
@@ -254,7 +260,7 @@ $query = new WP_Query($args);
                                 $query->the_post();
                                 $post_id = get_the_ID();
                                 $logo_id = carbon_get_post_meta($post_id, 'logo');
-                                $tag = carbon_get_post_meta($post_id, 'tag');
+                                $post_terms = get_the_terms($post_id, 'case_study_category');
 
                                 // Pull stats from Banner Cards Items (top_cards_items)
                                 $banner_cards = carbon_get_post_meta($post_id, 'top_cards_items');
@@ -271,8 +277,12 @@ $query = new WP_Query($args);
                                                     <div class="company-logo">
                                                         <?php echo wp_get_attachment_image($logo_id, 'full'); ?>
 
-                                                        <?php if ($tag): ?>
-                                                            <span class="case-study-tag"><?php echo esc_html($tag); ?></span>
+                                                         <?php if (!empty($post_terms) && !is_wp_error($post_terms)): ?>
+                                                            <div class="case-study-tag-wrapper">
+                                                                <?php foreach ($post_terms as $term): ?>
+                                                                    <span class="case-study-tag"><?php echo esc_html($term->name); ?></span>
+                                                                <?php endforeach; ?>
+                                                            </div>
                                                         <?php endif; ?>
                                                     </div>
                                                 <?php endif; ?>

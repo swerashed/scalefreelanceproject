@@ -45,6 +45,12 @@
                     padding: 6px 16px;
                 }
             }
+
+            .case-study-tag-wrapper {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 8px;
+            }
         }
     }
 

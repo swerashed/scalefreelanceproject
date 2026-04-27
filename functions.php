@@ -207,7 +207,7 @@ function filter_case_studies()
 			$query->the_post();
 			$logoID = carbon_get_post_meta(get_the_ID(), 'logo');
 			$logo = wp_get_attachment_image($logoID, 'full');
-			$tag = carbon_get_post_meta(get_the_ID(), 'tag');
+			$post_terms = get_the_terms(get_the_ID(), 'case_study_category');
 			$top_cards = carbon_get_post_meta(get_the_ID(), 'top_cards_items');
 
 			// Get categories for filtering classes (optional but good for consistency)
@@ -225,8 +225,12 @@ function filter_case_studies()
 						<?php if ($logoID): ?>
 							<div class="company-logo">
 								<?php echo wp_get_attachment_image($logoID, 'full'); ?>
-								<?php if ($tag): ?>
-									<span class="case-study-tag"><?php echo esc_html($tag); ?></span>
+								<?php if (!empty($post_terms) && !is_wp_error($post_terms)): ?>
+									<div class="case-study-tag-wrapper">
+										<?php foreach ($post_terms as $term): ?>
+											<span class="case-study-tag"><?php echo esc_html($term->name); ?></span>
+										<?php endforeach; ?>
+									</div>
 								<?php endif; ?>
 							</div>
 						<?php endif; ?>
