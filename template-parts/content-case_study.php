@@ -116,14 +116,11 @@ $author_position = carbon_get_post_meta(get_the_ID(), 'author_position');
                             </span>
                         </div>
                         <div class="author-info">
-                            <div class="author-img">
-                                <?php if ($author_image): ?>
+                            <?php if ($author_image): ?>
+                                <div class="author-img">
                                     <?php echo wp_get_attachment_image($author_image, 'full'); ?>
-                                <?php else: ?>
-                                    <img src="<?php echo get_template_directory_uri(); ?>/src/img/dummy-avatar.jpg"
-                                        alt="Author Placeholder">
-                                <?php endif; ?>
-                            </div>
+                                </div>
+                            <?php endif; ?>
                             <div class="author-details">
                                 <h4>
                                     <?php echo $author_name; ?>
