@@ -57,7 +57,7 @@ $rows = isset($data['comparison_rows']) ? $data['comparison_rows'] : [];
         <div class="comparison-cta">
             <div class="group-cta">
                 <div class="cta-wrapper">
-                    <a href="<?php echo $data['btn_link']; ?>" class="animated-button stop-animation">
+                    <a href="<?php echo $data['btn_link']; ?>" class="animated-button">
                         <?php echo $data['btn_title']; ?>
                     </a>
                 </div>
